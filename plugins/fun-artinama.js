@@ -44,4 +44,4 @@ handler.help = ['artinama'].map(v => v + ' [nama]')
 handler.tags = ['kerang']
 handler.command = ['artinama']
 
-module.exports = handler
+export default handler
