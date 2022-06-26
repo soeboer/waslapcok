@@ -7,4 +7,4 @@ let handler = async (m, { conn }) => {
 }
 handler.command = /^hint$/i
 
-module.exports = handler
+export default handler
