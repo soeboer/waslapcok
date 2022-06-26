@@ -33,12 +33,4 @@ ${hasil.map(v => `
 handler.help = ['Layarkaca'].map(v => v + ' <query>')
 handler.tags = ['internet']
 handler.command = /^(layarkaca)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = false
-handler.admin = false
-handler.botAdmin = false
-module.exports = handler
+export default handler
