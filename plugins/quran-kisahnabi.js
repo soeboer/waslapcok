@@ -1,28 +1,14 @@
-let axios = require("axios");
-let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukan Nama Nabi nya', m)
-
-	axios.get(`https://kisahnabi-api-zhirrr.vercel.app/api/searchnabi?q=${text}`).then ((res) => {
-	 	let hasil = `*NAMA NABI*			: ${text}\n*TEMPAT LAHIR*		: ${res.data.result.tempat_lahir}\n*TAHUN KELAHIRAN*	: ${res.data.result.tahun_kelahiran}\n*UMUR*				: ${res.data.result.usia}\n*KISAH*				: ${res.data.result.description}`
-
-    conn.reply(m.chat, hasil, m)
-	})
-}
-handler.help = ['kisah|kisah nabi|nabi'].map(v => v + ' <nama nabi>')
+import fetch from 'node-fetch'
+let handler = async (m, { text, usedPrefix, command }) => {
+     if (!text) throw `Masukan nama nabi\nExample: ${usedPrefix + command} adam`
+     let url = await fetch(`https://raw.githubusercontent.com/Aiinne/scrape/main/data/kisahnabi/${text}.json`)
+     let kisah = await url.json()
+     let hasil = `Nabi : ${kisah.name}\nTanggal Lahir : ${kisah.thn_kelahiran}\nTempat Lahir : ${kisah.tmp}\nUsia : ${kisah.usia}\nKisah : ${kisah.description}`
+     conn.reply(m.chat, hasil, m)
+     }
+handler.help = ['kisahnabi <name>']
 handler.tags = ['quran']
-handler.command = /^(kisah|kisah nabi|nabi)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
+handler.command = /^kisahnabi$/i
+handler.limit = true
 
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
-handler.limit = false
-
-module.exports = handler
+export default handler
