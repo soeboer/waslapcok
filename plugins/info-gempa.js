@@ -6,7 +6,7 @@ await m.reply(global.wait)
     conn.sendButtonLoc(m.chat, await (await fetch(res.map)).buffer(), str, footer, 'News', '#? news', m)
 }
 handler.help = ['infobmkg','infogempa']
-handler.tags = ['news']
+handler.tags = ['internet']
 handler.command = /^(infobmkg|infogempa)$/i
 handler.owner = false
 handler.mods = false
