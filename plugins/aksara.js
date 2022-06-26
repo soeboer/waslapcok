@@ -35,4 +35,4 @@ handler.command = /^aksara$/i
 
 handler.limit = 1
 
-module.exports = handler
+export default handler
