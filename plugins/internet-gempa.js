@@ -8,16 +8,4 @@ await m.reply(global.wait)
 handler.help = ['infobmkg','infogempa']
 handler.tags = ['internet']
 handler.command = /^(infobmkg|infogempa)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
-handler.limit = false
 export default handler
