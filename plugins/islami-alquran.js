@@ -14,7 +14,7 @@ ${api[args[0] - 1].ayahs[args[1] - 1].translation.id}
 }
 
 handler.command = ['quran']
-handler.help = ['alquran']
+handler.help = ['alquran <nmrsurat nmrayat>']
 handler.tags = ['islami']
 
 export default handler
