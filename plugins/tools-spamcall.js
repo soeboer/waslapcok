@@ -13,5 +13,5 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 handler.help = ['spamcall <nomor>']
 handler.tags = ['tools']
 handler.command = /^(spamcall)$/i
-handler.limit = true
-module.exports = handler
+
+export default handler
