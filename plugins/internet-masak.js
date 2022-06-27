@@ -5,7 +5,7 @@ if (!text) throw `*[❗INFO❗] Masukan Nama Resep Ingin Kamu Cari*`
 let res = await fetch(global.API('https://api.burhansyam.com', '/bot/resep/', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
-let { judul, waktu_masak, hasil, tingkat_kesulitan, thumb, bahan, langkah_langkah } = json.result[0]
+let { judul, waktu_masak, hasil, tingkat_kesulitan, thumb, bahan, langkah_langkah } = json.results[0]
 let madang = `✨ *Judul :* ${judul}
 🎆 *Durasi :* ${waktu_masak}
 💬 *Hasil :* ${hasil}
