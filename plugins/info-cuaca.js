@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-handler.help = ['cuaca']
+handler.help = ['cuaca <kota>']
 handler.tags = ['info']
 handler.command = /^cuaca$/i
 export default handler
