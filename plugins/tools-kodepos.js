@@ -11,7 +11,4 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['kodepos <kota>']
 handler.tags = ['tools']
 handler.command = /^kodepos$/i
-
-handler.limit = true
-
-module.exports = handler
+export default handler
