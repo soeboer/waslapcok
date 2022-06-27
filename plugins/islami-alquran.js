@@ -13,8 +13,8 @@ ${api[args[0] - 1].ayahs[args[1] - 1].translation.id}
     conn.sendFile(m.chat, api[args[0] - 1].ayahs[args[1] - 1].audio.url, '', '', m)
 }
 
-handler.command = ['alquran']
+handler.command = ['quran']
 handler.help = ['alquran']
-handler.tags = ['quran']
+handler.tags = ['islami']
 
 export default handler
