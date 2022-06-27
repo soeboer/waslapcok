@@ -48,3 +48,4 @@ ${rezeki}`
 handler.help = ['zodiakmingguan <zodiak>']
 handler.tags = ['fun']
 handler.command = /^(zodiakmingguan)$/i
+export default handler
