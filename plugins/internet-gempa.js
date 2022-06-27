@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
 await m.reply(global.wait)
     let res = await (await fetch(`https://api.burhansyam.com/bot/gempa`)).json()
         let str = `*INFO GEMPA*\n\nLokasi : ${res.lokasi}\nKedalaman : ${res.kedalaman}\nKoordinat : ${res.koordinat}\nMagnitude : ${res.magnitude}\nPotensi : ${res.potensi}\nWaktu : ${res.waktu}`
-        let url = json.url
+        let url = `${res.url}`
         conn.sendFile(m.chat, url, '', str, m)
 }
 
