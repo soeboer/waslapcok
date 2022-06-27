@@ -22,4 +22,4 @@ handler.help = ['resep <makanan>', 'masak <makanan>']
 handler.tags = ['internet']
 handler.command = /^(resep|masak)$/i
 
-module.exports = handler
+export default handler
