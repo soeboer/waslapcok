@@ -2,7 +2,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   await conn.sendButton(m.chat, `“${pickRandom(global.bucin)}”`, '', 'Bucin', `${usedPrefix}bucin`, m)
 }
 handler.help = ['bucin']
-handler.tags = ['quotes']
+handler.tags = ['fun']
 handler.command = /^(bucin)$/i
 
 export default handler
