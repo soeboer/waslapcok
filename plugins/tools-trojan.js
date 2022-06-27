@@ -29,6 +29,4 @@ handler.help = ['akungratis','trojan']
 handler.tags = ['tools']
 handler.command = /^(akungratis|trojan)$/i
 
-handler.limit = true
-
-module.exports = handler
+export default handler
