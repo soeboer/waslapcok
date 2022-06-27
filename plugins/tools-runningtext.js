@@ -10,9 +10,9 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['run']
 handler.tags = ['tools']
 handler.command = /^run$/i
-handler.limit = true
 
-module.exports = handler
+
+export default handler
 
 let { spawn } = require('child_process')
 let fs = require('fs')
