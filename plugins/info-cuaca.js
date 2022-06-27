@@ -1,10 +1,5 @@
 const axios = require('axios')
 
-handler.help = ['cuaca <kota>']
-handler.tags = ['info']
-handler.command = /^cuaca$/i
-export default handler
-
 async execute(m) {
 let {conn, text, args} = data
 if(!args[0]) return m.reply("please provide place or location name")
@@ -30,3 +25,7 @@ console.log(e)
     }
 }
 }
+handler.help = ['cuaca <kota>']
+handler.tags = ['info']
+handler.command = /^cuaca$/i
+export default handler
