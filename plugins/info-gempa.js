@@ -1,10 +1,21 @@
-import axios from 'axios'
-
-let handler = async(m, { conn, usedPrefix, command }) => {
-let res = await axios("https://api.burhansyam.com/bot/gempa.json")
-let json = res.data
-let url = json.url
-conn.sendButton(m.chat, "*Siiiuuuuuu*", author, url, [['⚽ tanggal ⚽', `${usedPrefix + command}`]], m)}
+import fetch from 'node-fetch'
+import cheerio from 'cheerio'
+let handler = async (m, { conn, text }) => {
+let res = await fetch(global.API('https://api.burhansyam.com/bot/gempa.json'))
+if (!res.ok) throw await res.text()
+let json = await res.json()
+let { tanggal, waktu, lokasi, kedalaman, koordinat, dirasakan, potensi, image_url, magnitude } = json.results[0]
+let html = await res.text()
+let ingfo = `✨ *Title:* ${title}
+🎆 *Tanggal:* ${tanggal}
+💬 *Waktu:* ${waktu}
+💌 *Lokasi:* ${lokasi}
+❤️ *Kedalaman:* ${kedalaman}
+👥 *Koordinat:* ${koordinat}
+💚 *Dirasakan:* ${dirasakan}
+🌐 *Potensi*: ${potensi}`
+conn.sendFile(m.chat, image_url, '', ingfo, m)
+}
 
 handler.help = ['gempa']
 handler.tags = ['info']
