@@ -34,7 +34,7 @@ let handler = async (m, { conn, args }) => {
         '-font',
         fontPath,
         '-fill',
-        'blue',
+        'black',
         '-size',
         '1024x784',
         '-pointsize',
@@ -47,7 +47,7 @@ let handler = async (m, { conn, args }) => {
         '-font',
         fontPath,
         '-fill',
-        'blue',
+        'black',
         '-size',
         '1024x784',
         '-pointsize',
@@ -62,12 +62,12 @@ let handler = async (m, { conn, args }) => {
     spawn(_spawnprocess, _spawnargs)
         .on('error', e => m.reply(format(e)))
         .on('close', () => {
-            conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Tulisan Tangan dengan Tinta Biru', m)
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Tulisan Tangan dengan Tinta Hitam', m)
         })
         .stdout.on('data', chunk => bufs.push(chunk))
 }
 handler.help = ['n'].map(v => v + 'ulis <teks>')
-handler.tags = ['tools']
+handler.tags = ['nulis']
 handler.command = /^nulis$/i
 
 export default handler
