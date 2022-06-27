@@ -47,7 +47,7 @@ let handler = async m => m.reply(`
 ┗━━━━━━━━━━━━━━━━━━━━┅
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['animelink']
-handler.tags = ['anime']
+handler.tags = ['internet']
 handler.command = /^animelink$/i
 
 export default handler 
