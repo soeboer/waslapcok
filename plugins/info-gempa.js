@@ -5,8 +5,14 @@ let json = res.data
 let url = json.url
 let author = json.author
 let tanggal = json.tanggal
+let jam = json.jam
+let magnitude = json.magnitude
+let koordinat = json.koordinat
+let kedalaman = json.kedalaman
+let lokasi = json.lokasi
 
-conn.sendButton(m.chat, "💬 Peringatan Dini ", tanggal, url, [['🌐 *Info Gempa BMKG* 🌐', `${usedPrefix + command}`]], m)
+
+conn.sendButton(m.chat, "💬 Informasi Gempa Terkini tanggal : `${jam}` ", lokasi, url, [['🌐Info Gempa BMKG🌐', `${usedPrefix + command}`]], m)
 
 }
 
