@@ -1,21 +1,21 @@
 let fetch = require("node-fetch")
 
 let handler = async (m, { conn, text }) => {
-  let res = await fetch(global.API('zeks', '/api/resep-masak', { q : text }, 'apikey'))
+  let res = await fetch(global.API('zenzapis', '/searching/bacaresep', { query : text }, 'apikey'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.title) throw json
   await conn.sendFile(m.chat, json.thumb, '', `
 ${json.title}
 ${json.url}
-
-*Tingkat:* ${json.tingkat}
-*Durasi:* ${json.duration}
-*Porsi:* ${json.banyak}
+*Judul:* ${json.judul}
+*Tingkat:* ${json.tingkat_kesulitan}
+*Durasi:* ${json.waktu_masak}
+*Porsi:* ${json.hasil}
 
 
 *Bahan:* ${json.bahan}
-*Cara:* ${json.cara}
+*Cara:* ${json.langkah_langkah}
 `.trim(), m)
 }
 handler.help = ['resep <makanan>', 'masak <makanan>']
