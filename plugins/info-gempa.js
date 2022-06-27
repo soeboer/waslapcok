@@ -1,5 +1,6 @@
 import axios from 'axios'
-let handler = async(m, { conn, usedPrefix, command }) => {
+//let handler = async(m, { conn, usedPrefix, command }) => {
+let handler = async (m, { conn, text }) => {  
 let res = await axios("https://api.burhansyam.com/bot/gempa.json")
 let json = res.data
 let url = json.url
@@ -11,7 +12,8 @@ let koordinat = json.koordinat
 let kedalaman = json.kedalaman
 let lokasi = json.lokasi
 
-let kaslak = `🗓 *Tanggal :* ${tanggal}
+let kaslak = `📢 Informasi Gempa Terkini
+🗓 *Tanggal :* ${tanggal}
 ⏰ *Jam :* ${jam}
 🌀 *Kekuatan SR :* ${magnitude}
 ⛳️ *Koordinat :* ${koordinat}
@@ -19,7 +21,8 @@ let kaslak = `🗓 *Tanggal :* ${tanggal}
 🌐 *Lokasi :* ${lokasi}
 📝 *Coded by :* @burhansyam`
 
-conn.sendButton(m.chat, "📢 Informasi Gempa Terkini", kaslak, url, [['♻️ Info Gempa BMKG ♻️', `${usedPrefix + command}`]], m)
+conn.sendFile(m.chat, url, '♻️ Info Gempa BMKG ♻️', kaslak, m)
+//conn.sendButton(m.chat, "📢 Informasi Gempa Terkini", kaslak, url, [['♻️ Info Gempa BMKG ♻️', `${usedPrefix + command}`]], m)
 
 }
 
