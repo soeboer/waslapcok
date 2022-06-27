@@ -22,7 +22,7 @@ Zodiak : ${zodiac}
 `.trim()
     m.reply(teks)
 }
-handler.help = ['zodiac *2002 02 25*']
+handler.help = ['zodiak <2002 02 25>']
 handler.tags = ['tools']
 
 handler.command = /^zodia[kc]$/i
