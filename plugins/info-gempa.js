@@ -11,8 +11,15 @@ let koordinat = json.koordinat
 let kedalaman = json.kedalaman
 let lokasi = json.lokasi
 
+let kaslak = `✨ *Title:* ${tanggal}
+🎆 *Episode:* ${jam}
+💬 *Transmisi:* ${magnitude}
+💌 *Rating:* ${koordinat}
+❤️ *Score:* ${kedalaman}
+👥 *Members:* ${lokasi}
+💚 *Sinopsis:* ${author}`
 
-conn.sendButton(m.chat, "💬 Informasi Gempa Terkini tanggal : `${jam}` ", lokasi, url, [['🌐Info Gempa BMKG🌐', `${usedPrefix + command}`]], m)
+conn.sendButton(m.chat, "💬 Informasi Gempa Terkini", kaslak, url, [['🌐Info Gempa BMKG tanggal 🌐', `${usedPrefix + command}`]], m)
 
 }
 
