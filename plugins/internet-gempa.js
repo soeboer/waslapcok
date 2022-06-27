@@ -1,12 +1,14 @@
 let fetch = require('node-fetch')
+
 let handler = async(m, { conn, text }) => {
 await m.reply(global.wait)
-    let res = await (await fetch(`https://cililitan.herokuapp.com/api/infogempa`)).json()
+    let res = await (await fetch(`https://api.burhansyam.com/bot/gempa`)).json()
         let str = `*INFO GEMPA*\n\nLokasi : ${res.lokasi}\nKedalaman : ${res.kedalaman}\nKoordinat : ${res.koordinat}\nMagnitude : ${res.magnitude}\nPotensi : ${res.potensi}\nWaktu : ${res.waktu}`
-    conn.sendButton(m.chat, await (await fetch(res.map)).buffer(), str, footer, 'BMKG', '#? Update', m)
+        let url = json.url
+        conn.sendFile(m.chat, url, '', str, m)
 }
 
 handler.help = ['infobmkg']
-handler.tags = ['internet']
+handler.tags = ['info']
 handler.command = /^(infobmkg|infogempa)$/i
 export default handler
