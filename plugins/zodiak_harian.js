@@ -47,19 +47,7 @@ ${rezeki}`
 	}
 }
 
-handler.help = ['Zodiakharian <zodiak>']
-handler.tags = ['internet']
-handler.command = /^zodiakharian?$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = true
-handler.admin = false
-handler.botAdmin = false
-module.exports = handler
-
-/*
-@mrf.zvx
-*/
+handler.help = ['zodiakharian <zodiak>']
+handler.tags = ['fun']
+handler.command = /^(zodiakharian)$/i
+export default handler
