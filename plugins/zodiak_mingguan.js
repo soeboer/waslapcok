@@ -45,19 +45,6 @@ ${rezeki}`
 	}
 }
 
-handler.help = ['Zodiakmingguan <zodiak>']
-handler.tags = ['internet']
-handler.command = /^zodiakmingguan?$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = true
-handler.admin = false
-handler.botAdmin = false
-module.exports = handler
-
-/*
-@mrf.zvx
-*/
+handler.help = ['zodiakmingguan <zodiak>']
+handler.tags = ['fun']
+handler.command = /^(zodiakmingguan)$/i
