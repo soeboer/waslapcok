@@ -31,6 +31,5 @@ handler.help = ['aksara'].map(v => v + ' <opsi> <teks>')
 handler.tags = ['tools']
 handler.command = /^aksara$/i
 
-handler.limit = true
 
 export default handler
