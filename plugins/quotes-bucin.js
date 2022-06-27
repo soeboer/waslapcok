@@ -5,7 +5,7 @@ handler.help = ['bucin']
 handler.tags = ['quotes']
 handler.command = /^(bucin)$/i
 
-module.exports = handler
+export default handler
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
