@@ -2,9 +2,17 @@ import axios from 'axios'
 
 let handler = async(m, { conn, text }) => {
         let res = await axios("https://api.burhansyam.com/bot/gempa.json")
-        let str = `*INFO GEMPA*\nTanggal : ${res.tanggal}\nWaktu : ${res.waktu}\nLokasi : ${res.lokasi}\nKedalaman : ${res.kedalaman}\nKoordinat : ${res.koordinat}\nMagnitude : ${res.magnitude}\nPotensi : ${res.potensi}\nDirasakan : ${res.dirasakan}`
-        let url = `${res.url}`
-        conn.sendFile(m.chat, url, '', str, m)
+        let json = res.data
+        let url = json.url
+        let jam = json.jam
+        let tanggal = json.tanggal
+        let lokasi = json.lokasi
+        let kedalaman = json.kedalaman
+        let koordinat = json.koordinat
+        let magnitude = json.magnitude
+        let dirasakan = json.dirasakan
+        let potensi = json.potensi
+        conn.sendFile(m.chat, "*tanggal*", author, url, [['jam', 'dirasakan']], m)
 }
 
 handler.help = ['gempa']
