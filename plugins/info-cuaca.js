@@ -10,7 +10,7 @@ let madang = `✨ *Kota :* ${name}
 🎆 *Deskrip :* ${weather[0].description}
 👥 *Suhu :* ${main.temp}`
 
-conn.reply(m.chat, name, '', madang, m)
+conn.reply(m.chat, 'madang', m)
 }
 
 
