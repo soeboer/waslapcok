@@ -1,34 +1,27 @@
-import axios from 'axios'
+import fetch from 'node-fetch'
+import cheerio from 'cheerio'
+let handler = async (m, { conn, text }) => {
+if (!text) throw `*[❗INFO❗] Masukan Nama Resep Ingin Kamu Cari*`
+let res = await fetch(global.API('https://api.burhansyam.com', '/bot/cuaca/', { q: text }))
+if (!res.ok) throw await res.text()
+let json = await res.json()
+let { title, thumb, key, times, serving, difficulty } = json.results
+// let res2 = await fetch(global.API('https://masak-apa.tomorisakura.vercel.app', '/api/recipe/' {${key}))
+// if (!res2.ok) throw await res2.text()
+// let json = await res2.json()
+// let { title, thumb, times, serving, difficulty, desc, step } = json.results[0]
+let madang = `✨ *Judul :* ${title}
+🎆 *Durasi :* ${times}
+💬 *Hasil :* ${serving}
+💌 *Level :* ${difficulty}
+❤️ Selengkapnya silakan kunjungi :
+https://foodzilla.my.id/cr/?resep=${key}`
+// 👥 *link :* ${step}
+conn.sendFile(m.chat, thumb, '', madang, m)
+}
 
 handler.help = ['cuaca <kota>']
 handler.tags = ['info']
 handler.command = /^cuaca$/i
 
 export default handler
-
-
-async execute(m) {
-let {conn, text, args} = data
-if(!args[0]) return m.reply("please provide place or location name")
-
-try{
-
-        const response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args[0]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
-        const res = await response
-        
-        const name = res.data.name
-        const Country = res.data.sys.country
-        const Weather= res.data.weather[0].description
-        const Temperature = res.data.main.temp + '°C'
-        const Minimum_Temperature= res.data.main.temp_min + '°C'
-        const Maximum_Temperature= res.data.main.temp_max + '°C'
-        const Humidity= res.data.main.temp + '%'
-        const Wind= res.data.wind.speed + 'km/h'
-        conn.reply(m.chat,`🌸 Place: ${name}\n💮 Country: ${Country}\n🌈 Weather: ${Weather}\n🎋 Temperature: ${Temperature}\n💠 Minimum Temperature: ${Minimum_Temperature}\n📛 Maximum Temperature: ${Maximum_Temperature}\n💦 Humidity: ${Humidity}\n🎐 Wind: ${Wind}
-        `.trim(),m)
-    } catch(e) {
-m.reply('location not found')
-console.log(e)
-    }
-}
-}
