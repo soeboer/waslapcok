@@ -14,8 +14,8 @@ let madang = `✨ *Judul :* ${title}
 🎆 *Durasi :* ${times}
 💬 *Hasil :* ${serving}
 💌 *Level :* ${difficulty}
-❤️ *Penyajian :* ${serving}`
-// 👥 *Proses :* ${step}
+❤️ *UrL :* https://api.burhansyam.com/bot/resep/?q=${key}`
+// 👥 *link :* ${step}
 conn.sendFile(m.chat, thumb, '', madang, m)
 }
 
