@@ -8,7 +8,7 @@ let json = await res.json()
 let { name, weather[0]description, main.temp, main[temp_min], main.temp_max, main.humidity, wind.speed } = json.results
 
 let madang = `✨ *Kota :* ${name}
-🎆 *Cuaca :* ${weather[0].description}
+🎆 *Cuaca :* ${weather[0]description}
 💬 *Hasil :* ${main.temp}
 💌 *Level :* ${main[temp_min]}
 ❤️ *Angin :* ${main.humidity}
