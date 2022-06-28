@@ -6,8 +6,6 @@ SNI : m.joox.co | m.spotify.com
 APN : aha | www.xlgprs.net | xlunlimited
 SNI : s10.tiktokcdn.com | api2-t3.musical.ly
 
-
-
 「 INJEK TELKOMSEX GAME MAX 30D 10GB 25rb」
 APN : home | internet | internux | aha | www.xlgprs.net | xlunlimited
 SNI : cf-vod.nimotv
