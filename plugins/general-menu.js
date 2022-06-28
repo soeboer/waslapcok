@@ -7,7 +7,7 @@ import moment from 'moment-timezone'
 
 let tags = {}
 const defaultMenu = {
-  before: `\n> Date: %date\n> Time: %time \n> Runtime: %uptime\n%readmore`,
+  before: `\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
   header: '*%category*',
   body: '• %cmd %islimit %isPremium',
   footer: '',
@@ -92,11 +92,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     // if (m.isGroup) return conn.sendButton(m.chat, text.trim(), conn.getName(conn.user.jid), pp, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
     //conn.sendHydrated(m.chat, text.trim(), conn.getName(conn.user.jid), await genProfile(conn, m), 'https://youtube.com/channel/UC0hs_I8N3JntK5vO6KogavQ', 'YouTube', null, null, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
    // conn.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/c82d5c358495e8ef15916.mp4' }, gifPlayback: true, gifAttribution: ~~(Math.random() * 2), caption: text.trim(), footer: await conn.getName(conn.user.jid) , templateButtons: [{ quickReplyButton: { displayText: 'Speedtest', id: `${_p}ping` }}, { quickReplyButton: { displayText: 'Owner', id: `${_p}owner` }} ] })
-   conn.sendButton(m.chat, `*${wish()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
+   conn.sendButton(m.chat, `*${wish()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['🚀 Cek', _p + 'ping'], ['🤖 Pemilik', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
 mediaType: 'VIDEO',
-mediaUrl: 'https://media.istockphoto.com/vectors/design-isolated-on-vector-id1326281753?b=1&k=20&m=1326281753&s=170667a&w=0&h=QUCey1lH7KHwOjlLTSh-gP47rOR3TS6tqCejdjfx0VM=',
-title: 'Waslap Auto Responder',
-body: 'Silakan digunakan seperlunya',
+mediaUrl: 'https://images-platform.99static.com//jeTtS-7CxGYyflLviRg4IaH1YV0=/0x0:1667x1667/fit-in/500x500/99designs-contests-attachments/85/85240/attachment_85240965',
+title: ' 🤖 WA Asisten 🤖 ',
+body: '⚠️Silakan di hancurkan ⚠️',
 thumbnail: fs.readFileSync("./thumbnail.jpg"),
 sourceUrl: 'B'
   }
