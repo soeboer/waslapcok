@@ -1,6 +1,9 @@
 import axios from 'axios'
-import fetch from 'node-fetch'
-import cheerio from 'cheerio'
+
+handler.help = ['cuaca <kota>']
+handler.tags = ['info']
+handler.command = /^cuaca$/i
+export default handler
 
 async execute(m) {
 let {conn, text, args} = data
@@ -27,7 +30,4 @@ console.log(e)
     }
 }
 }
-handler.help = ['cuaca <kota>']
-handler.tags = ['info']
-handler.command = /^cuaca$/i
-export default handler
+
