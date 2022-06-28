@@ -2,7 +2,7 @@ let handler = async m => m.reply(`
 「 INJEK TELKOMSEX EXTRA UNLI 」
 APN : home | internet | internux
 SNI : m.joox.co | m.spotify.com
-=========================================
+
 APN : aha | www.xlgprs.net | xlunlimited
 SNI : s10.tiktokcdn.com | api2-t3.musical.ly
 
@@ -13,7 +13,7 @@ METODE : websocket | bolak balik host & sni
 
 「 INJEK TELKOMSEX RUANG GURU 7D 28GB 10RB 」
 APN : home | internet | internux | aha | www.xlgprs.net | xlunlimited
-SNI/IP : 104.18.2.2
+SNI/IP : 104.18.2.2 | 104.18.2.3
 METODE : websocket | bolak balik host & sni
 
 
