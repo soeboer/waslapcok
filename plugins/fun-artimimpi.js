@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     if (!text) throw `Use example ${usedPrefix}${command} Bot`
     const result = await artimimpi(text)
     
-await conn.sendButton(m.chat, result, wm, [['Donasi', '.donasi']], m)
+await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
 }
 
 handler.help = ['artimimpi'].map(v => v + ' <Apa>')
