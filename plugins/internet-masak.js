@@ -14,7 +14,8 @@ let madang = `✨ *Judul :* ${title}
 🎆 *Durasi :* ${times}
 💬 *Hasil :* ${serving}
 💌 *Level :* ${difficulty}
-❤️ *UrL :* https://api.burhansyam.com/bot/resep/?q=${key}`
+❤️ Selengkapnya silakan kunjungi :
+https://foodzilla.my.id/cr/?resep=${key}`
 // 👥 *link :* ${step}
 conn.sendFile(m.chat, thumb, '', madang, m)
 }
