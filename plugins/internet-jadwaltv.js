@@ -3,19 +3,19 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 
 let handler = async (m, { text }) => {
-	if (!text) throw 'Masukkan Nama Channel TV'
+	if (!text) throw 'Input Query'
 	let res = await jadwalTV(text)
 	let txt = res.result.map((v) => `[${v.jam.replace('WIB', ' WIB')}] ${v.acara}`).join`\n`
-	m.reply(`Jadwal Acara TV ${res.channel}\n\n${txt}`)
+	m.reply(`Jadwal TV ${res.channel}\n\n${txt}`)
 }
-handler.help = ['jadwaltv <nama channel>']
-handler.tags = ['internet']
+handler.help = ['jadwaltv']
+handler.tags = ['tools']
 handler.command = /^jadwaltv$/i
 
 export default handler
 
 async function jadwalTV(name) {
-	let list = JSON.parse(fs.readFileSync('./src/jadwaltv.json', 'utf-8'))
+	let list = JSON.parse(fs.readFileSync('./lib/jadwaltv.json', 'utf-8'))
 	let data = list.find((v) => (new RegExp(name, 'gi')).test(v.channel)), result = []
 	if (!data) throw 'List Channel Yg Tersedia:\n\n' + list.map(v => v.channel).sort().join('\n')
 	let html = (await axios.get(`https://www.jadwaltv.net/${data.isPay ? 'jadwal-pay-tv/' : ''}${data.value}`)).data
