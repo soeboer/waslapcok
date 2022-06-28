@@ -1,5 +1,6 @@
-let fetch = require('node-fetch')
-let { JSDOM } = require('jsdom')
+import fetch from ('node-fetch')
+import { JSDOM } from ('jsdom')
+
 let handler = async (m, { conn, text, command }) => {
 	if (!text) throw `Ulangi dengan menambahkan zodiak\n*Contoh* : ${usedPrefix + command} libra
 
