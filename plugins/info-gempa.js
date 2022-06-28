@@ -12,7 +12,7 @@ let koordinat = json.koordinat
 let kedalaman = json.kedalaman
 let lokasi = json.lokasi
 
-let kaslak = `📢 Informasi Gempa Terkini
+let kaslak = `*📢 Informasi Gempa Terkini*
 🗓 *Tanggal :* ${tanggal}
 ⏰ *Jam :* ${jam}
 🌀 *Kekuatan SR :* ${magnitude}
