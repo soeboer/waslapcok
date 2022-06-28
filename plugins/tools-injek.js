@@ -33,6 +33,6 @@ trojan://215f9560-f0d6-11ec-a042-1577c1651679@id-tifa.bypass.id:443/?sni=s10.tik
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['injek']
 handler.tags = ['tools']
-handler.command = /^(akungratis|trojan)$/i
+handler.command = /^(injek)$/i
 
 export default handler
