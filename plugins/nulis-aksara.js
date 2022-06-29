@@ -1,12 +1,14 @@
-let fetch = require('node-fetch')
+import fetch from ('node-fetch')
+import { 
+    latinToAksara,
+    aksaraToLatin
+} from '@bochilteam/scraper'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
 ╭─「 Opsi 」
-│ latinkejawa
-│ latinkesunda
-│ jawakelatin
-│ sundakelatin
+│ latinToAksara
+│ aksaraToLatin
 ╰────
 
 Contoh penggunaan:
@@ -14,10 +16,8 @@ ${usedPrefix + command} latinkejawa selamat pagi
     `.trim()
     if (!args[0]) throw er
     switch (args[0].toLowerCase()) {
-        case 'latinkejawa':
-        case 'latinkesunda':
-        case 'jawakelatin':
-        case 'sundakelatin':
+        case 'latinToAksara':
+        case 'aksaraToLatin':
             let text = args.slice(1).join(' ')
             let res = await fetch(API('xteam', '/aksara/' + args[0].toLowerCase(), { text }, 'APIKEY'))
             if (!res.ok) throw await res.text()
@@ -32,7 +32,5 @@ ${usedPrefix + command} latinkejawa selamat pagi
 handler.help = ['aksara'].map(v => v + ' <opsi> <teks>')
 handler.tags = ['nulis']
 handler.command = /^aksara$/i
-
-handler.limit = 1
 
 export default handler
