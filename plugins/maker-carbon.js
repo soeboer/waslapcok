@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
 	conn.sendMessage(m.chat, { image: { url: res.url }}, { quoted: m })
 }
 handler.help = handler.alias = ['carbon']
-handler.tags = ['misc']
+handler.tags = ['maker']
 handler.command = /^(carbon)$/i
 
 export default handler
