@@ -1,7 +1,7 @@
+import fetch from 'node-fetch'
 import { bioskop, bioskopNow } from '@bochilteam/scraper'
 
-import { artimimpi } from '@bochilteam/scraper'
-//let jimp = require('jimp')
+
 let handler = async (m, { conn, usedPrefix, command }) => {
 
 //     if (!text) throw `Use example ${usedPrefix}${command} Bot`
