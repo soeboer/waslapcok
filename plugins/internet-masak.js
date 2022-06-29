@@ -14,8 +14,8 @@ let madang = `✨ *Judul :* ${title}
 🎆 *Durasi :* ${times}
 💬 *Hasil :* ${serving}
 💌 *Level :* ${difficulty}
-❤️ Selengkapnya silakan kunjungi :
-https://foodzilla.my.id/cr/?resep=${key}`
+❤️ Selengkapnya kunjungi :
+https://www.masakapahariini.com/resep/${key}`
 // 👥 *link :* ${step}
 conn.sendFile(m.chat, thumb, '', madang, m)
 }
