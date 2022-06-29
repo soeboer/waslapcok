@@ -17,7 +17,7 @@ Url ${result.link}
 }
 
 handler.help = ['lirik'].map(v => v + ' <Judul lagu atau artis>')
-handler.tags = ['tools']
+handler.tags = ['internet']
 handler.command = /^(lirik|lyrics|lyric)$/i
 
 export default handler
