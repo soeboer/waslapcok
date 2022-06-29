@@ -14,6 +14,7 @@ let madang = `
 🪄 *Suhu :* ${suhu} °C
 💦 *Kelembaban :* ${kelembaban} %
 🌀 *Angin :* ${angin} km/h
+📝 *Coded by Zhumbadhi*
 `
 
 conn.sendFile(m.chat, gbr, '', madang, m)
