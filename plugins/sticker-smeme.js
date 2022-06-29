@@ -16,6 +16,5 @@ handler.help = ['smeme <teks atas>|<teks bawah>']
 handler.tags = ['tools']
 handler.command = /^(smeme)$/i
 
-handler.limit = true
 
 export default handler
