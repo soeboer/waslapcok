@@ -61,7 +61,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 📈 ᴅᴀᴛᴀʙᴀsᴇ: ${totalreg}
 
 📅 ᴅᴀᴛᴇ: ${date}
-⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +5:30﹚
+⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +7:00﹚
 
 💻 sᴇʀᴠᴇʀ ɪɴғᴏ :
 ⮕ ᴩɪɴɢ: ${speed} ᴍs
@@ -73,9 +73,8 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 ⮕ ${groupsIn.length - groupsIn.length} - Groups Left
 ⮕ ${chats.length - groupsIn.length} - Personal Chats
 ⮕ ${chats.length} - Total Chats
-`.trim(), '', 'https://github.com/burhansyam/sadbotz', 'ʙᴏᴛ sᴄʀɪᴩᴛ', null, null, [
-[`ᴏᴡɴᴇʀ`, `${usedPrefix}owner`],
-[`ᴅᴏɴᴀᴛᴇ`, `${usedPrefix}donate`]
+`.trim(), '', 'https://github.com/burhansyam/Sad-Multi-Device', '🤖 Repository', null, null, [
+[`☠️ ᴏᴡɴᴇʀ`, `${usedPrefix}owner`],
 ], m, {asLocation: true})
 }
 handler.help = ['botinfo']
