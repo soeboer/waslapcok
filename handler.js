@@ -4,6 +4,7 @@ import path, { join } from 'path'
 import { fileURLToPath } from 'url'
 import { smsg } from './lib/simple.js'
 import { unwatchFile, watchFile } from 'fs'
+import { JSDOM } from 'jsdom'
 import fs from 'fs'
 
 const { proto } = (await import('@adiwajshing/baileys')).default
