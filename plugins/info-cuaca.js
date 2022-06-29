@@ -9,11 +9,11 @@ let json = await res.json()
 let { kota, suhu, cuaca, kelembaban, angin, gbr } = json.results[0]
 
 let madang = `
-✨ *Kota :* ${kota}
-✨ *Kota :* ${cuaca}
-🎆 *Suhu :* ${suhu}
-🎆 *Suhu :* ${kelembaban}
-🎆 *Suhu :* ${angin}
+🏭 *Kota :* ${kota}
+🌈 *Cuaca :* ${cuaca}
+🪄 *Suhu :* ${suhu} °C
+💦 *Kelembaban :* ${kelembaban} %
+🌀 *Angin :* ${angin} km/h
 `
 
 conn.sendFile(m.chat, gbr, '', madang, m)
