@@ -16,7 +16,7 @@ Url ${result.link}
 `.trim())
 }
 
-handler.help = ['lirik'].map(v => v + ' <Apa>')
+handler.help = ['lirik'].map(v => v + ' <Judul lagu atau artis>')
 handler.tags = ['tools']
 handler.command = /^(lirik|lyrics|lyric)$/i
 
