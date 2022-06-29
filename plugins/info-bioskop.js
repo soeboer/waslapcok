@@ -1,11 +1,9 @@
 import { bioskop } from '@bochilteam/scraper'
 
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-    
-    if (!text) throw `Use example ${usedPrefix}${command} Bot`
-    const result = await bioskop(text)
-
-await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
+let handler = async (m, { text, usedPrefix, command }) => {
+    if (!text) throw `${usedPrefix}${command}`
+    console.log(await bioskop())
+    conn.reply(m.chat, bioskop, m)
 }
 
 handler.help = ['jadwalbioskop']
