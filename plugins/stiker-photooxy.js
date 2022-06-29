@@ -73,7 +73,7 @@ lolpentakill
     conn.sendFile(m.chat, hasil, 'photooxy.jpg', caption, m)
 }
 handler.help = ['photooxy <effect|teks>']
-handler.tags = ['sticker']
+handler.tags = ['stiker']
 handler.command = /^(photooxy)$/i
 handler.limit = true
 
