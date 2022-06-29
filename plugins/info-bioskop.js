@@ -1,9 +1,13 @@
-import { bioskop } from '@bochilteam/scraper'
+import { bioskop, bioskopNow } from '@bochilteam/scraper'
 
-let handler = async (m, { text, usedPrefix, command }) => {
-    if (!text) throw `${usedPrefix}${command}`
-    console.log(await bioskop())
-    conn.reply(m.chat, bioskop, m)
+import { artimimpi } from '@bochilteam/scraper'
+//let jimp = require('jimp')
+let handler = async (m, { conn, usedPrefix, command }) => {
+
+//     if (!text) throw `Use example ${usedPrefix}${command} Bot`
+    const result = await bioskopNow)
+    
+await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
 }
 
 handler.help = ['jadwalbioskop']
