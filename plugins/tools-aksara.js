@@ -1,31 +1,11 @@
-import fetch from 'node-fetch'
+import { latinToAksara } from '@bochilteam/scraper'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    let er = `Opsi tersedia:
-• latinkejawa
-• latinkesunda
-• jawakelatin
-• sundakelatin
-Contoh penggunaan:
-${usedPrefix + command} latinkejawa selamat pagi
-    `.trim()
-    if (!args[0]) throw er
+let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
-    switch (args[0].toLowerCase()) {
-        case 'latinkejawa':
-        case 'latinkesunda':
-        case 'jawakelatin':
-        case 'sundakelatin':
-            let text = args.slice(1).join(' ')
-            let res = await fetch(global.API('xteam', '/aksara/' + args[0].toLowerCase(), { text }, `${xkey}`))
-            if (res.status !== 200) throw await res.text()
-            let json = await res.json()
-            if (!json.status) throw json
-            m.reply(json.message)
-            break
-        default:
-            throw er
-    }
+    if (!text) throw `.aksara latinToAksara${usedPrefix}${command} Tulisan`
+    const result = await latinToAksara(text)
+    
+await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
 }
 handler.help = ['aksara'].map(v => v + ' <opsi> <teks>')
 handler.tags = ['tools']
