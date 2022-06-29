@@ -75,6 +75,6 @@ lolpentakill
 handler.help = ['photooxy <effect|teks>']
 handler.tags = ['stiker']
 handler.command = /^(photooxy)$/i
-handler.limit = true
+// handler.limit = true
 
 export default handler
