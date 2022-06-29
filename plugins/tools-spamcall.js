@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+import fetch from 'node-fetch'
 
 handler.help = ['spamcall <nomor>']
 handler.tags = ['tools']
