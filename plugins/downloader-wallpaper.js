@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   await conn.sendMessage(m.chat, { image: { url: img.url_image }, caption: `Result From: ${text.capitalize()}`, footer: img.url_image, buttons: [{ buttonText: { displayText: 'Next' }, buttonId: `${usedPrefix + command} ${text}` }] }, { quoted: m })
 }
 handler.help = ['wallpaper']
-handler.tags = ['download']
+handler.tags = ['downloader']
 handler.alias = ['wp', 'wallpaper']
 handler.command = /^w(p|allpaper)$/i
 
