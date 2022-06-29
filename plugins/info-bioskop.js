@@ -1,8 +1,8 @@
-import { bioskopNow } from '@bochilteam/scraper'
+import { bioskop } from '@bochilteam/scraper'
 
 let handler = async (m, { command }) => {
 //     if (!text) throw `Example use ${usedPrefix}${command} halo`
-    const res = await bioskopNow
+    const res = await bioskop
     m.reply(`${res}`.trim())
 }
 
