@@ -11,6 +11,4 @@ handler.tags = ['maker']
 handler.command = /^(logorem)$/i
 handler.register = true
 
-handler.limit = true
-
 export default handler
