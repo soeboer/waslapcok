@@ -7,8 +7,8 @@ let handler = async (m, { conn, args }) => {
   conn.sendFile(m.chat, res, 'neko.jpg', `Sudah Jadi`, m, false)
 }
 handler.help = ['logoneko'].map(v => v + ' <text|text>')
-handler.tags = ['nulis']
+handler.tags = ['maker']
 handler.command = /^(logoneko)$/i
-handler.limit = true
+
 
 export default handler
