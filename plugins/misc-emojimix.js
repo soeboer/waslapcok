@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	} else throw `Ex: ${usedPrefix+command} ${decodeURI('%F0%9F%92%80')}+${decodeURI('%F0%9F%92%80')}`
 }
 handler.help = ['emojimix']
-handler.tags = ['misc']
+handler.tags = ['stiker']
 handler.command = /^(emojimix)$/i
 
 export default handler
