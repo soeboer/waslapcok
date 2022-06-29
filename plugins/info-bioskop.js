@@ -1,13 +1,9 @@
-import fetch from 'node-fetch'
-import { bioskop, bioskopNow } from '@bochilteam/scraper'
+import { bioskopNow } from '@bochilteam/scraper'
 
-
-let handler = async (m, { conn, usedPrefix, command }) => {
-
-//     if (!text) throw `Use example ${usedPrefix}${command} Bot`
-    const result = await bioskopNow
-    
-await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
+let handler = async (m, { command }) => {
+//     if (!text) throw `Example use ${usedPrefix}${command} halo`
+    const res = await bioskopNow
+    m.reply(`${res}`.trim())
 }
 
 handler.help = ['jadwalbioskop']
