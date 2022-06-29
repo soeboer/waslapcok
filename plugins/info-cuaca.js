@@ -6,10 +6,10 @@ if (!text) throw `*Masukan Nama Kota*`
 let res = await fetch(global.API('https://api.burhansyam.com', '/bot/cuaca/', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
-let { name, main[humidity], thumb } = json.results[0]
+let { name, main, thumb } = json.results[0]
 
 let madang = `✨ *Kota :* ${name}
-🎆 *B :* ${main[humidity]}`
+🎆 *B :* ${main}`
 
 conn.sendFile(m.chat, thumb, '', madang, m)
 }
