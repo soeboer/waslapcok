@@ -10,6 +10,4 @@ handler.help = ['logokaneki'].map(v => v + ' <text>')
 handler.tags = ['maker']
 handler.command = /^(logokaneki)$/i
 
-handler.limit = true
-
 export default handler
