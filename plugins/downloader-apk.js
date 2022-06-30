@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import fs from 'fs'
 let handler = async (m, {text, usedPrefix, command, conn}) => {
-let frep = { contextInfo: { externalAdReply: {title: global.wm, body: 'Simple Bot Esm', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg')  }}}
+let frep = { contextInfo: { externalAdReply: {title: global.wm, body: 'WA Asisten', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg')  }}}
   if (!text) throw `Contoh penggunaan ${usedPrefix}${command} Minecraft`
   
   if (command == 'apkdone') {
