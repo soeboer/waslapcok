@@ -24,11 +24,11 @@ ${usedPrefix + command} merah
             if (!res.ok) throw eror
             let json = await res.json()
             if (!json.result[0]) throw json
-            let { merah } = json.result[0]
-            let { args[0] } = json.result[0]
+            let { merah, kuning, ungu, biru } = json.result[0]
+//             let { args[0] } = json.result[0]
 //             m.reply(json.message)
 //             conn.sendButton(m.chat, `Tsel :\n ${merah}\n\nXL :\n${biru}_ ~`, `\n\nAxis :\n${ungu}`, [['blablabla']], m)
-            conn.reply(m.chat, `Bug ${args[0]} sudah masuk kardus siap dibuang`.trim(), m)
+            conn.reply(m.chat, `Bug ${args[0]} sudah masuk kardus siap dibuang`,`${text}`.trim(), m)
             break
         default:
             throw er
