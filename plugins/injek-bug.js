@@ -4,10 +4,10 @@ import axios from 'axios'
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
 ┌〔 Pilihan 〕
-├ Merah
-├ Biru
-├ Ungu
-├ Kuning
+├ Tsel
+├ XL
+├ Axis
+├ Isat
 └────
 
 contoh:
