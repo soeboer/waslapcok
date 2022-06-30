@@ -25,7 +25,8 @@ ${usedPrefix + command} merah
             let json = await res.json()
             if (!json.result[0]) throw json
             let { merah, biru, ungu, kuning } = json.result[0]
-            m.reply(json.message)
+//             m.reply(json.message)
+            conn.sendButton(m.chat, `Tsel :\n ${merah}\n\nXL :\n${biru}_ ~`, `\n\nAxis :\n${ungu}`, [['blablabla']], m)
             break
         default:
             throw er
