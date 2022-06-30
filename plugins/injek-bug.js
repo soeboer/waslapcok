@@ -11,15 +11,15 @@ let handler = async (m, { args, usedPrefix, command }) => {
 └────
 
 contoh:
-${usedPrefix + command} merah
+${usedPrefix + command} tsel
     `.trim()
     if (!args[0]) throw er
 
     switch (args[0].toLowerCase()) {
-        case 'merah':
-        case 'biru':
-        case 'ungu':
-        case 'kuning':
+        case 'tsel':
+        case 'xl':
+        case 'axis':
+        case 'isat':
             let text = args.slice(1).join(' ')
 //             let res = await fetch('https://api.burhansyam.com/bot/injek/asu.json?k=' + args[0].toLowerCase()))
 //             if (!res.ok) throw eror
