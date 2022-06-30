@@ -4,22 +4,22 @@ import axios from 'axios'
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
 ┌〔 Pilihan 〕
-├ Tsel
-├ XL
-├ Axis
-├ Isat
+├ Merah
+├ Biru
+├ Ungu
+├ Kuning
 └────
 
 contoh:
-${usedPrefix + command} tsel
+${usedPrefix + command} merah
     `.trim()
     if (!args[0]) throw er
 
     switch (args[0].toLowerCase()) {
-        case 'tsel':
-        case 'xl':
-        case 'axis':
-        case 'isat':
+        case 'merah':
+        case 'biru':
+        case 'ungu':
+        case 'kuning':
             let text = args.slice(1).join(' ')
 //             let res = await fetch('https://api.burhansyam.com/bot/injek/asu.json?k=' + args[0].toLowerCase()))
 //             if (!res.ok) throw eror
@@ -27,7 +27,7 @@ ${usedPrefix + command} tsel
 //             if (!json.result[0]) throw json
 //             let { merah, kuning, ungu, biru } = json.result[0]
             
-            let res = await axios("https://api.burhansyam.com/bot/injek/bug.json?k=+ args[0].toLowerCase()")
+            let res = await axios('https://api.burhansyam.com/bot/injek/asu.json?k=' + args[0].toLowerCase()))
             let json = res.data
             let bugs = json.bugs
             
