@@ -15,7 +15,7 @@ METODE : bolak balik host & sni
 Link Pembelian :
 https://my.telkomsel.com/app/package-details/8302109366b885095fd23c566bdbe472
 
-「 CONTOH GAMBAR METODE TERBALIK 」
+「 CONTOH INJEK METODE TERBALIK/SALTO 」
 Screenshoot : 
 https://img001.prntscr.com/file/img001/yhThPcxRTneIP7HT59hRGw.png
 
