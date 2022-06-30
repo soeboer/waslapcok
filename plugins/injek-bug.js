@@ -3,10 +3,10 @@ import fetch from 'node-fetch'
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
 ┌〔 Pilihan 〕
-├ tsel
-├ xl
-├ axis
-├ isat
+├ Merah
+├ Biru
+├ Ungu
+├ Kuning
 └────
 
 contoh:
@@ -15,10 +15,10 @@ ${usedPrefix + command} tsel
     if (!args[0]) throw er
 
     switch (args[0].toLowerCase()) {
-        case 'tsel':
-        case 'xl':
-        case 'axis':
-        case 'isat':
+        case 'merah':
+        case 'biru':
+        case 'ungu':
+        case 'kuning':
             let text = args.slice(1).join(' ')
             let res = await fetch(global.API('bubur', '/bot/injek/' + args[0].toLowerCase(), 'APIKEY'))
             if (!res.ok) throw eror
