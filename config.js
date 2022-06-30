@@ -14,7 +14,8 @@ global.lolkey = 'Papah-Chan'
 global.xkey = 'YourApikey'
 global.APIs = { // API Prefix
   // name: 'https://website'
-  zenzapis: 'https://zenzapis.xyz/',   
+  bubur: 'https://api.burhansyam.com',      
+  zenzapis: 'https://zenzapis.xyz',   
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api-xcoders.xyz',
@@ -27,6 +28,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
+  'https://burhansyam.com': 'gatholoco',     
   'https://zenzapis.xyz': '91fd4f297f70',  
   'https://api-xcoders.xyz': 'Go3E6RC4hu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
