@@ -23,7 +23,7 @@ ${usedPrefix + command} merah
             let res = await fetch(global.API('bubur', '/bot/injek/asu.json?k=' + args[0].toLowerCase()))
             if (!res.ok) throw eror
             let json = await res.json()
-            if (!json.status[0]) throw json
+            if (!json.result[0]) throw json
             m.reply(json.message)
             break
         default:
