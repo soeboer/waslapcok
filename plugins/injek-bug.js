@@ -26,7 +26,8 @@ ${usedPrefix + command} merah
             if (!json.result[0]) throw json
             let { merah, biru, ungu, kuning } = json.result[0]
 //             m.reply(json.message)
-            conn.sendButton(m.chat, `Tsel :\n ${merah}\n\nXL :\n${biru}_ ~`, `\n\nAxis :\n${ungu}`, [['blablabla']], m)
+//             conn.sendButton(m.chat, `Tsel :\n ${merah}\n\nXL :\n${biru}_ ~`, `\n\nAxis :\n${ungu}`, [['blablabla']], m)
+            conn.reply(m.chat, `${merah}`.trim(), m)
             break
         default:
             throw er
