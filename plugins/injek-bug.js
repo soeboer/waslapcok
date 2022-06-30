@@ -20,10 +20,10 @@ ${usedPrefix + command} merah
         case 'ungu':
         case 'kuning':
             let text = args.slice(1).join(' ')
-            let res = await fetch(global.API('bubur', '/bot/injek/asu.json' + args[0].toLowerCase()))
+            let res = await fetch(global.API('bubur', '/bot/injek/asu.json?k=' + args[0].toLowerCase()))
             if (!res.ok) throw eror
             let json = await res.json()
-            if (!json.status) throw json
+            if (!json.status[0]) throw json
             m.reply(json.message)
             break
         default:
