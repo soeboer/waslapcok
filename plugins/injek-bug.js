@@ -24,6 +24,7 @@ ${usedPrefix + command} merah
             if (!res.ok) throw eror
             let json = await res.json()
             if (!json.result[0]) throw json
+            let { merah, biru, ungu, kuning } = json.result[0]
             m.reply(json.message)
             break
         default:
