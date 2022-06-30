@@ -10,7 +10,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
 └────
 
 contoh:
-${usedPrefix + command} tsel
+${usedPrefix + command} merah
     `.trim()
     if (!args[0]) throw er
 
@@ -20,7 +20,7 @@ ${usedPrefix + command} tsel
         case 'ungu':
         case 'kuning':
             let text = args.slice(1).join(' ')
-            let res = await fetch(global.API('bubur', '/bot/injek/' + args[0].toLowerCase(), 'APIKEY'))
+            let res = await fetch(global.API('bubur', '/bot/injek/asu.php?k=' + args[0].toLowerCase()))
             if (!res.ok) throw eror
             let json = await res.json()
             if (!json.status) throw json
