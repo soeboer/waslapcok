@@ -28,7 +28,7 @@ await conn.sendButtonImg(m.chat, datathumb, otaku, wm, 'menu', '.menu', m)
 }
 
 handler.help = ['otakudesu'].map(v => v + ' <Apa>')
-handler.tags = ['anime']
+handler.tags = ['internet']
 handler.command = /^(otakudesu)$/i
 
 export default handler
