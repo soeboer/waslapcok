@@ -67,14 +67,15 @@ lolpentakill
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sedang membuat...')
- let hasil = await conn.getFile(await fetch('https://api.xteam.xyz/photooxy/' + effect + '?text=' + teks + `&APIKEY=${xkey}`)).buffer()
+//let img = await conn.getFile(`https://violetics.pw/api/asupan/${pilih}?apikey=beta`)
+ let hasil = await conn.getFile(`https:/violetics.pw/api/photooxy/${effect}/?apikey=beta&text=${teks}`)
  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
 
     conn.sendFile(m.chat, hasil, 'po.jpg', caption, m)
 }
-handler.help = ['po <effect teks>']
+handler.help = ['pox <effect teks>']
 handler.tags = ['maker']
-handler.command = /^(po)$/i
+handler.command = /^(pox)$/i
 // handler.limit = true
 
 export default handler
