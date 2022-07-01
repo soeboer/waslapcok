@@ -83,7 +83,7 @@ yoyowaimo
 //let img = await conn.getFile(`https://violetics.pw/api/asupan/${pilih}?apikey=beta`)
   
  let audio = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${effect}.mp3`)
-//  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
+ let caption = `*SFX*\n\nEffect : ${effect}`
 
 // await conn.sendFile(m.chat, audio, 'error.mp3', null, m, true) 
  
