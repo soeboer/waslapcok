@@ -25,8 +25,8 @@ Bonus: ${poin} XP
         }, timeout)
     ]
 }
-handler.help = ['Who am I']
-handler.tags = ['game']
+handler.help = ['siapa']
+handler.tags = ['fun']
 handler.command = /^siapa(kah)?who/i
 
 export default handler
