@@ -1,4 +1,4 @@
-let handler = async (m, {command, conn}) => {
+let handler = async (m, { args, usedPrefix, command }) => {
   
     let er = `
 ┌〔 Pilihan 〕
@@ -30,7 +30,7 @@ ${usedPrefix + command} cecan
             let text = args.slice(1).join(' ')
             
 await m.reply('dalam proses...')
-let img = await conn.getFile(`https://hadi-api.herokuapp.com/api/randomImage/${text}?apikey=FZDEVELOPER`)
+let img = await conn.getFile(`https://violetics.pw/api/asupan/${text}?apikey=beta`)
 var capt = `🐦 Koleksi Random Foto 🗿`
         conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 lanjut 🤗', `/${command} ${text}`]], m)
 
