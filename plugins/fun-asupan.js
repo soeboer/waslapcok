@@ -32,7 +32,7 @@ ${usedPrefix + command} cecan
 await m.reply('dalam proses...')
 let img = await conn.getFile(`https://violetics.pw/api/asupan/${text}?apikey=beta`)
 var capt = `🐦 Koleksi Random Foto 🗿`
-        conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 lanjut 🤗', `/${command} ${text}`]], m)
+        conn.sendButton(m.chat, `_${usedPrefix + command + text}_`.trim(), capt, img.data, [['😋 lanjut 🤗', `/${usedPrefix + command + text}`]], m)
 
             break
         default:
