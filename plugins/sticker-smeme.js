@@ -12,8 +12,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let stiker = await sticker(false, meme, global.packname, global.author)
     if (stiker) await conn.sendFile(m.chat, stiker, '', author, m, '', { asSticker: 1 })
 }
-handler.help = ['smeme <teks atas>|<teks bawah>']
-handler.tags = ['stiker']
+handler.help = ['smeme <teks a>|<teks b>']
+handler.tags = ['maker']
 handler.command = /^(smeme)$/i
 
 
