@@ -66,15 +66,14 @@ underquotes
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sedang membuat...')
-//let img = await conn.getFile(`https://violetics.pw/api/asupan/${pilih}?apikey=beta`)
- let hasil = await conn.getFile(`https:/violetics.pw/api/photooxy/${effect}/?apikey=beta&text=${teks}`)
+ let hasil = await (await fetch('https://violetics.pw/api/photooxy/' + effect + '?text=' + teks + `&APIKEY=beta`)).buffer()
  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
 
-    conn.sendFile(m.chat, hasil, 'po.jpg', caption, m)
+    conn.sendFile(m.chat, hasil, 'photooxy.jpg', caption, m)
 }
+
 handler.help = ['pox <effect teks>']
 handler.tags = ['maker']
 handler.command = /^(pox)$/i
-// handler.limit = true
 
 export default handler
