@@ -75,7 +75,7 @@ yowaimo
 yoyowaimo
 
 contoh:
-${usedPrefix + command} daisuki
+${usedPrefix + command} onichan
     `.trim()
     if (!args[0]) throw er
 
@@ -129,7 +129,8 @@ case 'mastah':
 case 'nande-nande':
 case 'nani':
 case 'ngadi-ngadi':
-case 'nikah': case 'nuina':
+case 'nikah': 
+case 'nuina':
 case 'onichan':
 case 'owner-sange':
 case 'ownerku':
