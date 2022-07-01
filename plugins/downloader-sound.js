@@ -85,9 +85,9 @@ yoyowaimo
  let audio = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${effect}.mp3`)
 //  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
 
-await conn.sendFile(m.chat, audio, 'error.mp3', null, m, true) 
+// await conn.sendFile(m.chat, audio, 'error.mp3', null, m, true) 
  
-//     conn.sendFile(m.chat, hasil, 'po.jpg', caption, m)
+    conn.sendFile(m.chat, audio, 'error.mp3', caption, m)
 }
 handler.help = ['sfx']
 handler.tags = ['downloader']
