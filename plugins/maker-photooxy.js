@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
-let [effect, teks] = text.split `|`
+let [effect, teks] = text.split ` `
 
 let listeffect = `
 *List Effect Photooxy :*
@@ -67,12 +67,12 @@ lolpentakill
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sedang membuat...')
- let hasil = await (await fetch('https://api.xteam.xyz/photooxy/' + effect + '?text=' + teks + `&APIKEY=${xkey}`)).buffer()
+ let hasil = await conn.getFile(await fetch('https://api.xteam.xyz/photooxy/' + effect + '?text=' + teks + `&APIKEY=${xkey}`)).buffer()
  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
 
-    conn.sendFile(m.chat, hasil, 'photooxy.jpg', caption, m)
+    conn.sendFile(m.chat, hasil, 'po.jpg', caption, m)
 }
-handler.help = ['po <effect|teks>']
+handler.help = ['po <effect teks>']
 handler.tags = ['maker']
 handler.command = /^(po)$/i
 // handler.limit = true
