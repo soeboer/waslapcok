@@ -66,7 +66,7 @@ underquotes
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sedang membuat...')
- let hasil = await (await fetch('https://violetics.pw/api/photooxy/' + effect + '?text=' + teks + `&APIKEY=beta`)).buffer()
+ let hasil = await fetch('https://violetics.pw/api/photooxy/' + effect + '?text=' + teks + `&APIKEY=beta`).buffer()
  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
 
     conn.sendFile(m.chat, hasil, 'photooxy.jpg', caption, m)
