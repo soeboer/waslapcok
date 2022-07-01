@@ -29,12 +29,16 @@ ${usedPrefix + command} cecan
         case 'vietnam':          
             let text = args.slice(1).join(' ')
             
-// await m.reply('dalam proses...')
-let img = await conn.getFile(`https://hadi-api.herokuapp.com/api/randomImage/${text}`)
+await m.reply('dalam proses...')
+let img = await conn.getFile(`https://hadi-api.herokuapp.com/api/randomImage/${text}?apikey=FZDEVELOPER`)
 var capt = `🐦 Koleksi Random Foto 🗿`
-        conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 lanjut 🤗', `/${command}`]], m)
-}
+        conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 lanjut 🤗', `/${command} ${text}`]], m)
 
+            break
+        default:
+            throw er
+    }
+}
 handler.help = ['Asupan Wallpaper']
 handler.tags = ['fun']
 
