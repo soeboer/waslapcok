@@ -64,7 +64,7 @@ lolpentakill
 `.trim()
 
     if (!effect) return conn.reply(m.chat, listeffect, m)
-    if (!teks) return conn.reply(m.chat, 'Uhm... Teksnya?', m)
+    if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sedang membuat...')
  let hasil = await (await fetch('https://api.xteam.xyz/photooxy/' + effect + '?text=' + teks + `&APIKEY=${xkey}`)).buffer()
@@ -72,9 +72,9 @@ lolpentakill
 
     conn.sendFile(m.chat, hasil, 'photooxy.jpg', caption, m)
 }
-handler.help = ['photooxy <effect|teks>']
-handler.tags = ['stiker']
-handler.command = /^(photooxy)$/i
+handler.help = ['po <effect|teks>']
+handler.tags = ['maker']
+handler.command = /^(po)$/i
 // handler.limit = true
 
 export default handler
