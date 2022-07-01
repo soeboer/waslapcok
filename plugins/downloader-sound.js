@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
-let [effect] = text.split ` `
 
 let listeffect = `
 *List Sound :*
@@ -82,8 +81,8 @@ yoyowaimo
   await m.reply('tunggu dulu 🐦')
 //let img = await conn.getFile(`https://violetics.pw/api/asupan/${pilih}?apikey=beta`)
   
- let audio = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${effect}.mp3`)
- let caption = `*SFX*\n\nEffect : ${effect}`
+ let audio = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${listeffect}.mp3`)
+ let caption = `*SFX*\n\nEffect : ${listeffect}`
 
 // await conn.sendFile(m.chat, audio, 'error.mp3', null, m, true) 
  
