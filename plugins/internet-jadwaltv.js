@@ -8,8 +8,8 @@ let handler = async (m, { text }) => {
 	let txt = res.result.map((v) => `[${v.jam.replace('WIB', ' WIB')}] ${v.acara}`).join`\n`
 	m.reply(`Jadwal TV ${res.channel}\n\n${txt}`)
 }
-handler.help = ['jadwaltv']
-handler.tags = ['tools']
+handler.help = ['jadwaltv <channel>']
+handler.tags = ['info']
 handler.command = /^jadwaltv$/i
 
 export default handler
