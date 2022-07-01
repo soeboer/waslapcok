@@ -5,9 +5,9 @@ var capt = `🐦 Random Foto Cecan🗿`
         conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 acak 🤗', `/${command}`]], m)
 }
 
-handler.help = ['igo Cecan']
+handler.help = ['Cecan']
 handler.tags = ['downloader']
 
-handler.command = /^(igo|cecan)$/i
+handler.command = /^(cecan)$/i
 
 export default handler
