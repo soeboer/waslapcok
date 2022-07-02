@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import cheerio from 'cheerio'
+
 let handler = async (m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Nama Resep Ingin Kamu Cari*`
 let res = await fetch(global.API('https://masak-apa.tomorisakura.vercel.app', '/api/search/', { q: text }))
@@ -20,8 +20,8 @@ https://www.masakapahariini.com/resep/${key}`
 conn.sendFile(m.chat, thumb, '', madang, m)
 }
 
-handler.help = ['resep <makanan>', 'masak <makanan>']
+handler.help = ['resep <makanan>']
 handler.tags = ['internet']
-handler.command = /^(resep|masak)$/i
+handler.command = /^(resep)$/i
 
 export default handler
