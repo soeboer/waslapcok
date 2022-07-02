@@ -32,7 +32,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['kal <expression>']
 handler.tags = ['tools']
-handler.command = /^(calc(ulat(e|or))?|kal(kulator)?)$/i
+handler.command = /^(calc(ulat(e|or))?|kalk(ulator)?)$/i
 handler.exp = 5
 
 export default handler
