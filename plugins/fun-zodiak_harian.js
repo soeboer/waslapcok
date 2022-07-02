@@ -2,9 +2,8 @@ import fetch from 'node-fetch'
 import cheerio from 'cheerio'
 import { JSDOM } from 'jsdom'
 
-let handler = async (m, { conn, text, command }) => {
-	if (!text) throw `Ulangi dengan menambahkan zodiak\n*Contoh* : ${usedPrefix + command} libra
-
+let handler = async (m, { args, usedPrefix, command }) => {
+    let er = `
 ▢ *List zodiak*
 
 - Capricorn
@@ -20,6 +19,32 @@ let handler = async (m, { conn, text, command }) => {
 - Scorpio
 - Sagittarius
 - Capricorn`
+    
+contoh:
+${usedPrefix + command} taurus
+    `.trim()
+    
+       if (!args[0]) throw er
+
+    switch (args[0].toLowerCase()) {
+        case 'capricorn':
+        case 'aquarius':
+        case 'pisces':
+        case 'aries':
+        case 'taurus':
+        case 'gemini':
+        case 'cancer':
+        case 'leo':	
+        case 'virgo':
+        case 'libra':
+        case 'scorpio':
+        case 'sagittarius':
+        case 'capricorn':		
+	            let text = args.slice(1).join(' ')
+		    
+// 	if (!text) throw `Ulangi dengan menambahkan zodiak\n*Contoh* : ${usedPrefix + command} libra
+
+
 	try {
 		let res = await fetch(`https://www.fimela.com/zodiak/${text}`)
 		if (!res.ok) throw await res.text()
@@ -43,10 +68,16 @@ ${love}
 ▢ *Keuangan* : 
 ${rezeki}`
 
-		conn.sendFile(m.chat, thumb, 'zodiak.jpeg', caption, m)
-	} catch (e) {
-		m.reply('Hasil tidak di temukan')
-	}
+// 		conn.sendFile(m.chat, thumb, 'zodiak.jpeg', caption, m)
+		  conn.sendFile(m.chat, thumb, 'zodiak.jpg', `Zodiak`, m, false)
+// 	} catch (e) {
+// 		m.reply('Hasil tidak di temukan')
+// 	}
+// }
+		            break
+        default:
+            throw er
+    }
 }
 
 handler.help = ['zodiakharian <zodiak>']
