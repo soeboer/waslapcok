@@ -7,14 +7,14 @@ export async function before(m) {
     this.tebakgambar = this.tebakgambar ? this.tebakgambar : {}
     if (!(id in this.tebakgambar)) {
         if (m.text == 'surrender') return
-        conn.sendButton(m.chat, 'The matter has ended', author, null, buttonTebakgambar, m)
+        conn.sendButton(m.chat, 'Waktu Habis bestiee', author, null, buttonTebakgambar, m)
     }
     if (m.quoted.id == this.tebakgambar[id][0].id) {
         let isSurrender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
         if (isSurrender) {
             clearTimeout(this.tebakgambar[id][3])
             delete this.tebakgambar[id]
-            return conn.sendButton(m.chat, '*Well Give Up :( !*', author, null, buttonTebakgambar, m)
+            return conn.sendButton(m.chat, '*Menyerah :( !*', author, null, buttonTebakgambar, m)
         }
         let json = JSON.parse(JSON.stringify(this.tebakgambar[id][1]))
         // m.reply(JSON.stringify(json, null, '\t'))
