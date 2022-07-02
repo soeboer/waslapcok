@@ -12,9 +12,11 @@ async function handler(m) {
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 *Soal:* ${json.soal}
+
 Terdapat *${json.jawaban.length}* jawaban${json.jawaban.find(v => v.includes(' ')) ? `
-(beberapa jawaban terdapat spasi)
+(beberapa jawaban menggunakan spasi)
 `: ''}
+
 +${winScore} Money tiap jawaban benar
     `.trim()
     this.game[id] = {
