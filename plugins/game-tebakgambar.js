@@ -1,4 +1,5 @@
-import { tebakgambar } from '@bochilteam/scraper'
+// import { tebakgambar } from '@bochilteam/scraper'
+import fetch from 'node-fetch'
 
 let timeout = 120000
 let poin = 4999
@@ -6,10 +7,12 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakgambar = conn.tebakgambar ? conn.tebakgambar : {}
     let id = m.chat
     if (id in conn.tebakgambar) {
-        conn.sendButton(m.chat, 'There are still unanswered questions in this chat', author, null, buttons, conn.tebakgambar[id][0])
+        conn.reply(m.chat, 'Masih ada soal belum terjawab kak,maaf y', conn.tebakgambar[id][0])
         throw false
     }
-    let json = await tebakgambar()
+    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')).json()
+    let json = src[Math.floor(Math.random() * src.length)]
+//     let json = await tebakgambar()
     // if (!json.status) throw json
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} second*
