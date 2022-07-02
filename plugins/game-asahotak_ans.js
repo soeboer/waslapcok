@@ -12,7 +12,8 @@ export async function before(m) {
         if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.asahotak[id][2]
             global.db.data.users[m.sender].tiketcoin += 1
-            m.reply(`*Benar!*\n+${this.asahotak[id][2]} XP\n+1 TiketCoin`)
+//             m.reply(`*Benar!*\n+${this.asahotak[id][2]} XP\n+1 TiketCoin`)
+            await this.sendButton(m.chat, `*Betuool!* +${this.asahotak[id][2]} XP\n${json.deskripsi}`, author, null, [['Asah Otak', '.asahotak']], m)            
             clearTimeout(this.asahotak[id][3])
             delete this.asahotak[id]
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
