@@ -16,7 +16,7 @@ export async function before(m) {
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold)
             m.reply(`*Sedikit Lagi!*`)
         else {
-            if (m.text != '/calo') return
+            if (m.text != '/teka') return
             m.reply(`*Salaaah!*`)
         }
     }
