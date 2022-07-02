@@ -65,7 +65,7 @@ underquotes
     if (!effect) return conn.reply(m.chat, listeffect, m)
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
-  await m.reply('Sedang membuat...')
+  await m.reply('Sabar Kak saya buatkan dulu...')
 //  let hasil = await fetch('https://violetics.pw/api/photooxy/' + effect + '?text=' + teks + `&apikey=beta`)
  let hasil = await conn.getFile(`https://violetics.pw/api/photooxy/${effect}?text=${teks}&apikey=beta`)
  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
