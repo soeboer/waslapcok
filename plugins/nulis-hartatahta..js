@@ -14,7 +14,7 @@ handler.help = ['tahta <teks>']
 handler.tags = ['nulis']
 handler.command = /^((harta)?tahta)$/i
 
-handler.limit = true
+// handler.limit = true
 
 export default handler
 
