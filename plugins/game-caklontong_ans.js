@@ -5,7 +5,7 @@ export async function before(m) {
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*calo/i.test(m.quoted.text) || /.*(calo|bantuan)/i.test(m.text))
         return !0
     this.caklontong = this.caklontong ? this.caklontong : {}
-    if (!(id in this.caklontong)) return m.reply('The matter has ended')
+    if (!(id in this.caklontong)) return m.reply('Waktu habisss')
     if (m.quoted.id == this.caklontong[id][0].id) {
         let json = JSON.parse(JSON.stringify(this.caklontong[id][1]))
         if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
