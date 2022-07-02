@@ -12,7 +12,7 @@ await m.reply(`*[❗] SPAM PESAN KE NOMOR ${nomor} ITU SUKSES DILAKUKAN*\n*JUMLA
 for (let i = fixedJumlah; i > 1; i--) {
 if (i !== 0) conn.reply(fixedNumber, pesan.trim(), m)
 }}
-handler.help = ['spamwa <number>|<mesage>|<no of messages>']
+handler.help = ['spamwa <nmr>|<pesan>|<jmlh>']
 handler.tags = ['tools']
 handler.command = /^spam(wa)?$/i
 
