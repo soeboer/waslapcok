@@ -1964,7 +1964,7 @@ def shell():
                 ((results.upload / 1000.0 / 1000.0) / args.units[1],
                  args.units[0]),
                 quiet)
-        printer("\n...................................................................................\n▶︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ *OOKLA*\n▶︎")
+        printer("\n...................................................................................\n▶︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ *OOKLA*\n▶︎burhansyam was here")
     else:
         printer('Skipping upload test', quiet)
 
