@@ -1,8 +1,12 @@
 import { otakudesu } from 'hxz-api'
 import fetch from 'node-fetch'
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+// let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+let handler = async (m, { conn, text }) => {
+
+
     //let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
-    if (!text) throw `Use example ${usedPrefix}${command} Anime`
+//     if (!text) throw `Use example ${usedPrefix}${command} Anime`
+    if (!text) throw `*[❗INFO❗] Masukan Judul Anime Yang Ingin Kamu Cari*`
     let result = await otakudesu(text)
     let datathumb = await(await fetch(result.img)).buffer()
     let otaku = `
@@ -24,7 +28,8 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
 *BATCHHD:* ${result.batchHD}
 `
-await conn.sendButtonImg(m.chat, datathumb, otaku, wm, 'menu', '.menu', m)
+// await conn.sendButtonImg(m.chat, datathumb, otaku, wm, 'menu', '.menu', m)
+    conn.sendFile(m.chat, datathumb, '', otaku, m)
 }
 
 handler.help = ['otakudesu'].map(v => v + ' <Apa>')
