@@ -41,6 +41,6 @@ var capt = `🐦 Koleksi Random Foto Video ${pilih} 🗿`
 }
 handler.help = ['asupan <opsi>']
 handler.tags = ['fun']
-handler.command = /^(asupan|cuss)$/i
+handler.command = /^(asupan)$/i
 
 export default handler
