@@ -39,7 +39,7 @@ var capt = `🐦 Koleksi Random Foto Video ${pilih} 🗿`
             throw er
     }
 }
-handler.help = ['Asupan Wallpaper']
+handler.help = ['asupan <opsi>']
 handler.tags = ['fun']
 handler.command = /^(asupan|cuss)$/i
 
