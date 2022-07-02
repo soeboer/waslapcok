@@ -27,7 +27,7 @@ export async function before(m) {
             m.reply(`*Right!*`)
         else {
             if (m.text == '/hint') return
-            conn.sendButton(m.chat, `*WRONG!*`, author, null, [
+            conn.sendButton(m.chat, `*SALAAAH!*`, author, null, [
                 ['hint', '/hint'],
                 ['nyerah', 'menyerah']
             ], m)
