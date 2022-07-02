@@ -1,7 +1,6 @@
 import similarity from 'similarity'
 const threshold = 0.72 // the higher the value, the more similar
 export async function before(m) {
-//     async before(m) {
         this.game = this.game ? this.game : {}
         let id = 'family100_' + m.chat
         if (!(id in this.game)) return !0
@@ -22,6 +21,7 @@ export async function before(m) {
         let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
         let caption = `
 *Soal:* ${room.soal}
+
 Terdapat *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes(' ')) ? `
 (beberapa jawaban terdapat spasi)
 `: ''}
@@ -29,6 +29,7 @@ ${isWin ? `*SEMUA JAWABAN TERJAWAB*` : isSurrender ? '*MENYERAH!*' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
             return isSurrender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
         }).filter(v => v).join('\n')}
+
 ${isSurrender ? '' : `+${room.winScore} Money tiap jawaban benar`}
     `.trim()
         m.reply(caption, null, {
