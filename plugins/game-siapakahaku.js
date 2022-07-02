@@ -25,8 +25,7 @@ Tiketcoin: ${tiketcoin} TiketCoin
         await conn.reply(m.chat, caption, m),
         json, poin,
         setTimeout(() => {
-            if (conn.siapakahaku[id]) sendButton(m.chat, `*Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, ['who am i', '/siapakahaku'], conn.siapakahaku[id][0]) 
-				
+            if (conn.siapakahaku[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.siapakahaku[id][0])
             delete conn.siapakahaku[id]
         }, timeout)
     ]
