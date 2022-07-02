@@ -3,9 +3,9 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.tebakgambar)) throw false
     let json = conn.tebakgambar[id][1]
-    await conn.sendButton(m.chat, '```' + json.jawaban.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_') + '```', author, null, [
-        ['nyerah', 'menyerah']
-    ], m)
+    let ans = json.jawaban.trim()
+    let clue = ans.replace(/[AIUEOaiueo]/g, '_')
+    conn.reply(m.chat, '```' + clue + '```\nBalas soalnya, bukan pesan ini', conn.tebakgambar[id][0])
 }
 handler.command = /^hint$/i
 
