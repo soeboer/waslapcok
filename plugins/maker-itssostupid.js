@@ -6,7 +6,7 @@ avatar: await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.p
 dog: text || 'im+stupid'
 }), 'error.png', `*@${author}*`, m)
 }  
-handler.help = ['itssostupid', 'iss', 'stupid']
+handler.help = ['stupid']
 handler.tags = ['maker']
-handler.command = /^(itssostupid|iss|stupid)$/i
+handler.command = /^(stupid)$/i
 export default handler
