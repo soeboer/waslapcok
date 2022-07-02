@@ -1,7 +1,7 @@
-const similarity = require('similarity')
+import similarity from 'similarity'
 const threshold = 0.72
-let handler = m => m
-handler.before = async function (m) {
+// let handler = m => m
+export async function before(m) {
     let id = m.chat
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*ao/i.test(m.quoted.text)) return !0
     this.asahotak = this.asahotak ? this.asahotak : {}
@@ -20,6 +20,4 @@ handler.before = async function (m) {
     }
     return !0
 }
-handler.exp = 0
-
-export default handler
+export const exp = 0
