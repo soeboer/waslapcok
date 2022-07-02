@@ -5,7 +5,7 @@ var capt = `🐦 Random Foto Cecan🗿`
         conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 acak 🤗', `/${command}`]], m)
 }
 
-handler.help = ['cecan <random wallpaper>']
+handler.help = ['cecan']
 handler.tags = ['fun']
 
 handler.command = /^(cecan)$/i
