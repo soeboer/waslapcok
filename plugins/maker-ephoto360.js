@@ -75,7 +75,7 @@ glowing-effect
     if (!teks) return conn.reply(m.chat, 'tulis juga... Teksnya?', m)
 
   await m.reply('Sabar Kak saya buatkan dulu...')
- let hasil = await conn.getFile(`https://violetics.pw/api/photooxy/${effect}?text=${teks}&apikey=beta`)
+ let hasil = await conn.getFile(`https://violetics.pw/api/ephoto360/${effect}?text=${teks}&apikey=beta`)
  let caption = `*Ephoto360*\n\nEffect : ${effect}`
     conn.sendFile(m.chat, hasil.data, 'ephoto360.jpg', caption, m)
 }
