@@ -20,7 +20,7 @@ Balas ${usedPrefix}teka untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkata[id] = [
-        await conn.sendButton(m.chat, caption, author, ['BANTUAN', `${usedPrefix}teka`], m),
+        await conn.reply(m.chat, caption, m),
         json, poin,
         setTimeout(() => {
             if (conn.tebakkata[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.deskripsi}`, conn.tebakkata[id][0])
