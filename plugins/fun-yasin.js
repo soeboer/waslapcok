@@ -8,7 +8,7 @@ let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.m
 conn.sendFile(m.chat, global.API('https://hadi-api.herokuapp.com', '/api/canvas/yasin', {
 url: await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
 name: text || '${text[0]}'
-}), 'error.png', `*Turut Mengenang & Mendoakan*`, m)
+}), 'error.png', `*Turut Mengenang*`, m)
 }  
 
 
