@@ -32,7 +32,7 @@ ${hasil.map(v => `
 `.trim())
 }
 
-handler.help = ['Layarkaca'].map(v => v + ' <query>')
+handler.help = ['lk21'].map(v => v + ' <query>')
 handler.tags = ['internet']
-handler.command = /^(layarkaca)$/i
+handler.command = /^(lk21)$/i
 export default handler
