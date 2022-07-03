@@ -4,12 +4,13 @@ import jimp from 'jimp'
 import fs from 'fs'
 import PhoneNumber from 'awesome-phonenumber'
 import moment from 'moment-timezone'
-import { pasaran } from './lib/tgl.js'
+// import { pasaran } from './lib/tgl.js'
 
 let tags = {}
 const defaultMenu = {
-//asli   before: `\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
-  before: `\n> Hari: ${pasaran().jawa}\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
+  
+  before: `\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
+//   before: `\n> Hari: ${pasaran().jawa}\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
   header: '*❏═┅═━–〈 %category*',
   body: '┊› %cmd %islimit %isPremium',
   footer: '',
