@@ -1,5 +1,7 @@
-let fetch = require('node-fetch')
-let { JSDOM } = require('jsdom')
+import fetch from 'node-fetch'
+import { JSDOM } from 'jsdom'
+
+
 let handler = async (m, { text, usedPrefix, command }) => {
   let res = await fetch(`http://149.56.24.226/?s=` + text, {
     headers: {
