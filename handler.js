@@ -3,6 +3,7 @@ import { format } from 'util'
 import path, { join } from 'path'
 import { fileURLToPath } from 'url'
 import { smsg } from './lib/simple.js'
+import { pasaran } from './lib/tgl.js'
 import { unwatchFile, watchFile } from 'fs'
 import { JSDOM } from 'jsdom'
 import fs from 'fs'
@@ -655,7 +656,7 @@ export async function participantsUpdate({ id, participants, action }) {
 
       ['MENU 🎀', '/menu'],
 
-      ['\n\nSAYA PEDO DAN SAYA BANGGA (≧▽≦)', '...'],
+      ['\n\nMasih Belajar Om (≧▽≦)', '...'],
 
       [null, null]
 
