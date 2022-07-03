@@ -3,6 +3,7 @@ import cheerio from 'cheerio'
 import { JSDOM } from 'jsdom'
 
 
+
 let handler = async (m, { text, usedPrefix, command }) => {
   let res = await fetch(`http://149.56.24.226/?s=` + text, {
     headers: {
@@ -14,7 +15,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
   if (!res.ok) throw await res.text()
   let html = await res.text()
   let { document } = new JSDOM(html).window
-  const $ = cheerio.load(res.data)
+  let cheerio.load(res.data)
   let hasil = [...document.querySelectorAll('div.row > div.col-xs-3.col-sm-2.search-poster')].map(el => {
     let a = el.querySelector('a')
     return {
