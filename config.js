@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 import { watchFile, unwatchFile } from 'fs'
 import moment from 'moment-timezone'
-import { pasaran } from './lib/tgl.js'
+// import { pasaran } from './lib/tgl.js'
 
 
 global.owner = [
