@@ -10,7 +10,7 @@ if (!text) throw `Contoh : ${usedPrefix + command} makan`
 }
 
 handler.help = ['artimimpi'].map(v => v + ' <Apa>')
-handler.tags = ['fun']
+handler.tags = ['primbon']
 handler.command = /^(artimimpi)$/i
 
 export default handler
