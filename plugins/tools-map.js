@@ -1,6 +1,7 @@
 import axios from 'axios'
 import imageToBase64 from 'imageToBase64'
 
+let handler = async(m, { conn, text }) => {
 await m.reply('Searching...')
 let str = `
 *Hasil Pencarian Daerah :*
