@@ -1,9 +1,8 @@
 let handler = async (m, { args, usedPrefix, command }) => {
 	
 let er = `IQRA Yang tersedia : 1,2,3,4,5,6
-contoh:
-${usedPrefix + command} 3
-    `.trim()
+Contoh: ${usedPrefix + command} 3 
+`.trim()
     if (!args[0]) throw er
     switch (args[0].toLowerCase()) {
         case '1':
