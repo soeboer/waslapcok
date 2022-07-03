@@ -2,7 +2,7 @@ import { Primbon } from 'scrape-primbon'
 
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-                if (!text) throw `Contoh : ${prefix + command} 4, 7, 2022`
+                if (!text) throw `Contoh : ${usedPrefix + command} 4, 7, 2022`
                 let [tgl, bln, thn] = text.split`,`
                 const primbon = new Primbon()    
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
