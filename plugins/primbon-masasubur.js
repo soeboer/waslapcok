@@ -2,7 +2,7 @@ import { Primbon } from 'scrape-primbon'
 
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} hari pertama menstruasi, siklus`
+                if (!text) throw `Contoh : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} hari pertama menstruasi, siklus`
                 let [tgl, bln, thn, siklus] = text.split`,`
                 
                 const primbon = new Primbon()           
