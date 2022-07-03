@@ -11,7 +11,7 @@ let handler  = async (m, { conn, command }) => {
             .then(body => {
                 let splitnix = body.split('\n')
                 let randomnix = splitnix[Math.floor(Math.random() * splitnix.length)]
-                conn.sendButton(m.chat, randomnix, wm,[['NEXT', `/${command}`]], m)
+                conn.sendButton(m.chat, randomnix, wm,[['😎 Fakta Berikutnya ✍🏻', `/${command}`]], m)
   })
 } 
 handler.help = ['fakta']
