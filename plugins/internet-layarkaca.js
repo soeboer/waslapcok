@@ -5,7 +5,7 @@ if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
 let res = await fetch(global.API('https://api.burhansyam.com', '/bot/lk21/', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
-let { title, author, stars, url, thumbnail } = json.results
+let { title, author, stars, url, thumbnail } = json.result[0]
 // let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
 // if (!res2.ok) throw await res2.text()
 // let html = await res2.text()
