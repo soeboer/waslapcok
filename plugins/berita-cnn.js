@@ -1,15 +1,16 @@
 import fetch from 'node-fetch'
+import { CNNNews } from 'dhn-api'
+
 
 let handler = async(m, { conn }) => {
-   var a = await require('dhn-api').CNNNews()
-   var b = JSON.parse(JSON.stringify(a))
-   var c = await conn.rand(b)
-   //var c = b[Math.floor(Math.random() * b.length)]
-   var { berita, berita_url, berita_thumb } = c
-   var sell = `📺 *CNN News*
-📢 *Berita:* ${berita}
-🛰 *Source Url:* ${berita_url}`
-   conn.sendButton(m.chat, sell, wm, berita_thumb, [['CNN News', '.cnnnews']], m, {jpegThumbnail: await(await fetch(berita_thumb)).buffer()})
+     let json = await CNNNews()
+     let json = src[Math.floor(Math.random() * src.length)]
+     
+    let berita = `📺 *CNN News*
+    
+📢 *Berita:* ${json.berita}
+🛰 *Source Url:* ${json.berita_url}`
+   conn.sendButton(m.chat, berita, wm, json.berita_thumb, [['CNN News', '.cnnnews']], m)
 }
 handler.help = ['cnn']
 handler.tags = ['berita']
