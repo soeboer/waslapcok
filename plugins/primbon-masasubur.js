@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
                 const primbon = new Primbon()           
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return m.reply(anu.message)
-                conn.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+                conn.reply(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
 }
 
 handler.help = ['subur'].map(v => v + ' <12, 1, 2022, 28>')
