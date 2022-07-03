@@ -5,7 +5,6 @@ import { sizeFormatter } from 'human-readable'
 import { join } from 'path'
 import { promises } from 'fs'
 import moment from 'moment-timezone'
-import { pasaran } from './lib/tgl.js'
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 let format = sizeFormatter({
@@ -16,7 +15,6 @@ let format = sizeFormatter({
 })
 let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
     let date = moment.tz('Asia/Jakarta').format("dddd, Do MMMM, YYYY")
-    let pasaran = new pasaran()
     let time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let _uptime = process.uptime() * 1000
@@ -54,18 +52,18 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
   let neww = performance.now()
   let speed = neww - old
     conn.sendHydrated(m.chat, 
-    '*––––––『 BOT INFO 』––––––*', 
-`🤖 ɴᴀᴍᴇ: ${_package.name}
-🧩 ᴠᴇʀsɪᴏɴ: ${_package.version}
-📚 ʟɪʙʀᴀʀʏ: ${_package.description}
+    '*––––––『 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎 』––––––*', 
+`🤖 𝗡𝗮𝗺𝗮 : ${_package.name}
+🧩 𝗩𝗲𝗿𝘀𝗶 : ${_package.version}
+📚 𝗟𝗶𝗯𝗿𝗮𝗿𝘆 : ${_package.description}
 
-⏳ ᴜᴩᴛɪᴍᴇ: ${uptime}
-📈 ᴅᴀᴛᴀʙᴀsᴇ: ${totalreg}
+⏳ 𝗛𝗶𝗱𝘂𝗽 : ${uptime}
+📈 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 : ${totalreg}
 
-📅 ᴅᴀᴛᴇ: ${date} ${pasaran().jawa}
-⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +7:00﹚
+📅 𝗛𝗮𝗿𝗶 : ${date}
+⌚ 𝗝𝗮𝗺 : ${time} ﹙ɢᴍᴛ +7:00﹚
 
-💻 sᴇʀᴠᴇʀ ɪɴғᴏ :
+💻 🅂🄴🅁🅅🄴🅁 🄸🄽🄵🄾 :
 ⮕ ᴩɪɴɢ: ${speed} ᴍs
 ⮕ ʀᴀᴍ: ${format(totalmem() - freemem())} / ${format(totalmem())}
 
@@ -75,8 +73,8 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 ⮕ ${groupsIn.length - groupsIn.length} - Groups Left
 ⮕ ${chats.length - groupsIn.length} - Personal Chats
 ⮕ ${chats.length} - Total Chats
-`.trim(), '', 'https://github.com/burhansyam/Sad-Multi-Device', '🤖 Repository', null, null, [
-[`☠️ ᴏᴡɴᴇʀ`, `${usedPrefix}owner`],
+`.trim(), '', 'https://www.burhansyam.com', '🤖 𝐊𝐚𝐧𝐝𝐚𝐧𝐠 𝐁𝐨𝐭', null, null, [
+[`💻 𝐊𝐚𝐧𝐠 𝐑𝐞𝐦𝐨𝐭`, `${usedPrefix}owner`],
 ], m, {asLocation: true})
 }
 handler.help = ['botinfo']
