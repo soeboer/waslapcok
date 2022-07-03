@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
-let res = await fetch(global.API('https://violetics.pw', '/api/search/layarkaca?apikey=beta', { query: text }))
+let res = await fetch(global.API('https://api.burhansyam.com', '/bot/lk21/', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
 let { title, author, stars, url, thumbnail } = json.results[0]
