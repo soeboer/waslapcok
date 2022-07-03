@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import { metroNews } from 'dhn-api'
 
 let handler = async(m, { conn }) => {
    var a = await require('dhn-api').metroNews()
@@ -14,6 +15,5 @@ let handler = async(m, { conn }) => {
 handler.help = ['metronews']
 handler.tags = ['berita']
 handler.command = /^metro(news)?$/i
-handler.limit = true
 
-module.exports = handler
+export default handler 
