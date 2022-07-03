@@ -77,7 +77,7 @@ global.hbeach = ['https://telegra.ph/file/14ae0ba2da77d74e6b80c.jpg', 'https://t
 /*============== NOMOR ==============*/
 global.nomorbot = '6281312868800'
 global.nomorown = '6281808032100'
-global.namebot = 'Itachi-Uciha'
+global.namebot = 'No-Name'
 global.nameown = 'burhansyam'
 
 /*=========== FAKE SIZE ===========*/
