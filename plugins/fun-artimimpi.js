@@ -1,11 +1,12 @@
-import { artimimpi } from '@bochilteam/scraper'
-//let jimp = require('jimp')
+import { Primbon } from 'scrape-primbon'
+
+
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-    //let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
-    if (!text) throw `Use example ${usedPrefix}${command} Bot`
-    const result = await artimimpi(text)
-    
-await conn.sendButton(m.chat, result, wm, [['Menu', '.menu']], m)
+if (!text) throw `Contoh : ${usedPrefix + command} makan`
+                const primbon = new Primbon()   
+                let anu = await primbon.tafsir_mimpi(text)
+                if (anu.status == false) return m.reply(anu.message)
+                conn.reply(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, m)
 }
 
 handler.help = ['artimimpi'].map(v => v + ' <Apa>')
