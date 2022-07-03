@@ -12,7 +12,7 @@ if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.tiktok.com/
 _©Sad-Bot_
 `.trim(), m)
 }
-handler.help = ['tiktok', 'tiktok', 'tiktokdl'].map(v => v + ' <url>')
+handler.help = ['tiktok', 'tiktokdl'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(tik(tok)?(tok)?(dl)?)$/i
 
