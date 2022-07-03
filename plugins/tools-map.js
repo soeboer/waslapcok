@@ -1,4 +1,5 @@
 import axios from 'axios'
+import fs from 'fs'
 import imageToBase64 from 'imageToBase64'
 
 let handler = async(m, { conn, text }) => {
