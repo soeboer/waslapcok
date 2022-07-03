@@ -1,18 +1,17 @@
 import fetch from 'node-fetch'
 
-let handler = async(m, { conn }) => {
-   var a = await require('dhn-api').KompasNews()
-   var b = JSON.parse(JSON.stringify(a))
-   var c = await conn.rand(b)
-   //var c = b[Math.floor(Math.random() * b.length)]
-   var { berita, berita_url, berita_thumb, berita_jenis, berita_diupload } = c
-   var sell = `📺 *Kompas News*
 
-📢 *Berita:* ${berita}
-📁 *Type News:* ${berita_jenis}
-⌚ *Uploded:* ${berita_diupload}
-🛰 *Source Url:* ${berita_url}`
-   conn.sendButton(m.chat, sell, wm, berita_thumb, [['Kompas News', '.kompasnews']], m, {jpegThumbnail: await(await fetch(berita_thumb)).buffer()})
+let handler = async (m, {command, conn}) => {
+
+     let src = await (await fetch('https://hadi-api.herokuapp.com/api/kompas')).json()
+    let json = src[Math.floor(Math.random() * src.length)]
+//     let json = await res.json()
+let { title, img, time, url } = json.result[0]
+let kompis = `📺 *Kompas News*
+📢 *Berita:* ${title}
+📁 *Type News:* ${time}
+🛰 *Source Url:* ${url}`
+        conn.sendButton(m.chat, `_${command}_`.trim(), kompis, img, [['😋 Lanjut Baca 🤗', `/${command}`]], m)
 }
 handler.help = ['kompasnews']
 handler.tags = ['berita']
