@@ -5,6 +5,7 @@ import { sizeFormatter } from 'human-readable'
 import { join } from 'path'
 import { promises } from 'fs'
 import moment from 'moment-timezone'
+import { pasaran } from './lib/tgl.js'
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 let format = sizeFormatter({
@@ -15,6 +16,7 @@ let format = sizeFormatter({
 })
 let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
     let date = moment.tz('Asia/Jakarta').format("dddd, Do MMMM, YYYY")
+    let pasaran = new pasaran()
     let time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let _uptime = process.uptime() * 1000
@@ -60,7 +62,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 ⏳ ᴜᴩᴛɪᴍᴇ: ${uptime}
 📈 ᴅᴀᴛᴀʙᴀsᴇ: ${totalreg}
 
-📅 ᴅᴀᴛᴇ: ${date}
+📅 ᴅᴀᴛᴇ: ${date} ${pasaran().jawa}
 ⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +7:00﹚
 
 💻 sᴇʀᴠᴇʀ ɪɴғᴏ :
