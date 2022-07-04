@@ -1,6 +1,6 @@
 let handler = async (m, { args, usedPrefix, command }) => {
 
-let er = `Juz-Amma tersedia dlm format : pdf, docx
+let er = `Juz-Amma tersedia dlm format : PDF, DOCX
 Contoh: ${usedPrefix + command} pdf 
 `.trim()
     if (!args[0]) throw er
