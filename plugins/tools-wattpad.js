@@ -6,7 +6,8 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
                 let cari = wattpad.set('query', 'text');
                 let anu = await wattpad.search(cari);
                 if (anu.status == false) return m.reply(anu.response)
-                conn.reply(m.chat, `⭔ *Judul :* ${anu.response}\n⭔ *Info :* ${anu.response}\n⭔ *Deskripsi :* ${anu.response}`, m)
+//                 conn.reply(m.chat, `⭔ *Judul :* ${anu.response}\n⭔ *Info :* ${anu.response}\n⭔ *Deskripsi :* ${anu.response}`, m)
+                  conn.reply(m.chat, `⭔ *Judul :* ${anu.response}`, m)
 }
 handler.help = ['wattpadd'].map(v => v + ' [nama]')
 handler.tags = ['tools']
