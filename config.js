@@ -33,7 +33,6 @@ global.APIKeys = { // APIKey Here
 //   'https://website': 'apikey'
   'https://burhansyam.com': 'gatholoco',    
   'https://api.lolhuman.xyz': '835641f3d2d1b6971e1fd132'
-  'https://burhansyam.com': 'gatholoco',     
   'https://zenzapis.xyz': '91fd4f297f70',  
   'https://api.xteam.xyz': 'apivproject',  
   'https://api-xcoders.xyz': 'Go3E6RC4hu',
