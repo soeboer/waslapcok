@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
 	if (!text) throw 'Masukkan Nama Togel'
 	let res = await Togel(text)
 	let txt = res.result.map((v) => `${v.No}. ${v.Hari}, ${v.Tanggal} [${v.Angka}]`).join`\n`
-	m.reply(`Keluaran Togel ${res.toto}\n\n${txt}`)
+	m.reply(`Keluaran Togel ${res.toto}\n${txt}`)
 }
 handler.help = ['togel <nama>']
 handler.tags = ['info']
