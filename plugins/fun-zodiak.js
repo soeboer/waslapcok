@@ -1,11 +1,14 @@
-let handler = (m, { usedPrefix, command, text }) => {
-    if (!text) throw `contoh:\n${usedPrefix + command} 2002 02 25`
+import { Primbon } from 'scrape-primbon'
+
+// let handler = (m, { usedPrefix, command, text }) => {
+let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+    if (!text) throw `contoh:\n${usedPrefix + command} 06 08 2013`
 
     const date = new Date(text)
     if (date == 'Invalid Date') throw date
     const d = new Date()
-    const [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
-    const birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+    const [tanggal, bulan, tahun] = [d.getDate(), d.getMonth() + 1, d.getFullYear()]
+    const birth = [date.getDate(), date.getMonth() + 1, date.getFullYear()]
     
     const zodiac = getZodiac(birth[1], birth[2])
     const ageD = new Date(d - date)
@@ -20,9 +23,14 @@ Ultah : ${birthday.join('-')}
 Usia : ${cekusia}
 Zodiak : ${zodiac}
 `.trim()
-    m.reply(teks)
+//     m.reply(teks)
+    
+                    const primbon = new Primbon()   
+    let anu = await primbon.zodiak(zodiac)
+                if (anu.status == false) return m.reply(anu.message)
+                conn.reply(m.chat, `⭔${teks}\n⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
 }
-handler.help = ['zodiak <2002 02 25>']
+handler.help = ['zodiak <06 08 2013>']
 handler.tags = ['fun']
 
 handler.command = /^zodia[kc]$/i
@@ -44,6 +52,9 @@ const zodiak = [
     ["Sagittarius", new Date(1970, 10, 22)],
     ["Capricorn", new Date(1970, 11, 22)]
 ].reverse()
+
+
+                
 
 function getZodiac(month, day) {
     let d = new Date(1970, month - 1, day)
