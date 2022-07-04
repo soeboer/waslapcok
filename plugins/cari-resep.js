@@ -21,7 +21,7 @@ conn.sendFile(m.chat, thumb, '', madang, m)
 }
 
 handler.help = ['resep <makanan>']
-handler.tags = ['internet']
+handler.tags = ['pencarian']
 handler.command = /^(resep)$/i
 
 export default handler
