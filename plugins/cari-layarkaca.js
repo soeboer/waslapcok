@@ -16,6 +16,6 @@ let animeingfo = `✨ *Judul:* ${title}
 conn.sendFile(m.chat, thumbnail, '', animeingfo, m)
 }
 handler.help = ['lk21'].map(v => v + ' <query>')
-handler.tags = ['internet']
+handler.tags = ['pencarian']
 handler.command = /^(lk21)$/i
 export default handler
