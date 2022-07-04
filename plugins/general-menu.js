@@ -9,11 +9,11 @@ import moment from 'moment-timezone'
 let tags = {}
 const defaultMenu = {
   
-  before: `*\n> Tanggal: %date \n> Jam: %time \n> Aktif: %uptime*\n%readmore`,
+  before: `\n> Tanggal: %date \n> Jam: %time \n> Aktif: %uptime*\n%readmore`,
 //   before: `\n> Hari: ${pasaran().jawa}\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
-  header: '*❏═┅═━–〈 %category*',
-  body: '┊› %cmd %islimit %isPremium',
-  footer: '',
+  header: '│❏═┅═━–⭓〈 *%category*',
+  body: '│┊⭓› *%cmd* %islimit %isPremium',
+  footer: '│❏═┅═━–⭓',
   after: '',
 }
 
