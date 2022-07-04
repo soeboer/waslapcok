@@ -33,7 +33,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.help = ['otakudesu'].map(v => v + ' <Apa>')
-handler.tags = ['internet']
+handler.tags = ['pencarian']
 handler.command = /^(otakudesu)$/i
 
 export default handler
