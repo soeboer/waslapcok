@@ -1,12 +1,12 @@
 [
 	{
-		"value": "channel/hk",
-		"channel": "hk",
+		"value": "toto/hk",
+		"toto": "hk",
 		"isPay": false
 	},
 	{
-		"value": "channel/sgp",
-		"channel": "sgp",
+		"value": "toto/sgp",
+		"toto": "sgp",
 		"isPay": false
 	}
 ]
