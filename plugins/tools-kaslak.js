@@ -19,7 +19,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
     let kirik = `*Lapor Status Pesan* : _${asu.pesan}_\n\n_!_`
   conn.reply(m.chat, `${kirik}`.trim(), m)
-  
+    m.reply(asu)
 }
 }
 handler.help = ['bom <nomor>']
