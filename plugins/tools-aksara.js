@@ -7,7 +7,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 }
 
 handler.help = ['aksara <teks>']
-handler.tags = ['nulis']
+handler.tags = ['tools']
 handler.command = /^aksara$/i
 
 export default handler
