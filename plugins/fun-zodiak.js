@@ -1,29 +1,8 @@
 import { Primbon } from 'scrape-primbon'
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-//     if (!text) throw `contoh:\n${usedPrefix + command} 06 08 2013`
-
-//     const date = new Date(text)
-//     if (date == 'Invalid Date') throw date
-//     const d = new Date()
-//     const [tanggal, bulan, tahun] = [d.getDate(), d.getMonth() + 1, d.getFullYear()]
-//     const birth = [date.getDate(), date.getMonth() + 1, date.getFullYear()]
     
-//     const zodiac = getZodiac(birth[1], birth[2])
-//     const ageD = new Date(d - date)
-//     const age = ageD.getFullYear() - new Date(1970, 0, 1).getFullYear()
-
-//     const birthday = [tahun + (+ new Date(1970, bulan - 1, tanggal) > + new Date(1970, birth[1] - 1, birth[2])), ...birth.slice(1)]
-//     const cekusia = bulan === birth[1] && tanggal === birth[2] ? `Selamat ulang tahun yang ke-${age} 🥳` : age
-
-//     const teks = `
-// Lahir : ${birth.join('-')}
-// Ultah : ${birthday.join('-')}
-// Usia : ${cekusia}
-// Zodiak : ${zodiac}
-// `.trim()
-//     m.reply(teks)
-                    if (!text) throw `Contoh : ${prefix+ command} 7 7 2005`
+                    if (!text) throw `Contoh : ${usedPrefix+ command} 7 7 2005`
                 let zodiak = [
                     ["capricorn", new Date(1970, 0, 1)],
                     ["aquarius", new Date(1970, 0, 20)],
