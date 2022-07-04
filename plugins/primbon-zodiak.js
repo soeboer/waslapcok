@@ -2,7 +2,7 @@ import { Primbon } from 'scrape-primbon'
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     
-                    if (!text) throw `Contoh : ${usedPrefix+ command} 7 7 2005`
+                    if (!text) throw `Contoh : ${usedPrefix+ command} 2013 8 6`
                 let zodiak = [
                     ["capricorn", new Date(1970, 0, 1)],
                     ["aquarius", new Date(1970, 0, 20)],
@@ -25,10 +25,10 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
                 }
                 let date = new Date(text)
                 if (date == 'Invalid Date') throw date
-                let d = new Date()
-                let [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
+                let dus = new Date()
+                let [tahun, bulan, tanggal] = [dus.getFullYear(), dus.getMonth() + 1, dus.getDate()]
                 let birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
-                let ageD = new Date(d - date)
+                let ageD = new Date(dus - date)
                 let age = ageD.getFullYear() - new Date(1970, 0, 1).getFullYear()
                 
                 let birthday = [tahun + (+ new Date(1970, bulan - 1, tanggal) > + new Date(1970, birth[1] - 1, birth[2])), ...birth.slice(1)]
@@ -41,8 +41,8 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
                 conn.reply(m.chat, `⭔ *Lahir :* ${birth.join('-')}\n⭔ *Ultah :* ${birthday.join('-')}\n⭔ *Usia :* ${cekusia}\n⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
 }
-handler.help = ['zodiak <06 08 2013>']
-handler.tags = ['fun']
+handler.help = ['zodiak <2013 8 6>']
+handler.tags = ['primbon']
 
 handler.command = /^zodia[kc]$/i
 
