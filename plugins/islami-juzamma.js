@@ -1,6 +1,6 @@
 let handler = async (m, { args, usedPrefix, command }) => {
 
-let er = `Juz Amma yang tersedia berformat : pdf, docx, pptx, xlsx
+let er = `Juz-Amma tersedia dlm format : pdf, docx
 Contoh: ${usedPrefix + command} pdf 
 `.trim()
     if (!args[0]) throw er
@@ -8,12 +8,10 @@ Contoh: ${usedPrefix + command} pdf
     switch (args[0].toLowerCase()) {
         case 'pdf':
         case 'docx':
-        case 'pptx':
-        case 'xlsx':       
             let text = args.slice(1).join(' ')
             let pilih = args[0].toLowerCase()
 		await m.reply('baik,ditunggu dulu kak...')	
-		let hasil = await conn.getFile(`https://github.com/burhansyam/media/blob/main/juz-amma-arab-latin-indonesia.${pilih}`)
+		let hasil = await conn.getFile(`https://github.com/burhansyam/media/blob/main/juz-amma-arab-latin-indonesia.${pilih}?raw=true`)
 		let caption = `*Juz-Amma*\n\nFormat : ${pilih}`
                 conn.sendFile(m.chat, hasil.data, `Juz-Amma.${pilih}`, caption, m)
 	break
