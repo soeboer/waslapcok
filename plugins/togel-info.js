@@ -5,7 +5,7 @@ import cheerio from 'cheerio'
 let handler = async (m, { text }) => {
 	if (!text) throw 'Masukkan Nama Togel'
 	let res = await Togel(text)
-	let txt = res.result.map((v) => `${v.No} ${v.Hari} ${v.Tanggal} ${v.Angka}`).join`\n`
+	let txt = res.result.map((v) => `[${v.No}] ${v.Hari} ${v.Tanggal} ${v.Angka}`).join`\n`
 	m.reply(`Keluaran Togel ${res.toto}\n\n${txt}`)
 }
 handler.help = ['togel <nama>']
