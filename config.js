@@ -14,11 +14,8 @@ global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.lolkey = '835641f3d2d1b6971e1fd132'
 global.xkey = '5S3epf7hC2'
-global.APIs = { // API Prefix
-  lolapi: 'https://api.lolhuman.xyz',   
-  xcode: 'https://api-xcoders.xyz',
-  bubur: 'https://api.burhansyam.com', 
-  zenzapis: 'https://zenzapis.xyz',   
+global.APIs = { // API Prefix  
+  bubur: 'https://api.burhansyam.com',  
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   xteam: 'https://api.xteam.xyz',
@@ -31,10 +28,8 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
 //   'https://website': 'apikey'
-  'https://burhansyam.com': 'gatholoco',    
-  'https://api.lolhuman.xyz': '835641f3d2d1b6971e1fd132'
-  'https://zenzapis.xyz': '91fd4f297f70',  
-  'https://api.xteam.xyz': 'apivproject',  
+  'https://burhansyam.com': 'gatholoco',      
+  'https://api.xteam.xyz': 'apivproject',
   'https://api-xcoders.xyz': 'Go3E6RC4hu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
