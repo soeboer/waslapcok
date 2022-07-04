@@ -75,7 +75,7 @@ global.hbunny = ['https://telegra.ph/file/2b71a8d46d29351479fbc.jpg', 'https://t
 global.hbeach = ['https://telegra.ph/file/14ae0ba2da77d74e6b80c.jpg', 'https://telegra.ph/file/b6905b77e6c7732592a13.jpg','https://telegra.ph/file/9da45a352eb4c40e5d641.jpg', 'https://telegra.ph/file/59e78846ee365975ee6e3.jpg','https://telegra.ph/file/1bf7dee46b83eb4c41d7d.jpg','https://telegra.ph/file/0525a7929f819cb8278f3.jpg']
 
 /*============== NOMOR ==============*/
-global.nomorbot = '6281312868800'
+global.nomorbot = '6282242228600'
 global.nomorown = '6281808032100'
 global.namebot = 'No-Name'
 global.nameown = 'burhansyam'
@@ -86,9 +86,9 @@ global.fpagedoc = '999'
 
 /*=========== HIASAN ===========*/
 // DEFAULT MENU
-global.dmenut = '❏═┅═━–〈' //top
-global.dmenub = '┊›' //body
-global.dmenub2 = '┊' //body for info cmd on Default menu
+global.dmenut = '❏═┅═━–⭓〈' //top
+global.dmenub = '┊⭓›' //body
+global.dmenub2 = '┊⭓' //body for info cmd on Default menu
 global.dmenuf = '┗––––––––––✦' //footer
 
 // COMMAND MENU
