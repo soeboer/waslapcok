@@ -23,7 +23,7 @@ await conn.sendButton(m.chat, nohoki, wm, [['menu', '.menu']], m)
 }
 
 handler.help = ['nomorhoki'].map(v => v + ' <no hp>')
-handler.tags = ['fun']
+handler.tags = ['primbon']
 handler.command = /^(nomorhoki)$/i
 
 export default handler
