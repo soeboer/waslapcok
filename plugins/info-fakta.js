@@ -15,7 +15,7 @@ let handler  = async (m, { conn, command }) => {
   })
 } 
 handler.help = ['fakta']
-handler.tags = ['fun']
+handler.tags = ['info']
 handler.command = /^(fakta|faktaunik)$/i
 
 handler.fail = null
