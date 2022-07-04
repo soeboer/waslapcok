@@ -4,12 +4,12 @@ import jimp from 'jimp'
 import fs from 'fs'
 import PhoneNumber from 'awesome-phonenumber'
 import moment from 'moment-timezone'
-// import { pasaran } from './lib/tgl.js'
+import { pasaran } from './lib/tgl.js'
 
 let tags = {}
 const defaultMenu = {
   
-  before: `\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
+  before: `\n> Tanggal: %date ${tgl}\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
 //   before: `\n> Hari: ${pasaran().jawa}\n> Tanggal: %date\n> Jam: %time \n> Aktif: %uptime\n%readmore`,
   header: '*❏═┅═━–〈 %category*',
   body: '┊› %cmd %islimit %isPremium',
@@ -96,12 +96,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     //conn.sendHydrated(m.chat, text.trim(), conn.getName(conn.user.jid), await genProfile(conn, m), 'https://youtube.com/channel/UC0hs_I8N3JntK5vO6KogavQ', 'YouTube', null, null, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
    // conn.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/c82d5c358495e8ef15916.mp4' }, gifPlayback: true, gifAttribution: ~~(Math.random() * 2), caption: text.trim(), footer: await conn.getName(conn.user.jid) , templateButtons: [{ quickReplyButton: { displayText: 'Speedtest', id: `${_p}ping` }}, { quickReplyButton: { displayText: 'Owner', id: `${_p}owner` }} ] })
    conn.sendButton(m.chat, `*${wish()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['🚀 Ping', _p + 'ping'], ['🤖 Pemilik', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
-mediaType: 'VIDEO',
-mediaUrl: 'https://images-platform.99static.com//jeTtS-7CxGYyflLviRg4IaH1YV0=/0x0:1667x1667/fit-in/500x500/99designs-contests-attachments/85/85240/attachment_85240965',
-title: ' 🤖 WA Asisten 🤖 ',
-body: '⚠️Silakan di hancurkan ⚠️',
+mediaType: '1',
+mediaUrl: 'https://sticker.nyc3.cdn.digitaloceanspaces.com/20210862/file_7287261_128x128.webp',
+title: ' 🤖 ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵀ 🤖 ',
+body: '⚠️ ʷʷʷ.ᵇᵘʳʰᵃⁿˢʸᵃᵐ.ᶜᵒᵐ ⚠️',
 thumbnail: fs.readFileSync("./thumbnail.jpg"),
-sourceUrl: 'B'
+sourceUrl: 'https://www.burhansyam.com'
   }
  } 
 })
