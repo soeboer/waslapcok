@@ -12,15 +12,16 @@ global.owner = [
 ] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
-global.lolkey = 'Papah-Chan'
-global.xkey = 'YourApikey'
+global.lolkey = '835641f3d2d1b6971e1fd132'
+global.xkey = '5S3epf7hC2'
 global.APIs = { // API Prefix
-  // name: 'https://website'
-  bubur: 'https://api.burhansyam.com',      
+  lolapi: 'https://api.lolhuman.xyz',   
+  xcode: 'https://api-xcoders.xyz',
+  bubur: 'https://api.burhansyam.com', 
   zenzapis: 'https://zenzapis.xyz',   
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
-  xteam: 'https://api-xcoders.xyz',
+  xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   zeks: 'https://api.zeks.xyz',
   pencarikode: 'https://pencarikode.xyz',
@@ -29,9 +30,12 @@ global.APIs = { // API Prefix
   hadi: 'http://hadi-api.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey'
+//   'https://website': 'apikey'
+  'https://burhansyam.com': 'gatholoco',    
+  'https://api.lolhuman.xyz': '835641f3d2d1b6971e1fd132'
   'https://burhansyam.com': 'gatholoco',     
   'https://zenzapis.xyz': '91fd4f297f70',  
+  'https://api.xteam.xyz': 'apivproject',  
   'https://api-xcoders.xyz': 'Go3E6RC4hu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
