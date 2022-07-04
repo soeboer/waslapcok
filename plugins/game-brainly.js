@@ -23,7 +23,7 @@ ${v.content}${v.attachments.length > 0 ? `\n*Media Url*: ${v.attachments.join(',
 	}
 }
 handler.help = handler.alias = ['brainly']
-handler.tags = ['tools']
+handler.tags = ['game']
 handler.command = /^(brainly)$/i
 
 export default handler
