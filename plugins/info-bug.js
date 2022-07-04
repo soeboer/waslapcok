@@ -47,7 +47,7 @@ ${usedPrefix + command} merah
     }
 }
 handler.help = ['bug'].map(v => v + ' <opsi>')
-handler.tags = ['tools']
+handler.tags = ['info']
 handler.command = /^bug$/i
 
 export default handler
