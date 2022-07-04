@@ -1,6 +1,6 @@
 let handler = async (m, { args, usedPrefix, command }) => {
 	
-let er = `IQRA Yang tersedia : 1, 2, 3, 4, 5, 6
+let er = `IQRO yang tersedia jilid : 1, 2, 3, 4, 5, 6
 Contoh: ${usedPrefix + command} 3 
 `.trim()
     if (!args[0]) throw er
