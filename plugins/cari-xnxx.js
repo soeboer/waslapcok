@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (res.status != 200) throw await res.text()
     let json = await res.json()
     if (!json.status) throw json
-    let mes = json.result.map((v, i) => `${i + 1}.📀 Judul: ${v.title}\n🎥 Info: ${v.info}\n🔑 Link: ${v.link}`).join('\n\n')
+    let mes = json.result.results.map((v, i) => `${i + 1}.📀 Judul: ${v.title}\n🎥 Info: ${v.info}\n🔑 Link: ${v.link}`).join('\n\n')
     m.reply(mes)
 //     	          conn.reply(m.chat, mes, m)
 
