@@ -14,9 +14,11 @@ pos
     if (!kurir) return conn.reply(m.chat, listkurir, m)
     if (!teks) return conn.reply(m.chat, 'Kode Resinya ?', m)
   await m.reply('Sabar Kak saya cek dulu...')
- let res = await fetch(`https://api.burhansyam.com/bot/resi/?kurir=${kurir}?&resi=${teks}`)
- 	if (res.status !== 200) throw res.result
-      conn.reply(m.chat, `${res.result}`, m)
+ let url = await fetch(`https://api.burhansyam.com/bot/resi/?kurir=${kurir}?&resi=${teks}`)
+      let angkut = await url.json()
+      let hasil = `${angkut.result}`
+//  conn.reply(m.chat, `${res.result}`, m)
+           conn.reply(m.chat, hasil, m)
 }
 
 handler.help = ['cekresi <kurir noresi>']
