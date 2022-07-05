@@ -155,7 +155,7 @@ case 'yoyowaimo':
 await m.reply('siap kirim...')
 let sound = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${pilih}.mp3`)
 		let caption = `*Sound Effect*\n\nFormat : ${pilih}`
-                conn.sendFile(m.chat, hasil.data, `SFX.${pilih}.mp3`, caption, m)
+                conn.sendFile(m.chat, sound.data, `SFX.${pilih}.mp3`, caption, m)
 
             break
         default:
