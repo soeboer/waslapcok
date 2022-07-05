@@ -8,7 +8,8 @@ let handler = async (m, { conn, text }) => {
 let data = await film(text)
 let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`
 let datathumb = data[0].thumb    
-	m.reply(`${txt}`)
+// 	m.reply(`${txt}`)
+	          conn.reply(m.chat, txt, m)
 }
                                 
 handler.help = ['film <keyword>']
