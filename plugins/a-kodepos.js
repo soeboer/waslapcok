@@ -8,7 +8,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let json = await res.json()
     if (!json.status) throw json
     let mes = json.data.map((v, i) => `${i + 1}. Provinsi: ${v.province}\nKota: ${v.city}\nKecamatan: ${v.subdistrict}\nPerkotaan: ${v.urban}\nKode Pos: ${v.postalcode}`).join('\n\n')
-    m.reply(`${mes}`)
+//     m.reply(mes)
+    	          conn.reply(m.chat, mes, m)
 
 }
 
