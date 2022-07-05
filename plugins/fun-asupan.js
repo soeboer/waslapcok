@@ -40,7 +40,7 @@ var capt = `🐦 Koleksi Random Foto Video ${pilih} 🗿`
     }
 }
 handler.help = ['asupan <opsi>']
-handler.tags = ['pencarian']
+handler.tags = ['fun']
 handler.command = /^(asupan)$/i
 
 export default handler
