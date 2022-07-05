@@ -1,11 +1,11 @@
-import { xfar } from 'xfarr-api'
+import { xa } from 'xfarr-api'
 import fetch from 'node-fetch'
 import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
     if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
     
-xfar.film(text).then(async data => {
+xa.search.film(text).then(async data => {
 let datathumb = data[0].thumb
 let txt = `*--------「 FILM-SEARCH 」--------*\n\n`
 for (let i of data) {
@@ -18,7 +18,7 @@ txt += `*🔗 Url :* ${i.link}\n------------------------------------\n`
 }
                                 
 handler.help = ['film <keyword>']
-handler.tags = ['pencarian', 'film']
+handler.tags = ['pencarian']
 handler.command = /^(film)$/i
 
 export default handler
