@@ -13,10 +13,10 @@ txt += `*🎞️ Tipe  :* ${i.type}\n`
 txt += `*📟 Kualitas :* ${i.quality}\n`
 txt += `*📮 Upload :* ${i.upload}\n`
 txt += `*🔗 Url :* ${i.link}\n------------------------------------\n`
-}
+
 conn.sendFile(m.chat, datathumb, '', txt, m)
-})
 }
+                                
 handler.help = ['film <keyword>']
 handler.tags = ['pencarian', 'film']
 handler.command = /^(film)$/i
