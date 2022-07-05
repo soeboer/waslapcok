@@ -10,7 +10,7 @@ sicepat
     if (!teks) return conn.reply(m.chat, 'nomor resinya?', m)
 
 //   await m.reply('Sabar Kak saya cek dulu...')
-axios.get('https://api.burhansyam.com/bot/resi/?kurir=sicepat&resi=003049012253')
+axios.get('https://api.burhansyam.com/bot/resi/?kurir=`${kurir}`&resi=`${teks}`')
         .then((res) => {
           let hasil = `${res.data.result}`
       conn.reply(m.chat, hasil, m)
