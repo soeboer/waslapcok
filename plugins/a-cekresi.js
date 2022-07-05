@@ -14,7 +14,7 @@ sicepat
  let hasil = await fetch('https://api.burhansyam.com/bot/resi/?kurir=' + kurir + '&resi=' + teks + `&apikey=bajingan99`)
 //  let hasil = await conn.getFile(`https://violetics.pw/api/photooxy/${effect}?text=${teks}&apikey=beta`)
 //  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
-  m.reply(hasil)
+  m.reply(`${hasil}`)
 //     conn.sendFile(m.chat, hasil.data, 'photooxy.jpg', caption, m)
 }
 
