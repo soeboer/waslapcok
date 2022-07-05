@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 }
 
-handler.help = ['kodepos].map(v => v + ' <query>'']
+handler.help = ['kodepos].map(v => v + ' <Ponjong>'']
 handler.tags = ['pencarian']
 handler.command = /^kodepos$/i
 export default handler
