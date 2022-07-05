@@ -41,7 +41,7 @@ global.APIKeys = { // APIKey Here
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://violetics.pw': 'beta'
 }
-global.wm = 'Burhan Syam' //Main Watermark
+global.wm = '🦉 𝗕𝘂𝗿𝗵𝗮𝗻 𝗦𝘆𝗮𝗺 🦉' //Main Watermark
 
 global.wm2 = ''
 
