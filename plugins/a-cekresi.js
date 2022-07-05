@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 
 let handler = async(m, { conn, text }) => {
 let [kurir, teks] = text.split ` `
@@ -11,9 +11,10 @@ sicepat
     if (!teks) return conn.reply(m.chat, 'nomor resinya?', m)
 
   await m.reply('Sabar Kak saya cek dulu...')
- let fucek = await fetch('https://api.burhansyam.com/bot/resi/?kurir=' + kurir + '&resi=' + teks + `&apikey=bajingan99`)
-//   m.reply(`${fucek}`)
-    conn.reply(m.chat,`${fucek}`.trim(), m)
+axios.get('https://api.burhansyam.com/bot/resi/?kurir=' + kurir + '&resi=' + teks + `&apikey=bajingan99`)
+        .then((res) => {
+          let hasil = `${res.data.result}`
+            conn.reply(m.chat, hasil, m)
 }
 
 handler.help = ['cekresi <kurir noresi>']
