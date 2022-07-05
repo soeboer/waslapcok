@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
     m.reply(msg)
 }
 handler.help = handler.alias = ['google']
-handler.tags = ['tools']
+handler.tags = ['pencarian']
 handler.command = /^google$/i
 
 export default handler
