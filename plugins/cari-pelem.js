@@ -40,3 +40,4 @@ async function film(text) {
                        	})
 	return { result }
 }
+}
