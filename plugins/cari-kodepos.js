@@ -1,4 +1,5 @@
-let fetch = require('node-fetch')
+import fetch from 'node-fetch'
+
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `*Perintah ini untuk mencari kode pos berdasarkan kota/pencarian*\n\ncontoh:\n${usedPrefix + command} Ponjong`
     let res = await fetch(global.API('kodepos', '/search', { q: text }, 'APIKEY'))
@@ -8,6 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let mes = json.result.map((v, i) => `${i + 1}. Provinsi: ${v.province}\nKota: ${v.city}\nKecamatan: ${v.subdistrict}\nPerkotaan: ${v.urban}\nKode Pos: ${v.postalcode}`).join('\n\n')
     m.reply(mes)
 }
+
 handler.help = ['kodepos <kota>']
 handler.tags = ['pencarian']
 handler.command = /^kodepos$/i
