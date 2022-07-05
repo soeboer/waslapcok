@@ -17,7 +17,10 @@ let handler = async(m, { conn, text, usedPrefix }) => {
     if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + 'rindu', m)
     axios.get(`https://violetics.pw/api/information/jagokata?apikey=beta&nama=` + text)
         .then((res) => {
-          let hasil = `*⭔ Quotes Kata ${text} :*\n*${res.data.results.quote}*`
+          let gbr = `${res.data.result.img}`
+          let bio = `${res.data.result.bio}`
+          let au = `${res.data.result.author}`
+          let hasil = `*⭔ Quotes Kata ${text} :*\n*${res.data.results.quote}\n⭔ *Penulis :* ${au}\n⭔ *Biografi :* ${bio} *`
 //           `⭔ *Quotes :* ${res.data.quote}\n⭔ *Penulis :* ${anu.message.author}\n⭔ *Biografi :* ${anu.message.bio}`
             conn.reply(m.chat, hasil, m)
         })
