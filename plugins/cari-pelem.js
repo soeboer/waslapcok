@@ -5,20 +5,14 @@ import cheerio from 'cheerio'
 let handler = async (m, { conn, text }) => {
     if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
     
-let data = await film(text)
+let data = await Film(text)
 let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`
 let datathumb = data[0].thumb    
 // 	m.reply(`${txt}`)
 	          conn.reply(m.chat, txt, m)
 }
                                 
-handler.help = ['film <keyword>']
-handler.tags = ['pencarian']
-handler.command = /^(film)$/i
-
-export default handler
-
-async function film(text) {
+async function Film() {
 	let html = (await axios.get(`http://167.99.31.48/?s=${text}`)
 	let $ = cheerio.load(html)
                     $(b).find('article').each(function (c, d) {
@@ -30,7 +24,7 @@ async function film(text) {
                         let thumb = $(d).find('div > a > div > img').attr('src');
                         result.push = ({
                             status: 200,
-                        	author: author,
+                            author: author,
                             judul: judul,
                             quality: quality,
                             type: type,
@@ -41,3 +35,8 @@ async function film(text) {
 	return { result }
 }
 }
+handler.help = ['film <keyword>']
+handler.tags = ['pencarian']
+handler.command = /^(film)$/i
+
+export default handler
