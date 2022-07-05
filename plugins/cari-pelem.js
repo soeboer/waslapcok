@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
     if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
     
 let data = await Film(text)
-let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`
+let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`)
 // 	m.reply(`${txt}`)
 	          conn.reply(m.chat, txt, m)
 }
