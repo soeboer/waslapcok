@@ -21,7 +21,7 @@ ${repo.open_issues} Issue${repo.description ? `
    conn.sendHydrated(m.chat, str,wm, null, ["github.com/FahriAdison"], ['Github Owner'], null,null,[null,null],m)
 }
 handler.help = ['githubsearch'].map(v => v + ' <pencarian>')
-handler.tags = ['tools']
+handler.tags = ['pencarian']
 
 handler.command = /^g(ithub|h)search$/i
 
