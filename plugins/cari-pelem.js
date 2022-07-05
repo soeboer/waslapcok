@@ -1,22 +1,15 @@
-import fetch from 'node-fetch'
+import fs from 'fs'
 import axios from 'axios'
-import { film } from 'xfarr-api'
+import cheerio from 'cheerio'
 
 
 let handler = async (m, { conn, text }) => {
     if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
     
-let data = film('query',text).then(async data => {
-let datathumb = data[0].thumb
-let txt = `*--------「 FILM-SEARCH 」--------*\n\n`
-for (let i of data) {
-txt += `*📫 Judul :* ${i.judul}\n`
-txt += `*🎞️ Tipe  :* ${i.type}\n`
-txt += `*📟 Kualitas :* ${i.quality}\n`
-txt += `*📮 Upload :* ${i.upload}\n`
-txt += `*🔗 Url :* ${i.link}\n------------------------------------\n`
-}
-        conn.sendFile(m.chat, datathumb, '', txt, m)
+let data = await film(text)
+let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`
+let datathumb = data[0].thumb    
+        m.reply(txt)
 }
                                 
 handler.help = ['film <keyword>']
@@ -24,3 +17,26 @@ handler.tags = ['pencarian']
 handler.command = /^(film)$/i
 
 export default handler
+
+async function film(text) {
+	let html = (await axios.get(`http://167.99.31.48/?s=${text}`)
+	let $ = cheerio.load(html)
+                    $(b).find('article').each(function (c, d) {
+                        let judul = $(d).find('div > a > div.addinfox > header > h2').text()
+                        let quality = $(d).find('div > a > div > div > span').text()
+                        let type = $(d).find('div > a > div.addinfox > div > i.type').text()
+                        let upload = $(d).find('div > a > div.addinfox > div > span').text()
+                        let link = $(d).find('div > a').attr('href');
+                        let thumb = $(d).find('div > a > div > img').attr('src');
+                        result.push = ({
+                            status: 200,
+                        	author: author,
+                            judul: judul,
+                            quality: quality,
+                            type: type,
+                            upload: upload,
+                            link: link,
+                            thumb: thumb,
+                       	})
+	return { result }
+}
