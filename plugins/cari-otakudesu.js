@@ -32,7 +32,7 @@ let handler = async (m, { conn, text }) => {
     conn.sendFile(m.chat, datathumb, '', otaku, m)
 }
 
-handler.help = ['otakudesu'].map(v => v + ' <Apa>')
+handler.help = ['otakudesu'].map(v => v + ' <Anime>')
 handler.tags = ['pencarian']
 handler.command = /^(otakudesu)$/i
 
