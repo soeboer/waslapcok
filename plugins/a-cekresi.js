@@ -6,15 +6,16 @@ let [kurir, teks] = text.split ` `
 let listkurir = `*Jasa Kurir :*
 sicepat
 `.trim()
-
     if (!kurir) return conn.reply(m.chat, listkurir, m)
     if (!teks) return conn.reply(m.chat, 'nomor resinya?', m)
 
-  await m.reply('Sabar Kak saya cek dulu...')
-axios.get('https://api.burhansyam.com/bot/resi/?kurir=' + kurir + '&resi=' + teks)
+//   await m.reply('Sabar Kak saya cek dulu...')
+axios.get('https://api.burhansyam.com/bot/resi/?kurir=sicepat&resi=003049012253')
         .then((res) => {
           let hasil = `${res.data.result}`
-            conn.reply(m.chat, hasil, m)
+      conn.reply(m.chat, hasil, m)
+        })
+        .catch(_ => m.reply('Resi Tidak Ditemukan!'))
 }
 
 handler.help = ['cekresi <kurir noresi>']
