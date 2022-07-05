@@ -12,11 +12,8 @@ sicepat
 
   await m.reply('Sabar Kak saya cek dulu...')
  let fucek = await fetch('https://api.burhansyam.com/bot/resi/?kurir=' + kurir + '&resi=' + teks + `&apikey=bajingan99`)
-//  let hasil = await conn.getFile(`https://violetics.pw/api/photooxy/${effect}?text=${teks}&apikey=beta`)
-//  let caption = `*PHOTOOXY*\n\nEffect : ${effect}`
-//   m.reply(`${hasil}`)
-//     conn.sendFile(m.chat, hasil.data, 'photooxy.jpg', caption, m)
-    conn.reply(m.chat,`fucek`.trim(), m)
+//   m.reply(`${fucek}`)
+    conn.reply(m.chat,`${fucek}`.trim(), m)
 }
 
 handler.help = ['cekresi <kurir noresi>']
