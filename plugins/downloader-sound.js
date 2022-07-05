@@ -74,8 +74,7 @@ yamete
 yowaimo
 yoyowaimo
 
-contoh:
-${usedPrefix + command} onichan
+contoh: ${usedPrefix + command} onichan
     `.trim()
     if (!args[0]) throw er
 
@@ -153,10 +152,10 @@ case 'yowaimo':
 case 'yoyowaimo':
             let text = args.slice(1).join(' ')
             let pilih = args[0].toLowerCase()
-await m.reply('dalam proses...')
+await m.reply('siap kirim...')
 let sound = await conn.getFile(`https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/${pilih}.mp3`)
-var capt = `🐦 Koleksi Random Foto Video ${pilih} 🗿`
-     conn.sendFile(m.chat, `_${usedPrefix + command} ${pilih}_`.trim(), capt, sound.data, '', m)
+		let caption = `*Sound Effect*\n\nFormat : ${pilih}`
+                conn.sendFile(m.chat, hasil.data, `SFX.${pilih}.mp3`, caption, m)
 
             break
         default:
