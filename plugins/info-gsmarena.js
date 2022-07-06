@@ -4,23 +4,9 @@ let handler = async(m, { conn, text, usedPrefix }) => {
 
     if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + 'redmi note 10s', m)
     axios.get(`https://yx-api.herokuapp.com/api/search/gsmarena?query=` + text)
-        .then((anu) => {
-
-let hasil = `* GSM ARENA *\n\n
-*Name* : ${anu.judul}
-*Rilis* : ${anu.rilis}
-*Ukuran* : ${anu.ukuran}
-*Model* : ${anu.type}
-*Storage* : ${anu.storage}
-*Display* : ${anu.display}
-*Inchi* : ${anu.inchi}
-*Pixel* : ${anu.pixel}
-*VideoPixel* : ${anu.videoPixel}
-*Ram* : ${anu.ram}
-*Chipset* : ${anu.chipset}
-*Batrai* : ${anu.batrai}
-*Merek Batrai* : ${anu.merek_batre}
-*Detail* : ${anu.detail}`			
+        .then((res) => {
+	    
+let hasil = `* GSM ARENA *\n*Name* : ${res.judul}\n*Rilis* : ${res.rilis}\n*Ukuran* : ${res.ukuran}\n*Model* : ${res.type}\n*Storage* : ${res.storage}\n*Display* : ${res.display}\n*Inchi* : ${res.inchi}\n*Pixel* : ${res.pixel}\n*VideoPixel* : ${res.videoPixel}\n*Ram* : ${res.ram}\n*Chipset* : ${res.chipset}\n*Batrai* : ${res.batrai}\n*Merek Batrai* : ${res.merek_batre}\n*Detail* : ${res.detail}`
 
             conn.reply(m.chat, hasil, m)
         })
