@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { Antaranews } from '@bochilteam/scraper'
+import { antaranews } from '@bochilteam/scraper'
 
 let handler = async(m, { conn }) => {
    var a = await antaranews()
