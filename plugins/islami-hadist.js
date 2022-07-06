@@ -40,7 +40,7 @@ ${id}
         throw `_*Error!*_`
     }
 }
-handler.help = ['hadis']
+handler.help = ['hadist <perawi> <no>']
 handler.tags = ['islami']
 handler.command = /^(hadist?)$/i
 export default handler
