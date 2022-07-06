@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { Suaracom } from '@bochilteam/scraper'
+import { suaracom } from '@bochilteam/scraper'
 
 let handler = async(m, { conn }) => {
    var a = await suaracom()
