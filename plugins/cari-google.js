@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
     if (!msg.length) throw 'Not Found :/'
     m.reply(msg)
 }
-handler.help = handler.alias = ['google']
+handler.help = handler.alias = ['google <apa>']
 handler.tags = ['pencarian']
 handler.command = /^google$/i
 
