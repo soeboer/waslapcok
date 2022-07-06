@@ -9,7 +9,7 @@ let handler = async (m, { conn, text }) => {
 	m.reply(res, null, opt)
 }
 handler.help = ['apksearch']
-handler.tags = ['tools']
+handler.tags = ['pencarian']
 handler.command = /^(apksearch)$/i
 
 export default handler
