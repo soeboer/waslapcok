@@ -4,8 +4,8 @@ import { liputan6 } from '@bochilteam/scraper'
 let handler = async(m, { conn }) => {
    var a = await liputan6()
    var b = JSON.parse(JSON.stringify(a))
-   var c = await conn.rand(b)
-   //var c = b[Math.floor(Math.random() * b.length)]
+//    var c = await conn.rand(b)
+   var c = b[Math.floor(Math.random() * b.length)]
    var { title, link, image, description, date, label } = c
    var sell = `📺 *Liputan6 News*
 🌐 *Berita:* ${title}
