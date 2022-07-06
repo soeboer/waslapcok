@@ -20,7 +20,7 @@ if (!text) throw 'Brand atau Type Apa?\n *Contoh :* ${usedPrefix + command} redm
 *Detail* : ${anu.detail}`			
 //var kontoll = await getBuffer(anu.result.owner.profile_pic)	
 				//sendButLocation(from, `${reply22}`,`© drips`, {jpegThumbnail:kontoll}, [{buttonId:`${prefix}menu`,buttonText:{displayText:'OKE'},type:1}], {contextInfo: { mentionedJid: [sender, owner]}})
-let gimbir = await getBuffer(anu.thumb)
+let gimbir = `$(anu.thumb)`
 
         conn.sendMessage(m.chat, { image: gimbir, caption: `${kaslak}` }, { quoted: m}).catch((err) => m.reply('*Spesifikasi HP tidak ditemukan*'))
 	            }
