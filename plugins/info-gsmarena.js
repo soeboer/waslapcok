@@ -1,13 +1,12 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 
-let handler = async (m, { conn, text, usedPrefix, command }) => { 
-	
-if (!text) throw 'Brand atau Type Apa?\n *Contoh :* ${usedPrefix + command} redmi note 10s'
-	
-//         let anu = await fetch(`https://yx-api.herokuapp.com/api/search/gsmarena?query=${text}`)				
-let anu = await fetch(global.API('https://yx-api.herokuapp.com', '/api/search/gsmarena', { query: text }))
-	
-let kaslak = `* GSM ARENA *\n\n
+let handler = async(m, { conn, text, usedPrefix }) => {
+
+    if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + 'redmi note 10s', m)
+    axios.get(`https://yx-api.herokuapp.com/api/search/gsmarena?query=` + text)
+        .then((anu) => {
+
+let hasil = `* GSM ARENA *\n\n
 *Name* : ${anu.judul}
 *Rilis* : ${anu.rilis}
 *Ukuran* : ${anu.ukuran}
@@ -22,15 +21,12 @@ let kaslak = `* GSM ARENA *\n\n
 *Batrai* : ${anu.batrai}
 *Merek Batrai* : ${anu.merek_batre}
 *Detail* : ${anu.detail}`			
-// let gimbir = `$(anu.thumb)`
 
-//         conn.sendMessage(m.chat, { image: gimbir, caption: `${kaslak}` }, { quoted: m}).catch((err) => m.reply('*Spesifikasi HP tidak ditemukan*'))
-// 	            }
-
-conn.reply(m.chat, kaslak, m)
+            conn.reply(m.chat, hasil, m)
         })
-        .catch(_ => m.reply('*Spesifikasi HP tidak ditemukan*'))
+        .catch(_ => m.reply('Spesifikasi HP Tidak Ditemukan!'))
 }
+				
 
 
 handler.help = ['garena <type HP>']
