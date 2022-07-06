@@ -4,12 +4,12 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
                 if (!text) throw `Contoh : ${usedPrefix + command} love`
                                 let wattpad = new WattPads(); 
 
-async function wattpad.search(text) {  
+async function wattpad(text) {  
                  wattpad.set('query', 'text');
-               let anu = await wattpad.search();
-                if (anu.status == false) return m.reply(anu.response)
-//                 conn.reply(m.chat, `⭔ *Judul :* ${anu.response}\n⭔ *Info :* ${anu.response}\n⭔ *Deskripsi :* ${anu.response}`, m)
-                  conn.reply(m.chat, `⭔ *Judul :* ${anu.response}`, m)
+               let response = await wattpad.search();
+//                return response;
+                  conn.reply(m.chat, `⭔ *Wadepak :* ${response}`, m)
+};
 }
 handler.help = ['wattpadd'].map(v => v + ' [tentang]')
 handler.tags = ['tools']
