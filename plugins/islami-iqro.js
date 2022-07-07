@@ -22,7 +22,7 @@ Contoh: ${usedPrefix + command} 3
             throw er
     }
 		}
-handler.help = ['iqro']
+handler.help = ['iqro <jilid>']
 handler.tags = ['islami']
 handler.command = /^(iqro)$/i
 
