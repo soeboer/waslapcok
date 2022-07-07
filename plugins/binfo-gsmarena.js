@@ -7,10 +7,20 @@ let handler = async(m, { conn, text, usedPrefix }) => {
         .then((res) => {
 var deskripsi = res.data.detail;
 deskripsi = deskripsi.replace("Network\nTechnology", "Teknologi-Jaringan");	
+deskripsi = deskripsi.replace("\n\n", "~\n");	    
 deskripsi = deskripsi.replace("\n\n\n", "~\n");
+deskripsi = deskripsi.replace(" \n\n\n", "~\n");
+deskripsi = deskripsi.replace("\n\n\n\n\n\n\nBody", "~\nBody");
+deskripsi = deskripsi.replace("\n\n\t\t\n\n\n\n\n\n", "~\n");
 deskripsi = deskripsi.replace("\n\n\t\n\n\t\n\n\n\n\n\n\n\n", "~\n");
 deskripsi = deskripsi.replace("\n\t\n\n", "~\n");
+deskripsi = deskripsi.replace("\n\n\t\n\n\n", "~\n");
+deskripsi = deskripsi.replace("\n\t\t\t\n\n\n\n\n\n\t\n\t\n\t", "~\n");
 deskripsi = deskripsi.replace("\n\t\t\n\n\n\n\n\n", "~\n");	
+deskripsi = deskripsi.replace("\n\t\n\t\t\n\n\n\t\n\t\n\t", "~\n");
+deskripsi = deskripsi.replace("\n\t\n\t\t\n\n\n\n\n\n", "~\n");
+deskripsi = deskripsi.replace("\n\n\n\t\n\n\n", "~\n");
+deskripsi = deskripsi.replace("\n\n\n\n \t\n\n \t\n \t\n", "~\n");
 deskripsi = deskripsi.replace("\n\t\n\n\n\n\n\n", "~\n");	
 res.data.detail = deskripsi;	    
 	    
