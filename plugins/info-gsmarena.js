@@ -2,7 +2,7 @@ import axios from 'axios'
 
 let handler = async(m, { conn, text, usedPrefix }) => {
 
-    if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + 'redmi note 10s', m)
+    if (!text) return conn.reply(m.chat, 'Contoh penggunaan: .garena redmi note 10s', m)
     axios.get(`https://yx-api.herokuapp.com/api/search/gsmarena?query=` + text)
         .then((res) => {
 var deskripsi = res.data.detail;
