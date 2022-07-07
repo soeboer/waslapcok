@@ -11,7 +11,7 @@ deskripsi = deskripsi.replace("\t\n\t\n\t", "");
 // deskripsi = deskripsi.replace("\n\t\n\t\t", "");
 res.data.detail = deskripsi;	    
 	    
-let hasil = `*Rincian Type HP ${text}* \n *Name* : ${res.data.judul}\n*Rilis* : ${res.data.rilis}\n*Ukuran* : ${res.data.ukuran}\n*Model* : ${res.data.type}\n*Storage* : ${res.data.storage}\n*Display* : ${res.data.display}\n*Inchi* : ${res.data.inchi}\n*Pixel* : ${res.data.pixel}\n*VideoPixel* : ${res.data.videoPixel}\n*Ram* : ${res.data.ram}\n*Chipset* : ${res.data.chipset}\n*Batrai* : ${res.data.batrai}\n*Merek Batrai* : ${res.data.merek_batre}\n*Detail* : ${deskripsi}`
+let hasil = `*Rincian Type HP ${text}* \n*Name* : ${res.data.judul}\n*Rilis* : ${res.data.rilis}\n*Ukuran* : ${res.data.ukuran}\n*Model* : ${res.data.type}\n*Storage* : ${res.data.storage}\n*Display* : ${res.data.display}\n*Inchi* : ${res.data.inchi}\n*Pixel* : ${res.data.pixel}\n*VideoPixel* : ${res.data.videoPixel}\n*Ram* : ${res.data.ram}\n*Chipset* : ${res.data.chipset}\n*Batrai* : ${res.data.batrai}\n*Merek Batrai* : ${res.data.merek_batre}\n*Detail* : ${deskripsi}`
 
             conn.reply(m.chat, hasil, m)
         })
