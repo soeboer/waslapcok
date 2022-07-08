@@ -67,7 +67,7 @@ conn.reply(m.chat, `• *ᴛʏᴘᴇ:* XTEAM
   }
 }
 handler.help = ['cekapikey']
-handler.tags = ['internet', 'tools']
+handler.tags = ['tools']
 handler.command = /^(cek(key|api))$/i
 
 export default handler
