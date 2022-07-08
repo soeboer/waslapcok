@@ -26,5 +26,5 @@ await conn.sendFile(m.chat, image, 'gi.jpg', capt, m)
 }
 handler.help = ['charagi']
 handler.command = /^chara(gi|genshin)?$/i
-handler.tags = ['internet']
+handler.tags = ['maker']
 export default handler 
