@@ -10,7 +10,7 @@ ${json.articles}
 `.trim())
 }
 handler.help = ['wikipedia'].map(v => v + ' <apa>')
-handler.tags = ['internet']
+handler.tags = ['pencarian']
 handler.command = /^(wiki|wikipedia)$/i
 
 export default handler
