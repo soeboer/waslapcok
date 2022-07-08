@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import cheerio from 'cheerio'
+
 let handler = async (m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Tafsir tentang apa?*`
 let json = await fetch(global.API('https://docs-jojo.herokuapp.com', '/api/tafsir', { q: text }))
