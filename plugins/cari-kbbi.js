@@ -16,7 +16,7 @@ n = Nomina: kata benda
 `.trim())
 }
 handler.help = ['kbbi <teks>']
-handler.tags = ['internet']
+handler.tags = ['pencarian']
 handler.command = /^kbbi$/i
 
 export default handler
