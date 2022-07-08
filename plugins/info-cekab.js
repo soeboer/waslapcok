@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 let [nopol, teks] = text.split ` `
 
-    if (!nopol) return conn.reply(m.chat, 'Berapa Nopolnya ?', m)
+    if (!nopol) return conn.reply(m.chat, '[❗INFO❗] Berapa Nopolnya ?\n Contoh : .cekab 1895 MD', m)
     if (!teks) return conn.reply(m.chat, 'Huruf Belakangnya ?', m)
   await m.reply('Sabar bestie saya cek dulu...')
  let res = await fetch(`https://api.burhansyam.com/bot/pajek/?no=${nopol}&dd=${teks}`)
