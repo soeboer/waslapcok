@@ -9,7 +9,7 @@ let hasil = `${cerpen.data}`.trim()
   m.reply(hasil)
 }
 handler.help = ['cerpen']
-handler.tags = ['internet']
+handler.tags = ['fun']
 handler.command = /^cerpen$/i
 
 export default handler
