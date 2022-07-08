@@ -8,7 +8,7 @@ let [nopol, teks] = text.split ` `
   await m.reply('Sabar bestie saya cek dulu...')
  let res = await fetch(`https://api.burhansyam.com/bot/pajek/?no=${nopol}&dd=${teks}`)
 let json = await res.json()
-let { nopolisi, nmmerekkb, nmmodelkb, tahunkb, swdkllj, pkb, pkbswd, tgakhirpkb } = json.result
+let { nopolisi, nmmerekkb, nmmodelkb, tahunkb, swdkllj, pkb, pkbswd, tgakhirpkb } = json.result[0]
 
 let pelat = `
 ✨ *Nopol   :* ${nopolisi}
