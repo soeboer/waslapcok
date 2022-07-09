@@ -1,13 +1,13 @@
 import jimp from 'jimp'
 import fs from 'fs'
 import PhoneNumber from 'awesome-phonenumber'
-// import moment from 'moment-timezone'
+import moment from 'moment-timezone'
 
 
 let tags = {}
 const defaultMenu = {
   
-  before: `\n> *Hari:* %week %weton \n> *Tanggal:* %date \n> *Jam:* %time \n> *Aktif:* %uptime*\n%readmore`,
+  before: `\n>*Tanggal:* %date \n> *Jam:* %time \n>*Hari:* %dayName %weton \n> *Aktif:* %uptime*\n%readmore`,
   header: '│❏━━⦿❰ *%category* ❱⦿━━❏',
   body: '│┊⬤❱ *%cmd* %islimit %isPremium',
   footer: '│❏━━━━━━⦿',
@@ -23,7 +23,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     // Offset -420 is 18.00
     // Offset    0 is  0.00
     // Offset  420 is  7.00
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    
+    let days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    let x = new Date(dateString);
+    let dayName = days[x.getDay()];
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(x / 84600000) % 5]
+
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
