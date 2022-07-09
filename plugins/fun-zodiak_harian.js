@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {  
+let handler = async (m, { args, usedPrefix, command }) => {  
     let er = `
 ▢ *List zodiak*
 - Capricorn
@@ -40,7 +40,7 @@ await m.reply('saya proses dulu kak...')
 let res = await fetch(global.API('https://api.burhansyam.com', '/bot/zodiak', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
-let { image, hari_ini, description, angka_keberuntungan, peribahasa_cina, about } = json.result
+let { hari_ini, description, angka_keberuntungan, peribahasa_cina, about } = json.result
 let bintul = `✨ *Bintang:* ${hari_ini}
 🎆 *Deskripsi:* ${description}
 👥 *Keberuntungan:* ${angka_keberuntungan}
