@@ -8,7 +8,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!res.length) throw 'Group tidak ditemukan!'
     let teks = res.map(res => res.subject + '\n' + res.link).join('\n────────────\n')
     let image = 'https://telegra.ph/file/f5ec51bac808f543ef1d7.png'
-    conn.sendButtonLoc(m.chat, await(await fetch(image)).buffer(),teks,wm,'Jangan Di Pencet', 'huuu', m)
+//     conn.sendButton(m.chat, await(await fetch(image)).buffer(),teks,wm,'Jangan Di Pencet', 'huuu', m)
+    m.reply(teks)
+    
 }
 handler.help = ['carigrup <pencarian>']
 handler.tags = ['pencarian']
