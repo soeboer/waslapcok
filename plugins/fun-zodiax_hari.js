@@ -1,8 +1,6 @@
 import fetch from 'node-fetch'
 
-// let handler = async (m, { conn, args, usedPrefix, command }) => {  
-// let handler = async (m, { conn, text }) => {
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {  
     let er = `
 ▢ *List zodiak*
 - Capricorn
