@@ -25,6 +25,7 @@ ${usedPrefix + command} Taurus
         case 'aquarius':
         case 'pisces':
         case 'aries':
+        case 'virgo':		    
         case 'taurus':
         case 'gemini':
         case 'cancer':
