@@ -25,9 +25,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     // Offset  420 is  7.00
     
     let days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    let x = new Date(dateString);
-    let dayName = days[x.getDay()];
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(x / 84600000) % 5]
+    let dayName = days[d.getDay()];
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
 
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
