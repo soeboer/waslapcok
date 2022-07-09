@@ -1,7 +1,8 @@
 import fetch from 'node-fetch'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {  
+// let handler = async (m, { conn, args, usedPrefix, command }) => {  
 // let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
     let er = `
 ▢ *List zodiak*
 - Capricorn
@@ -39,7 +40,7 @@ ${usedPrefix + command} Taurus
 	    
 await m.reply('saya proses dulu kak...')
 
-let res = await fetch(global.API('https://api.burhansyam.com', '/bot/zodiak', { q: pilih }))
+let res = await fetch(global.API('https://api.burhansyam.com', '/bot/zodiak/', { q: pilih }))
 if (!res.ok) throw await res.pilih()
 let json = await res.json()
 let { image, hari_ini, description, angka_keberuntungan, peribahasa_cina, about } = json.result
