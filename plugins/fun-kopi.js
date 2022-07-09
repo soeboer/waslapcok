@@ -4,8 +4,8 @@ let handler = async (m, {command, conn}) => {
 await m.reply('saya buatkan dulu maszeeh...')
   let res = await fetch(global.API("https://coffee.alexflipnote.dev", "/random.json")
   let json = await res.json();
- 
-        conn.sendButton(m.chat, `_${command}_`.trim(), 'Selamat Menikmati', json.file, [['😋 Ngopi Lagi 🤗', `/${command}`]], m)
+ let kipo = json.file 
+        conn.sendButton(m.chat, `_${command}_`.trim(), `${kipo}`, kipo, [['😋 Ngopi Lagi 🤗', `/${command}`]], m)
  
 };
 handler.help = ["kopi"];
