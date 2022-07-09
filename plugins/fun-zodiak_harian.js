@@ -37,7 +37,7 @@ ${usedPrefix + command} Taurus
 	    
 await m.reply('saya proses dulu kak...')
 
-let res = await fetch(global.API('https://api.zacros.my.id', '/primbon/zodiakharian', { zodiak: text }))
+let res = await fetch(global.API('https://api.burhansyam.com', '/bot/zodiak', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
 let { image, hari_ini, description, angka_keberuntungan, peribahasa_cina, about } = json.result
@@ -48,8 +48,8 @@ let bintul = `✨ *Bintang:* ${hari_ini}
 🌐 *Tentang*: ${about}
 `
 
-// conn.sendFile(m.chat, image, '', bintul, m)
-  await m.reply(bintul)
+conn.sendFile(m.chat, image, '', bintul, m)
+//   await m.reply(bintul)
 		    
             break
         default:
