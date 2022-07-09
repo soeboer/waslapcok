@@ -4,7 +4,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     const res = await jadwalsholat(text)
     m.reply(`
 🕌 Jadwal Sholat *${text}* 🕋
-${Object.entries(res.today).map(([name, data]) => ` ⏰*Sholat ${name}:* ${data}`).join('\n').trim()}
+${Object.entries(res.today).map(([name, data]) => ` ⏰ *Sholat ${name}:* ${data}`).join('\n').trim()}
 `.trim())
 }
 handler.help = ['sholat <daerah>']
