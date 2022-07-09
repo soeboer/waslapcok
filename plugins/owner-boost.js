@@ -22,10 +22,12 @@ let handler = async (m, { conn }) => {
 
      conn.reply(m.chat, finish, m)
 }
-handler.help = ['boost', 'refresh']
-handler.tags = ['info']
-handler.command = /^boost|refresh/i
-handler.rowner = true 
+handler.help = ['refresh']
+handler.tags = ['owner']
+handler.command = /^refresh/i
+
+handler.rowner = true 
+
 
 handler.fail = null
 
