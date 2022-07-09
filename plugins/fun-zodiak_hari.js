@@ -46,7 +46,7 @@ let bintul = `✨ *Bintang:* ${hari_ini}
 🎆 *Deskripsi:* ${description}
 👥 *Keberuntungan:* ${angka_keberuntungan}
 🐦 *Peribahasa*: ${peribahasa_cina}
-🌐 *Tentang*: ${about}
+🌐 *Catatan*: ${about}
 `
 
 // conn.sendFile(m.chat, image, '', bintul, m)
