@@ -1,7 +1,7 @@
 import jimp from 'jimp'
 import fs from 'fs'
 import PhoneNumber from 'awesome-phonenumber'
-import moment from 'moment-timezone'
+// import moment from 'moment-timezone'
 
 
 let tags = {}
