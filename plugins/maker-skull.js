@@ -4,10 +4,14 @@ let handler = async (m, { conn, usedprefix }) => {
         image_url: await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
     }), 'error.png', `*Hiiii*`, m)
 }
+catch (e) {
+   m.reply('Mungkin wajah tidak terdeteksi')
+  }
 
 handler.help = ['skull']
 handler.tags = ['maker']
-
 handler.command = /^(skull)$/i
+handler.fail = null
+
 
 export default handler
