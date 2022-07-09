@@ -52,7 +52,7 @@ let bintul = `✨ *Bintang:* ${hari_ini}
 `
 
 // conn.sendFile(m.chat, image, '', bintul, m)
-  await m.reply(bintul)
+m.reply(bintul)
 		    
             break
         default:
