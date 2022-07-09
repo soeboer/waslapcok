@@ -1,11 +1,8 @@
 import fetch from 'node-fetch'
-import cheerio from 'cheerio'
-import { JSDOM } from 'jsdom'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {  
     let er = `
 ▢ *List zodiak*
-
 - Capricorn
 - Aquarius
 - Pisces
@@ -17,14 +14,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 - Virgo
 - Libra
 - Scorpio
-- Sagittarius
-- Capricorn`
-    
+- Sagitarius
 contoh:
-${usedPrefix + command} taurus
+${usedPrefix + command} Taurus
     `.trim()
-    
-       if (!args[0]) throw er
+    if (!args[0]) throw er
 
     switch (args[0].toLowerCase()) {
         case 'capricorn':
@@ -34,50 +28,32 @@ ${usedPrefix + command} taurus
         case 'taurus':
         case 'gemini':
         case 'cancer':
-        case 'leo':	
-        case 'virgo':
+        case 'leo':     
         case 'libra':
         case 'scorpio':
-        case 'sagittarius':
-        case 'capricorn':		
-	            let text = args.slice(1).join(' ')
+        case 'sagitarius':     		    
+            let text = args.slice(1).join(' ')
+            let pilih = args[0].toLowerCase()
+	    
+await m.reply('saya proses dulu kak...')
+
+let res = await fetch(global.API('https://api.zacros.my.id', '/primbon/zodiakharian', { zodiak: text }))
+if (!res.ok) throw await res.text()
+let json = await res.json()
+let { image, hari_ini, description, angka_keberuntungan, peribahasa_cina, about } = json.result
+let bintul = `✨ *Bintang:* ${hari_ini}
+🎆 *Deskripsi:* ${description}
+👥 *Keberuntungan:* ${angka_keberuntungan}
+🐦 *Peribahasa*: ${peribahasa_cina}
+🌐 *Tentang*: ${about}
+`
+
+conn.sendFile(m.chat, image, '', bintul, m)
 		    
-// 	if (!text) throw `Ulangi dengan menambahkan zodiak\n*Contoh* : ${usedPrefix + command} libra
-
-
-	try {
-		let res = await fetch(`https://www.fimela.com/zodiak/${text}`)
-		if (!res.ok) throw await res.text()
-		let html = await res.text()
-		let jsdom = new JSDOM(html).window
-		let thumb = jsdom.querySelector('body > div > div > div div > div > a > img').src
-		// let judul = document.querySelector('body > div > div.container-main > div.container-article > div div.zodiak--content-header__right > div.zodiak--content-header__text > h5').textContent.trim()
-		// let tanggal = document.querySelector('body > div > div > div > div > div > div > span').textContent.trim()
-
-		let main = jsdom.querySelector('body > div > div > div > div > div > div')
-		let nomer_ = main.find('div:nth-child(1) > div.zodiak--content__content > span').textContent.trim()
-		let umum = main.find('div:nth-child(1) > div.zodiak--content__content > p').textContent.trim() || undefined
-		let love = main.find('div:nth-child(2) > div.zodiak--content__content > p').textContent.trim() || undefined
-		let keuangan = $('body > div > div > div > div > div > div').find('div:nth-child(3) > div.zodiak--content__content > p').textContent.trim() || undefined
-		let rezeki = keuangan.replace('Couple', '\n\n- Couple').replace('Single', '- Single')
-		let caption = `${umum} Nomor keberuntungan kamu adalah *${nomer_}*
-		
-▢ *Asmara* : 
-${love}
-
-▢ *Keuangan* : 
-${rezeki}`
-
-		conn.sendFile(m.chat, thumb, 'zodiak.jpeg', caption, m)
-// 		  m.sendFile(m.chat, thumb, 'zodiak.jpg', `Zodiak`, m, false)
-// 	} catch (e) {
-// 		m.reply('Hasil tidak di temukan')
-// 	}
-// }
-		            break
+            break
         default:
             throw er
-    
+    }
 }
 
 handler.help = ['zodiakharian <zodiak>']
