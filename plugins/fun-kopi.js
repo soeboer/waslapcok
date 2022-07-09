@@ -1,12 +1,12 @@
 import fetch from "node-fetch"
 
-let handler = async (m, { conn, args }) => {
+let handler = async (m, {command, conn}) => {
+await m.reply('saya buatkan dulu maszeeh...')
   let res = await fetch(global.API("https://coffee.alexflipnote.dev", "/random.json")
-  );
-  if (!res.ok) throw await `${res.status} ${res.statusText}`;
   let json = await res.json();
-  if (json.file) conn.sendButtonImg(m.chat, json.file, "kopi", wm, 'Lagi', '.kopi', m);
-  else throw json;
+ 
+        conn.sendButton(m.chat, `_${command}_`.trim(), 'Selamat Menikmati', json.file, [['😋 Ngopi Lagi 🤗', `/${command}`]], m)
+ 
 };
 handler.help = ["kopi"];
 handler.tags = ["fun"];
