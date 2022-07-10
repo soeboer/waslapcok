@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom'
 
 
 let handler = async (m, { text, usedPrefix, command }) => {
-  let res = await fetch(`http://149.56.24.226/?s=` + text, {
+  let res = await fetch(`https://lk21.移动/?s=` + text, {
     headers: {
       "cache-control": "no-transform",
       "content-type": "text/html; charset=UTF-8",
