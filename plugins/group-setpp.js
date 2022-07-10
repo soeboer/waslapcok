@@ -1,4 +1,4 @@
-import { webp2png } from '../lib/webp2mp4.js'
+import { webp2png } from './lib/webp2mp4.js'
 import { URL_REGEX } from '@adiwajshing/baileys'
 
 let handler = async (m, { conn, args }) => {
