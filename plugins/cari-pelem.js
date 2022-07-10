@@ -1,41 +1,40 @@
-import axios from 'axios'
 import cheerio from 'cheerio'
+import fetch from 'node-fetch'
+import { JSDOM } from 'jsdom'
 
 
-let handler = async (m, { conn, text }) => {
-    if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
-    
-let data = await Film(text)
-let txt = res.result.map((v) => `${v.judul} ${v.type} ${v.quality} ${v.upload} ${v.link}`)
-// 	m.reply(`${txt}`)
-	          conn.reply(m.chat, txt, m)
+let handler = async (m, { text, usedPrefix, command }) => {
+  let res = await fetch(`http://149.56.24.226/?s=` + text, {
+    headers: {
+      "cache-control": "no-transform",
+      "content-type": "text/html; charset=UTF-8",
+      "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Mobile Safari/537.36",
+    }
+  })
+  if (!res.ok) throw await res.text()
+  let html = await res.text()
+  let { document } = new JSDOM(html).window
+  const $ = cheerio.load(res.data)
+  let hasil = [...document.querySelectorAll('div.row > div.col-xs-3.col-sm-2.search-poster')].map(el => {
+    let a = el.querySelector('a')
+    return {
+      film_title: a.title,
+      film_link: a.href,
+      film_thumb: el.querySelector('img').src.replace('//', ''),
+    }
+  })
+
+  m.reply(`
+*LAYAR KACA*
+${hasil.map(v => `
+▢ *Judul* : ${v.film_title}
+▢ *Link* : ${v.film_link}
+`).join('────────────────')}
+`.trim())
 }
-                                
-async function Film() {
-	let html = (await axios.get(`http://167.99.31.48/?s=${text}`)
-	let $ = cheerio.load(html)
-                    $(b).find('article').each(function (c, d) {
-                        let judul = $(d).find('div > a > div.addinfox > header > h2').text()
-                        let quality = $(d).find('div > a > div > div > span').text()
-                        let type = $(d).find('div > a > div.addinfox > div > i.type').text()
-                        let upload = $(d).find('div > a > div.addinfox > div > span').text()
-                        let link = $(d).find('div > a').attr('href');
-                        let thumb = $(d).find('div > a > div > img').attr('src');
-                        result.push = ({
-                            status: 200,
-                            author: author,
-                            judul: judul,
-                            quality: quality,
-                            type: type,
-                            upload: upload,
-                            link: link,
-                            thumb: thumb,
-                       	})
-	return { result }
-}
-}
-handler.help = ['film <keyword>']
+
+handler.help = ['pelem'].map(v => v + ' <query>')
 handler.tags = ['pencarian']
-handler.command = /^(film)$/i
+handler.command = /^(pelem)$/i
 
 export default handler
