@@ -10,7 +10,7 @@ let handler = async (m, { text }) => {
 	}).join`\n\n`
 	m.reply(res)
 }
-handler.help = ['imsyak <anime>']
+handler.help = ['imsyak <kota>']
 handler.tags = ['islami']
 handler.command = /^(imsyak)$/i
 export default handler
