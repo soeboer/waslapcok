@@ -8,7 +8,6 @@ let json = await res.json()
 let { title, thumb, views, genre, quality, country, duration, release, result } = json.result
 let dondot = json.result.result.map((v, i) => `${i + 1}.📺 Server : ${v.name}\n🔑 Link : ${v.url}`).join('\n\n')
 let animeingfo = `✨ *Title:* ${title}
-🎆 *Episode:* ${views}
 💬 *Genre:* ${genre}
 💌 *Rating:* ${views}
 ❤️ *Kualitas:* ${quality}
