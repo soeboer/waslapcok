@@ -4,9 +4,11 @@ let handler = async (m, { text }) => {
 	if (!text) throw 'Masukkan Nama Kota' 
 	let res = await jadwalsholat(text)
 	res = res.map(({ lokasi, daerah, jadwal }) => {
+		let saiki = jadwal.tanggal
 		delete jadwal.tanggal, delete jadwal.date
-		jadwal = Object.keys(jadwal).map((v) => `• ${v.capitalize()}: ${jadwal[v]}`).join('\n')
-		return `*Lokasi:* ${lokasi}\n*Daerah:* ${daerah}\n*Jadwal:*\n${jadwal}`
+		let saiki = jadwal.tanggal
+		jadwal = Object.keys(jadwal).map((v) => `⏰ *Waktu* ${v.capitalize()}: *${jadwal[v]}*`).join('\n')
+		return `*Lokasi:* ${lokasi}\n*Daerah:* ${daerah}\n ${saiki}\n*Jam Waktu Sholat :*\n${jadwal}`
 	}).join`\n\n`
 	m.reply(res)
 }
