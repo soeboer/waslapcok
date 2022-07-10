@@ -7,8 +7,8 @@ let handler = async (m, { text }) => {
 		let saiki = jadwal.tanggal
 		delete jadwal.tanggal, delete jadwal.date
 
-		jadwal = Object.keys(jadwal).map((v) => `⏰ *Waktu* *${v.capitalize()}:* *${jadwal[v]}*`).join('\n')
-		return `🏠 *Lokasi:* ${lokasi}\n🕌 *Daerah:* ${daerah}\n📆 *Hari:* *${saiki}*\n🕋 *Jam Waktu Sholat :*\n${jadwal}`
+		jadwal = Object.keys(jadwal).map((v) => `⏲ Waktu ${v.capitalize()}: *${jadwal[v]}*`).join('\n')
+		return `🏠 *Lokasi:* ${lokasi}\n🕌 *Daerah:* ${daerah}\n📆 *Hari:* ${saiki}\n🕋 *Jam Waktu Sholat :*\n${jadwal}`
 	}).join`\n\n`
 	m.reply(res)
 }
