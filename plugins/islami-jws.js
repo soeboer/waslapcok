@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { text }) => {
-	if (!text) throw 'Masukkan Nama Kota' 
+	if (!text) throw 'Masukkan Nama Kota/Kabupaten' 
 	let res = await jadwalsholat(text)
 	res = res.map(({ lokasi, daerah, jadwal }) => {
 		let saiki = jadwal.tanggal
