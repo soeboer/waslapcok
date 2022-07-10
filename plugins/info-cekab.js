@@ -11,14 +11,14 @@ let json = await res.json()
 let { nopolisi, nmmerekkb, nmmodelkb, tahunkb, swdkllj, pkb, pkbswd, tgakhirpkb } = json.result[0]
 
 let pelat = `
-✨ *Nopol   :* ${nopolisi}
-🎆 *Merk KB :* ${nmmerekkb}
-💬 *Model KB:* ${nmmodelkb}
-💌 *Tahun   :* ${tahunkb}
-❤️ *SWD KB  :* ${swdkllj}
-👥 *Pajak KB:* ${pkb}
-💚 *PKB SWD :* ${pkbswd}
-🌐 *AkrPjak :* ${tgakhirpkb}`      
+🚧 *No Pol    :* ${nopolisi}
+⛽️ *Merk KB  :* ${nmmerekkb}
+🛵 *Model KB:* ${nmmodelkb}
+🚏 *Tahun       :* ${tahunkb}
+💰 *SWD KB  :* ${swdkllj}
+💵 *Pajak KB:* ${pkb}
+💸 *PKB SWD :* ${pkbswd}
+📆 *Akhir Pajak:* ${tgakhirpkb}`      
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
 }
