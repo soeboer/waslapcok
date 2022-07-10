@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
 	res = res.map(({ lokasi, daerah, jadwal }) => {
 		let saiki = jadwal.tanggal
 		delete jadwal.tanggal, delete jadwal.date
-		let saiki = jadwal.tanggal
+
 		jadwal = Object.keys(jadwal).map((v) => `⏰ *Waktu* ${v.capitalize()}: *${jadwal[v]}*`).join('\n')
 		return `*Lokasi:* ${lokasi}\n*Daerah:* ${daerah}\n ${saiki}\n*Jam Waktu Sholat :*\n${jadwal}`
 	}).join`\n\n`
