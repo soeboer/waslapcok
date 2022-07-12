@@ -24,7 +24,7 @@ let pelat = `
 💵 *Pajak KB:* ${total_pkb_pokok}
 💸 *Total PKB :* ${total}
 📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
-⛽️ *Samsat Terdekat:* ${lokasi_samsat}
+⛽️ *Samsat:* ${lokasi_samsat}
 `      
 //⛽️ *Rincian:* ${rincian}
 //  conn.reply(m.chat, `${res.result}`, m)
