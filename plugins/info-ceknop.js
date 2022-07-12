@@ -14,7 +14,7 @@ let pajek = `
 🧕🏾 *Nama WP:* ${nama_wp}
 🚏 *Alamat WP:* ${alamat_wp}
 🎯 *Alamat OP:* ${alamat_op}
-💵 *Jumblah Bayar:* \n ${NJOP}
+💵 *Jumlah Bayar:* \n ${NJOP}
 ❗ *Jatuh Tempo:* ${tempo}`      
            conn.reply(m.chat, pajek, m)
 }
