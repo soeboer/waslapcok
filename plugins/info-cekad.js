@@ -9,7 +9,7 @@ let [teks, nopol, akhir] = text.split ` `
   await m.reply('Sabar bestie saya cek dulu...')
 let res = await fetch(`https://api.burhansyam.com/bot/sakpole/?na=${teks}&no=${nopol}&nc=${akhir}`)
 let json = await res.json()
-let { kd_wilayah, kode_angka, kd_seri, merek, tipe, model, bbm, warna_tnkb, milikke, thn_buat, cylinder, jml_sumbu, sts_blokir, tgl_stnk, info_nik, thn, bulan, hari, bbn2_pokok, thn2, pnbp, kp, lama_tunggakan, tgl_jatuh_tempo, total_pkb_pokok, total_pkb_denda, jumlah_pkb, total_jr_pokok, total_jr_denda, jumlah_jr, total, lokasi_samsat, tgl_blokir, ket_blokir, tgl_pengenaan, rincian } = json
+let { kd_wilayah, kode_angka, kd_seri, merek, tipe, model, bbm, warna_tnkb, warna_kb, milikke, thn_buat, cylinder, jml_sumbu, sts_blokir, tgl_stnk, info_nik, thn, bulan, hari, bbn2_pokok, thn2, pnbp, kp, lama_tunggakan, tgl_jatuh_tempo, total_pkb_pokok, total_pkb_denda, jumlah_pkb, total_jr_pokok, total_jr_denda, jumlah_jr, total, lokasi_samsat, tgl_blokir, ket_blokir, tgl_pengenaan, rincian } = json
 let detaile = json.rincian.map((v, i) => `${i + 1}. Masa Akhir Berlaku: ${v.masa_akhir_berlaku_pajak}\nLama Tunggakan: ${v.lama_tunggakan}\nPlus Denda: ${v.total}\nKode Terlambat: ${v.terlambat}`).join('\n\n')
 
 let pelat = `
@@ -18,6 +18,7 @@ let pelat = `
 🛻 *Model KB:* ${model}
 🚗 *Tipe KB:* ${tipe}
 🚌 *Warna TNKB:* ${warna_tnkb}
+🚗 *Warna :* ${warna_kb}
 🚏 *Tahun     :* ${thn_buat}
 📆 *TGL STNK:* ${tgl_stnk}
 💰 *SWD KB  :* ${jumlah_jr}
