@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 let [tanggal, bulan, teks] = text.split ` `
 
-    if (!tanggal) return conn.reply(m.chat, 'Tanggal ? \n Contoh : 21', m)  
+    if (!tanggal) return conn.reply(m.chat, 'Tanggal ? \n Contoh : 21 \n Penulisan Harus lengkap : 21 9 2022', m)  
     if (!bulan) return conn.reply(m.chat, 'Bulan ?\n Contoh : 06', m)
     if (!teks) return conn.reply(m.chat, 'Tahun ? \n Contoh : 2020', m)
   await m.reply('Sabar bestie saya hitung dulu...')
