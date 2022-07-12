@@ -12,15 +12,15 @@ let json = await res.json()
 let { wafat, dino3, dino7, dino40, dino100, pendak1, pendak2, nyewu } = json.result
 
 let sedane = `
-*Dinten Pengetan Sedo* \n
-📆 *Geblak :*\n ${wafat}
-📆 *3 Hari  :*\n ${dino3}
-📆 *7 Hari  :*\n ${dino7}
-📆 *40 Hari :*\n ${dino40}
-📆 *100 hari :*\n ${dino100}
-📆 *Pendak 1 :*\n ${pendak1}
-📆 *Pendak 2 :*\n ${pendak2}
-📆 *1000 Hari :*\n ${nyewu}
+*Dinten Pengetan Sedo*
+📆 *Geblak/ Wafat :*\n ${wafat}
+📆 *Pengetan 3 Hari  :*\n ${dino3}
+📆 *Pengetan 7 Hari  :*\n ${dino7}
+📆 *Pengetan 40 Hari :*\n ${dino40}
+📆 *Pengetan 100 hari :*\n ${dino100}
+📆 *Pengetan Pendak 1 :*\n ${pendak1}
+📆 *Pengetan Pendak 2 :*\n ${pendak2}
+📆 *Pengetan 1000 Hari :*\n ${nyewu}
 `      
            conn.reply(m.chat, sedane, m)
 }
