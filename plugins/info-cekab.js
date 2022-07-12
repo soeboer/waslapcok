@@ -9,6 +9,7 @@ let [nopol, teks] = text.split ` `
  let res = await fetch(`https://api.burhansyam.com/bot/pajek/?no=${nopol}&dd=${teks}`)
 let json = await res.json()
 let { nopolisi, nmmerekkb, nmmodelkb, tahunkb, swdkllj, pkb, pkbswd, tgakhirpkb } = json.result[0]
+let rincian = json.result.rincian.map((v, i) => `${i + 1}. Masa Akhir Berlaku: ${v.masa_akhir_berlaku_pajak}\nLama Tunggakan: ${v.lama_tunggakan}\nPlus Denda: ${v.total}\nKode Terlambat: ${v.terlambat}`).join('\n\n')
 
 let pelat = `
 🚧 *No Pol    :* ${nopolisi}
@@ -18,7 +19,8 @@ let pelat = `
 💰 *SWD KB  :* ${swdkllj}
 💵 *Pajak KB:* ${pkb}
 💸 *PKB SWD :* ${pkbswd}
-📆 *Akhir Pajak:* ${tgakhirpkb}`      
+📆 *Akhir Pajak:* ${tgakhirpkb}
+📆 *Rincian:* ${rincian}`      
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
 }
