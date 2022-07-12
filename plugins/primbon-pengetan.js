@@ -25,8 +25,8 @@ let sedane = `
            conn.reply(m.chat, sedane, m)
 }
 
-handler.help = ['cekad <AD 1061 MP>']
-handler.tags = ['info']
-handler.command = /^(cekad)$/i
+handler.help = ['pengetan <21 04 2020>']
+handler.tags = ['primbon']
+handler.command = /^(pengetan)$/i
 
 export default handler
