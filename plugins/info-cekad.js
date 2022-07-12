@@ -24,7 +24,8 @@ let pelat = `
 💰 *SWD KB  :* ${jumlah_jr}
 💵 *Pajak KB:* ${total_pkb_pokok}
 💸 *PKB SWD :* ${total}
-📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}`      
+📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
+⛽️ *Rincian:* ${rincian}`      
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
 }
