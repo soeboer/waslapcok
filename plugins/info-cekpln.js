@@ -1,14 +1,16 @@
-import axios from 'axios'
+import fetch from 'node-fetch'
 
-let handler = async(m, { conn, text, usedPrefix }) => {
-
-    if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + '521050558080', m)
-    axios.get(`https://api.burhansyam.com/bot/pln/?id=` + text)
-        .then((res) => {
-          let hasil = `*• Tagihan PLN periode ${res.data.period} :*\n${res.data.print}`
-            conn.reply(m.chat, hasil, m)
-        })
-        .catch(_ => m.reply('Tagihan Tidak Ditemukan!'))
+let handler = async(m, { conn, text }) => {
+    if (!text) return conn.reply(m.chat, 'ID Pelanggannya ? \n contoh : .cekpln 521050558080', m)
+  await m.reply('Sabar bestie saya cek dulu...')
+let res = await fetch(`https://api.burhansyam.com/bot/pln/?id=${text}`)
+let json = await res.json()
+let { bill_number, period, print } = json
+let jembat = `🚧 *Tagihan ID ${bill_number} Periode :* ${period}
+⛽️ *Rincian ID Pelanggan :*\n ${print}
+`      
+//  conn.reply(m.chat, `${res.result}`, m)
+           conn.reply(m.chat, jembat, m)
 }
 
 handler.help = ['cekpln <ID Pelanggan>']
