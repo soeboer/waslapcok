@@ -13,19 +13,22 @@ let { kd_wilayah, kode_angka, kd_seri, merek, tipe, model, bbm, warna_tnkb, warn
 let detaile = json.rincian.map((v, i) => `${i + 1}. Masa Akhir Berlaku: ${v.masa_akhir_berlaku_pajak}\nLama Tunggakan: ${v.lama_tunggakan}\nPlus Denda: ${v.total}\nKode Terlambat: ${v.terlambat}`).join('\n\n')
 
 let pelat = `
-🚧 *No Pol    :* ${kd_wilayah} ${nopol} ${kd_seri}
-⛽️ *Merk KB  :* ${merek}
-🛻 *Model KB:* ${model}
-🚗 *Tipe KB:* ${tipe}
+🚧 *No Polisi :* ${kd_wilayah} ${nopol} ${kd_seri}
+⛽️ *Merk KB   :* ${merek}
+🛻 *Model KB  :* ${model}
+🚗 *Tipe KB :* ${tipe}
 🚌 *Warna TNKB:* ${warna_tnkb}
 🚚 *Warna :* ${warna_kb}
 🚏 *Tahun     :* ${thn_buat}
-📆 *TGL STNK:* ${tgl_stnk}
-💰 *SWD KB  :* ${jumlah_jr}
-💵 *Pajak KB:* ${total_pkb_pokok}
+🚏 *Milik ke :* ${milikke}
+🚏 *Kode NIK :* ${info_nik}
+📆 *TGL STNK :* ${tgl_stnk}
+📆 *Beban Pokok:* ${bbn2_pokok}
+💰 *SWD KB    :* ${jumlah_jr}
+💵 *Pajak KB :* ${total_pkb_pokok}
 💸 *Total PKB :* ${total}
-📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
-⛽️ *Samsat:* ${lokasi_samsat}
+📆 *Jatuh Tempo :* ${tgl_jatuh_tempo}
+⛽️ *Samsat :* ${lokasi_samsat}
 📑 *Rincian Pajak:*\n ${detaile}
 `      
 //  conn.reply(m.chat, `${res.result}`, m)
