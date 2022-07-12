@@ -22,7 +22,7 @@ let pelat = `
 📆 *TGL STNK:* ${tgl_stnk}
 💰 *SWD KB  :* ${jumlah_jr}
 💵 *Pajak KB:* ${total_pkb_pokok}
-💸 *PKB SWD :* ${total}
+💸 *Total PKB :* ${total}
 📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
 ⛽️ *Samsat Terdekat:* ${lokasi_samsat}
 `      
