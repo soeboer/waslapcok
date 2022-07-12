@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 let [tanggal, bulan, teks] = text.split ` `
 
-    if (!tanggal) return conn.reply(m.chat, 'Tanggal ? \n Contoh : 21 \n Penulisan Harus lengkap : 21 9 2022', m)  
+    if (!tanggal) return conn.reply(m.chat, 'Tanggal ? Contoh : 21 \n Penulisan Harus lengkap :\n .pengetan 21 9 2022', m)  
     if (!bulan) return conn.reply(m.chat, 'Bulan ?\n Contoh : 06', m)
     if (!teks) return conn.reply(m.chat, 'Tahun ? \n Contoh : 2020', m)
   await m.reply('Sabar bestie saya hitung dulu...')
@@ -11,9 +11,8 @@ let res = await fetch(`https://api.burhansyam.com/bot/petung/?y=${teks}&m=${bula
 let json = await res.json()
 let { wafat, dino3, dino7, dino40, dino100, pendak1, pendak2, nyewu } = json.result
 
-let sedane = `
-*Dinten Pengetan Sedo*
-📆 *Geblak/ Wafat :*\n ${wafat}
+let sedane = `🥷🏻 *Dinten Pengetan Sedo* 🥷🏻
+📆 *Geblak/Wafat :*\n ${wafat}
 📆 *Pengetan 3 Hari  :*\n ${dino3}
 📆 *Pengetan 7 Hari  :*\n ${dino7}
 📆 *Pengetan 40 Hari :*\n ${dino40}
