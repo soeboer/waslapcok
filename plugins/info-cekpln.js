@@ -12,8 +12,8 @@ ${print}`
            conn.reply(m.chat, pelan, m)
 }
 
-handler.help = ['pln <ID Pelanggan>']
+handler.help = ['cekpln <ID Pelanggan>']
 handler.tags = ['info']
-handler.command = /^(pln)$/i
+handler.command = /^(cekpln)$/i
 
 export default handler
