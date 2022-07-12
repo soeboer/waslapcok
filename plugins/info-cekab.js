@@ -17,7 +17,7 @@ let pelat = `
 💰 *SWD KB  :* ${swdkllj}
 💵 *Pajak KB:* ${pkb}
 💸 *PKB SWD :* ${pkbswd}
-📆 *Akhir Pajak:* ${tgakhirpkb}
+📆 *Akhir Pajak:* ${tgakhirpkb}`
   
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
