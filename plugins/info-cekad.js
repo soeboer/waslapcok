@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
 let [teks, nopol, akhir] = text.split ` `
 
     if (!teks) return conn.reply(m.chat, 'Huruf Depan ? \n contoh : AD, H, K, G, R', m)
-    if (!nopol) return conn.reply(m.chat, '[❗INFO❗] Berapa Nopolnya ?\n Contoh : .cekad AD 1061 MP', m)
+    if (!nopol) return conn.reply(m.chat, '[❗INFO❗] Berapa Nopolnya ?\n Contoh : .sakpole AD 1061 MP', m)
     if (!akhir) return conn.reply(m.chat, 'Huruf Belakangnya ? \n contoh : MJ, KL, FD', m)  
   await m.reply('Sabar bestie saya cek dulu...')
 let res = await fetch(`https://api.burhansyam.com/bot/sakpole/?na=${teks}&no=${nopol}&nc=${akhir}`)
