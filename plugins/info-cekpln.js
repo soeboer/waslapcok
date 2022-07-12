@@ -8,7 +8,7 @@ let handler = async(m, { conn, text, usedPrefix }) => {
           let hasil = `*• Tagihan PLN periode ${res.data.period} :*\n${res.data.print}`
             conn.reply(m.chat, hasil, m)
         })
-        .catch(_ => m.reply('Chord Lagu Tidak Ditemukan!'))
+        .catch(_ => m.reply('Tagihan Tidak Ditemukan!'))
 }
 
 handler.help = ['cekpln <ID Pelanggan>']
