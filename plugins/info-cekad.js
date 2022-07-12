@@ -10,7 +10,7 @@ let [teks, nopol, akhir] = text.split ` `
  let res = await fetch(`https://api.burhansyam.com/bot/sakpole/?na=${teks}&no=${nopol}&nc=${akhir}`)
 let json = await res.json()
 let { kd_wilayah, kode_angka, kd_seri, merek, tipe, model, bbm, WarnaKB, warna_tnkb, milikke, thn_buat, cylinder, jml_sumbu, sts_blokir, tgl_stnk, info_nik, thn, rincian, bulan, hari, bbn2_pokok, thn2, pnbp, kp, lama_tunggakan, tgl_jatuh_tempo, total_pkb_pokok, total_pkb_denda, jumlah_pkb, total_jr_pokok, total_jr_denda, jumlah_jr, total, lokasi_samsat, tgl_blokir, ket_blokir, tgl_pengenaan } = json.result
-let rincian = json.result.rincian.map((v, i) => `${i + 1}. Masa Akhir Berlaku: ${v.masa_akhir_berlaku_pajak}\nLama Tunggakan: ${v.lama_tunggakan}\nPlus Denda: ${v.total}\nKode Terlambat: ${v.terlambat}`).join('\n\n')
+//let rincian = json.result.rincian.map((v, i) => `${i + 1}. Masa Akhir Berlaku: ${v.masa_akhir_berlaku_pajak}\nLama Tunggakan: ${v.lama_tunggakan}\nPlus Denda: ${v.total}\nKode Terlambat: ${v.terlambat}`).join('\n\n')
 
 let pelat = `
 🚧 *No Pol    :* ${kd_wilayah}${kode_angka}${kd_seri}
@@ -25,7 +25,8 @@ let pelat = `
 💵 *Pajak KB:* ${total_pkb_pokok}
 💸 *PKB SWD :* ${total}
 📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
-⛽️ *Rincian:* ${rincian}`      
+`      
+//⛽️ *Rincian:* ${rincian}
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
 }
