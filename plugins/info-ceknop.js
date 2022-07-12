@@ -9,12 +9,12 @@ let json = await res.json()
 let { tahun, nama_wp, alamat_wp, alamat_op, bumi, bangunan, NJOP, status, tempo } = json.result
 
 let pajek = `
-🚧 *Tahun    :* ${tahun}
+📆 *Tahun    :* ${tahun}
 ⛽️ *Status   :* ${status}
-🛵 *Nama WP:* ${nama_wp}
+🧕🏾 *Nama WP:* ${nama_wp}
 🚏 *Alamat WP:* ${alamat_wp}
-💰 *Alamat OP:* ${alamat_op}
-📆 *Jumblah Bayar:* \n ${NJOP}
+🎯 *Alamat OP:* ${alamat_op}
+💵 *Jumblah Bayar:* \n ${NJOP}
 ❗ *Jatuh Tempo:* ${tempo}`      
            conn.reply(m.chat, pajek, m)
 }
