@@ -18,7 +18,7 @@ let pelat = `
 🛻 *Model KB:* ${model}
 🚗 *Tipe KB:* ${tipe}
 🚌 *Warna TNKB:* ${warna_tnkb}
-🚗 *Warna :* ${warna_kb}
+🚚 *Warna :* ${warna_kb}
 🚏 *Tahun     :* ${thn_buat}
 📆 *TGL STNK:* ${tgl_stnk}
 💰 *SWD KB  :* ${jumlah_jr}
@@ -26,9 +26,8 @@ let pelat = `
 💸 *Total PKB :* ${total}
 📆 *Jatuh Tempo:* ${tgl_jatuh_tempo}
 ⛽️ *Samsat:* ${lokasi_samsat}
-⛽️ *Rincian:*\n ${detaile}
+📑 *Rincian Pajak:*\n ${detaile}
 `      
-//⛽️ *Rincian:* ${rincian}
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pelat, m)
 }
