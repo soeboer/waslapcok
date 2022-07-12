@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
 let res = await fetch(`https://api.burhansyam.com/bot/pln/?id=${text}`)
 let json = await res.json()
 let { bill_number, period, print } = json
-let jembat = `⚡️ *Rincian ID Pelanggan :*\n ${print}`      
+let jembat = `⚡️ *${print}*`      
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, jembat, m)
 }
