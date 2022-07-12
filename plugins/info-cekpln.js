@@ -7,8 +7,7 @@ let res = await fetch(`https://api.burhansyam.com/bot/pln/?id=${text}`)
 let json = await res.json()
 let { bill_number, period, print } = json
 let jembat = `🚧 *Tagihan ID ${bill_number} Periode :* ${period}
-⛽️ *Rincian ID Pelanggan :*\n ${print}
-`      
+⛽️ *Rincian ID Pelanggan :*\n ${print}`      
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, jembat, m)
 }
