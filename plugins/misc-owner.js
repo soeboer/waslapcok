@@ -11,6 +11,7 @@ async function handler(m) {
                     + 'N:Syam;Burhan;;;\n'
                     + 'FN:Burhan Syam\n' // full name
                     + 'ORG:Agen Dosa .Inc;\n' // the organization of the contact
+                    + 'PHOTO;TYPE=JPEG;VALUE=URI:https://yt3.ggpht.com/ytc/AKedOLQULZ1m7pFS3RU_C9BtC9dPzw46p1Y9g6NxzsH0=s900-c-k-c0x00ffffff-no-rj\n'
                     + 'TEL;type=CELL;type=VOICE;waid=6281808032100:+62 818-0803-2100\n' // WhatsApp ID + phone number
                     + 'item1.TEL;\n'
                     + 'item1.X-ABLabel:Burhan\n'
