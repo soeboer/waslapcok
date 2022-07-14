@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 // let [nopol, teks] = text.split ` `
 
-    if (!text) return conn.reply(m.chat, '[❗INFO❗] Berapa ID Sambungannya ?\n Contoh : .cekpdamgk 050200292', m)
+    if (!text) return conn.reply(m.chat, '[❗INFO❗] Berapa ID Sambungannya ?\n Contoh : .pdamgk 050200292', m)
 
   await m.reply('Sabar bestie saya cek dulu...')
  let res = await fetch(`https://api.burhansyam.com/bot/pdamgk/?id=${text}`)
@@ -27,8 +27,8 @@ let pampers = `*Informasi Tagihan PDAM Gunungkidul*
            conn.reply(m.chat, pampers, m)
 }
 
-handler.help = ['cekpdamgk <No Sambungan>']
+handler.help = ['pdamgk <No Sambungan>']
 handler.tags = ['info']
-handler.command = /^(cekpdamgk)$/i
+handler.command = /^(pdamgk)$/i
 
 export default handler
