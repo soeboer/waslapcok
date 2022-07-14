@@ -9,7 +9,7 @@ let handler = async(m, { conn, text }) => {
  let res = await fetch(`https://api.burhansyam.com/bot/pdamgk/?id=${text}`)
 let json = await res.json()
 let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l, pakai, lembar, jml_tag, denda, subtotal, message } = json
-let pampers = `*Informasi Tagiahan PDAM Gunungkidul
+let pampers = `*Informasi Tagihan PDAM Gunungkidul*
 🚧 *No Sambungan    :* ${nosamw}
 ⛽️ *Nama Pelanggan  :* ${nama}
 🛵 *Alamat          :* ${alamat}
@@ -17,11 +17,11 @@ let pampers = `*Informasi Tagiahan PDAM Gunungkidul
 ❗ *Status Tagihan  :* ${pesan}
 🚧 *Status Sambungan:* ${urstat_smb}
 ❗ *Jumlah Tagihan  :* ${lembar} lembar
-💰 *Beban pakai     :* ${stand_k} - ${stand_l} = ${pakai} M3
-💵 *Beban Pokok     :* ${jml_tag}
-💵 *Denda :* ${denda}
-💸 *Wajib Bayar :* ${subtotal}
-📆 *Catatan :* \n${message}`
+💰 *Beban pemakaian :* ${stand_k} - ${stand_l} = ${pakai} M3
+💵 *Beban Pokok   :* ${jml_tag}
+💵 *Denda         :* ${denda}
+💸 *Wajib Bayar   :* ${subtotal}
+📆 *Catatan :* ${message}`
   
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, pampers, m)
