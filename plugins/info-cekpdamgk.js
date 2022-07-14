@@ -12,11 +12,13 @@ let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l,
 let pampers = `*Informasi Tagiahan PDAM Gunungkidul
 🚧 *No Sambungan    :* ${nosamw}
 ⛽️ *Nama Pelanggan  :* ${nama}
-🛵 *Alamat :* ${alamat}
-🚏 *Periode       :* ${periode}
-🚧 *Status    :* ${urstat_smb}
-💰 *Beban pakai  :* ${stand_k} - ${stand_l} = ${pakai} M3
-💵 *Beban Pokok :* ${jml_tag}
+🛵 *Alamat          :* ${alamat}
+🚏 *Periode         :* ${periode}
+❗ *Status Tagihan  :* ${pesan}
+🚧 *Status Sambungan:* ${urstat_smb}
+❗ *Jumlah Tagihan  :* ${lembar} lembar
+💰 *Beban pakai     :* ${stand_k} - ${stand_l} = ${pakai} M3
+💵 *Beban Pokok     :* ${jml_tag}
 💵 *Denda :* ${denda}
 💸 *Wajib Bayar :* ${subtotal}
 📆 *Catatan :* \n${message}`
