@@ -11,19 +11,18 @@ let json = await res.json()
 // let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l, pakai, lembar, jml_tag, denda, subtotal, message } = json
 let mes = json.result.map((v, i) => `${i + 1}.*Informasi Tagihan PDAM Bantul*
 🚧 *No Sambungan    :* ${text}
-⛽️ *Nama Pelanggan  :* ${v.nama}
+⛽️ *Nama Pelanggan :* ${v.nama}
 🛵 *Alamat          :* ${v.alamat}
 🚏 *Telepon         :* ${v.telpon}
 ❗ *Periode         :* ${v.BLNTHNREK}
 💰 *Beban pemakaian :* ${v.AKHIR} - ${v.AWAL} = ${v.JMLPAKAI} M3
 💵 *Beban Pokok     :* ${v.TARIP1}
 🚧 *Tarif Buka      :* ${v.TARIPBUKA}
-💵 *Denda           :* ${v.TARIPDENDA}
-💸 *Wajib Bayar     :* ${v.JMLHARGA}
+💵 *Denda            :* ${v.TARIPDENDA}
+💸 *Wajib Bayar     :* *${v.JMLHARGA}*
 ❗ *Angsuran        :* ${v.ANGSRP} 
 ❗ *Angsuran sisa   :* ${v.NANGSRP} 
-📆 *Tanggal Bayar   :* ${v.TGLBAYAR}
-`).join('\n\n')
+📆 *Tanggal Bayar   :* ${v.TGLBAYAR}`).join('\n')
   
 //  conn.reply(m.chat, `${res.result}`, m)
            conn.reply(m.chat, mes, m)
