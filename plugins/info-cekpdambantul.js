@@ -8,23 +8,25 @@ let handler = async(m, { conn, text }) => {
   await m.reply('Sabar bestie saya cek dulu...')
  let res = await fetch(`https://api.burhansyam.com/bot/pdamban/?id=${text}`)
 let json = await res.json()
-let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l, pakai, lembar, jml_tag, denda, subtotal, message } = json
-let pampers = `*Informasi Tagihan PDAM Gunungkidul*
-🚧 *No Sambungan    :* ${nosamw}
-⛽️ *Nama Pelanggan  :* ${nama}
-🛵 *Alamat          :* ${alamat}
-🚏 *Periode         :* ${periode}
-❗ *Status Tagihan  :* ${pesan}
-🚧 *Status Sambungan:* ${urstat_smb}
-❗ *Jumlah Tagihan  :* ${lembar} lembar
-💰 *Beban pemakaian :* ${stand_k} - ${stand_l} = ${pakai} M3
-💵 *Beban Pokok   :* ${jml_tag}
-💵 *Denda         :* ${denda}
-💸 *Wajib Bayar   :* ${subtotal}
-📆 *Catatan :* ${message}`
+// let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l, pakai, lembar, jml_tag, denda, subtotal, message } = json
+let mes = json.result.map((v, i) => `${i + 1}.*Informasi Tagihan PDAM Bantul*
+🚧 *No Sambungan    :* ${text}
+⛽️ *Nama Pelanggan  :* ${v.nama}
+🛵 *Alamat          :* ${v.alamat}
+🚏 *Telepon         :* ${v.telpon}
+❗ *Periode         :* ${v.BLNTHNREK}
+💰 *Beban pemakaian :* ${v.AKHIR} - ${v.AWAL} = ${v.JMLPAKAI} M3
+💵 *Beban Pokok     :* ${v.TARIP1}
+🚧 *Tarif Buka      :* ${v.TARIPBUKA}
+💵 *Denda           :* ${v.TARIPDENDA}
+💸 *Wajib Bayar     :* ${v.JMLHARGA}
+❗ *Angsuran        :* ${v.ANGSRP} 
+❗ *Angsuran sisa   :* ${v.NANGSRP} 
+📆 *Tanggal Bayar   :* ${v.TGLBAYAR}
+`).join('\n\n')
   
 //  conn.reply(m.chat, `${res.result}`, m)
-           conn.reply(m.chat, pampers, m)
+           conn.reply(m.chat, mes, m)
 }
 
 handler.help = ['pdamban <No Sambungan>']
