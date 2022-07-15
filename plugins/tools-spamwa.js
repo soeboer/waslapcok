@@ -16,6 +16,5 @@ handler.help = ['spamwa <nmr>|<psn>|<jml>']
 handler.tags = ['tools']
 handler.command = /^spam(wa)?$/i
 
-handler.rowner = true
 
 export default handler
