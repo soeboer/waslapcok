@@ -113,7 +113,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     // if (m.isGroup) return conn.sendButton(m.chat, text.trim(), conn.getName(conn.user.jid), pp, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
     //conn.sendHydrated(m.chat, text.trim(), conn.getName(conn.user.jid), await genProfile(conn, m), 'https://youtube.com/channel/UC0hs_I8N3JntK5vO6KogavQ', 'YouTube', null, null, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
    // conn.sendMessage(m.chat, { video: { url: 'https://telegra.ph/file/c82d5c358495e8ef15916.mp4' }, gifPlayback: true, gifAttribution: ~~(Math.random() * 2), caption: text.trim(), footer: await conn.getName(conn.user.jid) , templateButtons: [{ quickReplyButton: { displayText: 'Speedtest', id: `${_p}ping` }}, { quickReplyButton: { displayText: 'Owner', id: `${_p}owner` }} ] })
-   conn.sendButton(m.chat, `*${wish()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['🚀 Ping', _p + 'ping'], ['🤖 Pemilik', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
+   conn.sendButton(m.chat, `*${wish()}*, *${name}* 👋`, text.trim(), await genProfile(conn, m), [['🚀 Ping', _p + 'ping'], ['🤖 Pemilik', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
 mediaType: '1',
 mediaUrl: 'https://sticker.nyc3.cdn.digitaloceanspaces.com/20210862/file_7287261_128x128.webp',
 title: ' 🤖 ᵂʰᵃᵗˢᵃᵖᵖ ᴮᵒᵀ 🤖 ',
@@ -161,19 +161,22 @@ function wish() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   wishloc = ('Hi')
   if (time >= 0) {
-    wishloc = ('Met Jam Pocong')
+    wishloc = ('🌙 Met Jam Pocong')
   }
   if (time >= 4) {
-    wishloc = ('Pagee')
+    wishloc = ('🌄 Pageee')
   }
-  if (time >= 12) {
-    wishloc = ('Soree')
+  if (time >= 10) {
+    wishloc = ('☀️ Siangg')
+  }
+  if (time >= 15) {
+    wishloc = ('🌅 Soree')
   }
   if (time >= 16) {
-    wishloc = ('️Petanggg')
+    wishloc = ('️🌅Petanggg')
   }
   if (time >= 23) {
-    wishloc = ('Maleeem')
+    wishloc = ('🌙 Maleeem')
   }
   return wishloc
 }
