@@ -8,6 +8,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
     let img = await q.download()
     let url = await uploadImage(img)
+    await m.reply('ditunggu dulu maszeeh...')
+
  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
  let json = await res.json()
  let { raw_text } = json.result
