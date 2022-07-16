@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
  
  let pecah = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
  
- conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command + pecah}`]], m)
+ conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
  //            conn.reply(m.chat, pecah, m)
 }
 
