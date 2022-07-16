@@ -13,10 +13,9 @@ let handler = async (m, { conn, usedPrefix}) => {
  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
  let json = await res.json()
  let { raw_text } = json.result
- 
- let pecah = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
- 
- conn.sendButton(m.chat, 'Pembaca QR NOP', '@burhansyam', null, [['Cek NOP', `.ceknop ${pecah}`]], m)
+ let kodene = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
+ let peritahe = '.ceknop'
+ conn.sendButton(m.chat, 'Pembaca QR NOP : ${kodene}', '@burhansyam', null, [['Cek NOP', `${usedPrefix} ${kodene}`]], m)
  
 // conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
  //            conn.reply(m.chat, pecah, m)
