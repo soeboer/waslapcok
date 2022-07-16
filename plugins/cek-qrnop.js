@@ -15,10 +15,10 @@ let handler = async (m, { conn, usedPrefix}) => {
  let { raw_text } = json.result
  let kodene = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
  let perintahe = '.ceknop'
-//  conn.sendButton(m.chat, 'Pembaca QR NOP : ${kodene}', '@burhansyam', null, [['Cek NOP', `${usedPrefix + perintahe + kodene}`]], m)
+ conn.sendButton(m.chat, 'Pembaca QR NOP : ${kodene}', '@burhansyam', null, [['Cek NOP', `${usedPrefix + perintahe + kodene}`]], m)
  
 // conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
-            conn.reply(m.chat, raw_text, m)
+//             conn.reply(m.chat, raw_text, m)
 }
 
 handler.help = ['qrnop <reply>']
@@ -26,4 +26,3 @@ handler.tags = ['info']
 handler.command = /^(qrnop)$/i
 
 export default handler
-Footer
