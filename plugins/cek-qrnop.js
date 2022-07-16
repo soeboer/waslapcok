@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import uploadImage from '../lib/uploadImage.js'
 
-let handler = async (m, { conn, usedPrefix, command }) => {
+let handler = async (m, { conn, usedPrefix}) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}wait`
@@ -16,7 +16,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
  
  let pecah = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
  
- conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
+ conn.sendButton(m.chat, 'Pembaca QR NOP', '@burhansyam', null, [['Cek NOP', `.ceknop ${pecah}`]], m)
+ 
+// conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
  //            conn.reply(m.chat, pecah, m)
 }
 
