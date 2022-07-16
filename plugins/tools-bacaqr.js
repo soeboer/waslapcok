@@ -13,8 +13,7 @@ let handler = async (m, { conn, usedPrefix }) => {
  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
  let json = await res.json()
  let { raw_text } = json.result
- let pecah = `
-🚧 *Bacaan QR    :* \n${raw_text}`
+ let pecah = `🚧 *Bacaan Kode QR    :* \n${raw_text}`
              conn.reply(m.chat, pecah, m)
 }
 
