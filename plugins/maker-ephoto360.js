@@ -18,7 +18,8 @@ dragon
 neon-valentine
 glitter-gold
 firework-effect
-firework-effect23d-underwater
+firework-effect2
+3d-underwater
 3d-wood
 3damerican-flag
 3dglue-realistic
