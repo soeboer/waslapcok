@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	await conn.sendMessage(m.chat, { audio: { url: res }, ptt: true, mimetype: 'audio/mpeg' }, { quoted: m })
 }
 handler.help = ['tts']
-handler.tags = ['audio']
+handler.tags = ['sfx']
 handler.command = /^(tts)$/i
 
 export default handler
