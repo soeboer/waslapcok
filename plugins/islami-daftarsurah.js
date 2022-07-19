@@ -14,6 +14,6 @@ let handler = async (m, { usedPrefix, command }) => {
     }
 }
 handler.help = ['daftarsurah']
-handler.tags = ['islam']
+handler.tags = ['islami']
 handler.command = /^((list|daftar)sura(t|h))$/i
 export default handler
