@@ -9,9 +9,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 }
 handler.help = ['setppg']
 handler.tags = ['group']
-handler.alias = ['setppg']
-handler.command = /^setpp(g|grup|group)$/i
-handler.group = handler.admin = handler.botAdmin = true
+
+handler.command = /^setppg$/i
+
+handler.group = true
+handler.admin = true
+handler.botAdmin = true
 
 export default handler
-
