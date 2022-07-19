@@ -5,7 +5,9 @@ import axios from 'axios'
 let handler = async (m, { usedPrefix, command, conn:fur, args }) => {
 
 if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} spiderman`
-xfar.Film(args[0]).then(async data => {
+
+async function data(args[0]) {
+let data = await xfar.Film(args[0]).then
 let txt = `*--------「 FILM-SEARCH 」--------*\n\n`
 for (let i of data) {
 txt += `*📫 Judul :* ${i.judul}\n`
