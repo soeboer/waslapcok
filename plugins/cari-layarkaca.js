@@ -1,21 +1,25 @@
 import fetch from 'node-fetch'
+import { xfar } from 'xfarr-api'
+import axios from 'axios'
 
-let handler = async (m, { conn, text }) => {
-if (!text) throw `*[❗INFO❗] Masukan Judul Film Yang Ingin Kamu Cari*`
-let res = await fetch(global.API('https://api.burhansyam.com', '/bot/lk21/', { q: text }))
-if (!res.ok) throw await res.text()
-let json = await res.json()
-let { title, author, stars, url, thumbnail } = json.result[0]
-// let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
-// if (!res2.ok) throw await res2.text()
-// let html = await res2.text()
-let animeingfo = `✨ *Judul:* ${title}
-🎆 *Sutradara:* ${author}
-👥 *Aktor:* ${stars}
-🌐 *URL*: ${url}`
-conn.sendFile(m.chat, thumbnail, '', animeingfo, m)
+let handler = async (m, { usedPrefix, command, conn:fur, args }) => {
+
+if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} spiderman`
+xfar.Film(args[0]).then(async data => {
+let txt = `*--------「 FILM-SEARCH 」--------*\n\n`
+for (let i of data) {
+txt += `*📫 Judul :* ${i.judul}\n`
+txt += `*🎞️  Tipe  :* ${i.type}\n`
+txt += `*📟 Kualitas :* ${i.quality}\n`
+txt += `*📮Upload :* ${i.upload}\n`
+txt += `*🔗 Url :* ${i.url}\n-----------------------------------------------------\n`
 }
-handler.help = ['lk21'].map(v => v + ' <query>')
+
+conn.sendButtonLoc(m.chat, await (await fetch(data[0].thumb)).buffer(), txt, wm, 'pencet', 'ok', m)
+})
+}
+
+handler.help = ['lk21 <judul>']
 handler.tags = ['pencarian']
 handler.command = /^(lk21)$/i
 export default handler
