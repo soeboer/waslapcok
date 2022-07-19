@@ -65,6 +65,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 }
 handler.help = ['ayat'].map(v => v + ' *surah no*')
-handler.tags = ['islam']
+handler.tags = ['islami']
 handler.command = /^(ayat(mp3|audio)|ayta)$/i
 export default handler
