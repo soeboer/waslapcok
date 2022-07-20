@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         let json = await res.json()
         let list_id = json.data.map((v, i) => `${i + 1}. ${v.name.transliteration.id}`).join('\n')
         let contoh = `contoh:\n*${usedPrefix}surah An-Nisaa 1*\n*${usedPrefix}ayat An-Nisaa 1*\n*${usedPrefix}tafsir An-Nisaa 1*\n*${usedPrefix}alquran 1 1*\n\nharus sesuai yang ada pada daftar surah dibawah ini, dan 1 aja ayatnya\n\n`
-        conn.reply(m.chat, contoh + list_id, m)
+        conn.reply(m.chat, contoh, m)
     
     }
 
