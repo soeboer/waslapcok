@@ -4,8 +4,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args.length) throw `contoh:\n${usedPrefix + command} An-Nisaa 1`
     ayat = "ayat"
     bhs = ""
-    const response = await axios.get('https://api.quran.sutanlab.id/surah')
-    const surah = response.data
+    let response = await axios.get('https://api.quran.sutanlab.id/surah')
+    let surah = response.data
     try {
         var idx = surah.data.findIndex(function (post, index) {
             if ((post.name.transliteration.id.toLowerCase() == args[0].toLowerCase()) || (post.name.transliteration.en.toLowerCase() == args[0].toLowerCase()))
@@ -26,8 +26,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
             }
             pesan = ""
             if (isNaN(ayat)) {
-                const responsi2 = await axios.get('https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/' + nmr + '.json')
-                const { name, name_translations, number_of_ayah, number_of_surah, recitations } = responsi2.data
+                let responsi2 = await axios.get('https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/' + nmr + '.json')
+                let { name, name_translations, number_of_ayah, number_of_surah, recitations } = responsi2.data
                 pesan = pesan + "Audio Quran Surah ke-" + number_of_surah + " " + name + " (" + name_translations.ar + ") " + "dengan jumlah " + number_of_ayah + " ayat\n"
                 pesan = pesan + "Dilantunkan oleh " + recitations[0].name + " : " + recitations[0].audio_url + "\n"
                 pesan = pesan + "Dilantunkan oleh " + recitations[1].name + " : " + recitations[1].audio_url + "\n"
@@ -35,8 +35,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 conn.reply(m.chat, pesan, m)
             } else {
                 try {
-                    const responsi2 = await axios.get('https://api.quran.sutanlab.id/surah/' + nmr + "/" + ayat)
-                    const { data } = responsi2.data
+                    let responsi2 = await axios.get('https://api.quran.sutanlab.id/surah/' + nmr + "/" + ayat)
+                    let { data } = responsi2.data
                     var last = function last(array, n) {
                         if (array == null) return void 0;
                         if (n == null) return array[array.length - 1];
