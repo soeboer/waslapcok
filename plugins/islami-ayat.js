@@ -2,16 +2,16 @@ import axios from 'axios'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args.length) throw `contoh:\n${usedPrefix + command} An-Nisaa 1`
-    ayat = "ayat"
-    bhs = ""
-    let response = await axios.get('https://api.quran.sutanlab.id/surah')
+    let ayat = "ayat"
+    let bhs = ""
+    let response = await axios('https://api.quran.sutanlab.id/surah')
     let surah = response.data
     try {
         var idx = surah.data.findIndex(function (post, index) {
             if ((post.name.transliteration.id.toLowerCase() == args[0].toLowerCase()) || (post.name.transliteration.en.toLowerCase() == args[0].toLowerCase()))
                 return true;
         });
-        nmr = surah.data[idx].number
+        let nmr = surah.data[idx].number
         if (!isNaN(nmr)) {
             if (args.length > 2) {
                 ayat = args[1]
@@ -24,7 +24,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 };
                 ayat = last(args)
             }
-            pesan = ""
+            let pesan = ""
             if (isNaN(ayat)) {
                 let responsi2 = await axios.get('https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/' + nmr + '.json')
                 let { name, name_translations, number_of_ayah, number_of_surah, recitations } = responsi2.data
@@ -64,7 +64,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         throw `_*Surah tidak ditemukan!*_\n\n*${usedPrefix}daftarsurah* - untuk melihat daftar surah\n*${usedPrefix}quran* - versi mudah`
     }
 }
-handler.help = ['ayat'].map(v => v + ' *surah no*')
+handler.help = ['ayat <no>')
 handler.tags = ['islami']
 handler.command = /^(ayat(mp3|audio)|ayta)$/i
 export default handler
