@@ -10,6 +10,8 @@ if (!res.ok) throw await res.text()
 // let json = await res.json()
 let { title, thumb, result, artists, popularity, duration } = await res.json()
 
+let mp3 = await conn.getFile(`result`)
+
 let spotipy = `✨ *Judul:* ${title}
 🎆 *Artis:* ${artists}
 💌 *Rating:* ${popularity}
@@ -17,7 +19,8 @@ let spotipy = `✨ *Judul:* ${title}
 🌐 *Download:* ${result}`
 
   
-conn.sendFile(m.chat, result, `${title}.mp3`, `${artists}`, m)
+conn.sendFile(m.chat, mp3, `${title}.mp3`, spotipy, m)
+  
   conn.sendFile(m.chat, thumb, '', spotipy, m)
 }
 
