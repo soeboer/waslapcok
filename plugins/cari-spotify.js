@@ -3,6 +3,8 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Judul Lagu Yang Ingin Kamu Cari*`
 
+await m.reply('siap saya carikan dulu bestie...')
+
 let res = await fetch(`https://api.zekais.com/spotify?apikey=zekais&query=${text}`)
 if (!res.ok) throw await res.text()
 // let json = await res.json()
@@ -12,8 +14,11 @@ let spotipy = `✨ *Judul:* ${title}
 🎆 *Artis:* ${artists}
 💌 *Rating:* ${popularity}
 💬 *Durasi:* ${duration}
-🌐 *Download *: ${result}`
+🌐 *Download:* ${result}`
 conn.sendFile(m.chat, thumb, '', spotipy, m)
+  
+conn.sendFile(m.chat, result, `${title}.mp3`, `${artists}`, m)
+  
 }
 
 handler.help = ['spotify <judul>']
