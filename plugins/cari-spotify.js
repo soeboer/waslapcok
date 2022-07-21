@@ -5,11 +5,9 @@ let handler = async(m, { conn, text }) => {
 let res = await fetch(`https://api.zekais.com/spotify?query=${text}&apikey=zekais`)
   if (!res.ok) throw await res.text()
 await m.reply('siap saya carikan dulu bestie...')
-  
-  
   let json = await res.json()
 //   if(!json.data[0]) throw json
-  let { title, artists, duration, thumb, popularity, result } = json
+let { title, artists, duration, thumb, popularity, result } = json
 let spotifyinfo = `✨️ *Title:* ${title}
 🗣️ *Artists:* ${artists}
 🎆️ *Durasi:* ${duration}
