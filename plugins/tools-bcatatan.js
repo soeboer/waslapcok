@@ -21,5 +21,5 @@ let handler = async(m, {conn, command, usedPrefix, text}) => {
 
 handler.help = ['catat <title|isi>']
 handler.tags = ['tools']
-handler.command = /^buatcatatan$/i
+handler.command = /^catat$/i
 export default handler
