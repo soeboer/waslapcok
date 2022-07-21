@@ -6,16 +6,10 @@ let res = await fetch(`https://api.zekais.com/spotify?query=${text}&apikey=zekai
   if (!res.ok) throw await res.text()
 await m.reply('siap saya carikan dulu bestie...')
   let json = await res.json()
-//   if(!json.data[0]) throw json
-let { title, artists, duration, thumb, popularity, result } = json
-let spotifyinfo = `✨️ *Title:* ${title}
-🗣️ *Artists:* ${artists}
-🎆️ *Durasi:* ${duration}
-💚️ *Rating:* ${popularity}`
+let result = json.result
+let artists = json.artists
 
-//   await conn.sendFile(m.chat, thumb, '', spotifyinfo, m)
-// conn.sendFile(m.chat, result, 'spotify.mp3', spotifyinfo, m)
-conn.sendFile(m.chat, result, `${title}.mp3`, `${artists}`, m)
+conn.sendFile(m.chat, result, `${text}.mp3`, `${artists}`, m)
 
 }
 handler.help = ['spotify <judul>']
