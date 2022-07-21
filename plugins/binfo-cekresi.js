@@ -5,13 +5,8 @@ let [kurir, teks] = text.split ` `
 
 let listkurir = `
 *Jasa Kirim / Kurir:*
-jnt
-jne
-pos
-spx
-anteraja
-sicepat
-wahana
+jnt, jne, pos, spx, anteraja, sicepat, wahana, tiki, ninja, ide, lion,
+indahcargo, indopaket, jexpress, rpx, rex, sap, pcp, dse, first, idl
 `.trim()
 
     if (!kurir) return conn.reply(m.chat, listkurir, m)
