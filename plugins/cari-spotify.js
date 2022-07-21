@@ -9,11 +9,13 @@ let res = await fetch(`https://api.zekais.com/spotify?query=${text}&apikey=zekai
   let { title, artists, duration, thumb, popularity, result } = json
 let spotifyinfo = `✨️ *Title:* ${title}
 🗣️ *Artists:* ${artists}
-🎆️ *Album:* ${duration}
-💚️ *Rating:* ${popularity}\`
+🎆️ *Durasi:* ${duration}
+💚️ *Rating:* ${popularity}`
 
 //   await conn.sendFile(m.chat, thumb, '', spotifyinfo, m)
-conn.sendFile(m.chat, result, 'spotify.mp3', spotifyinfo, m)
+// conn.sendFile(m.chat, result, 'spotify.mp3', spotifyinfo, m)
+conn.sendFile(m.chat, result, `${title}.mp3`, `${artists}`, m)
+
 }
 handler.help = ['spotify <judul>']
 handler.tags = ['pencarian']
