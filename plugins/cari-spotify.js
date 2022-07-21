@@ -15,10 +15,10 @@ let spotipy = `✨ *Judul:* ${title}
 💌 *Rating:* ${popularity}
 💬 *Durasi:* ${duration}
 🌐 *Download:* ${result}`
-conn.sendFile(m.chat, thumb, '', spotipy, m)
+
   
 conn.sendFile(m.chat, result, `${title}.mp3`, `${artists}`, m)
-  
+  conn.sendFile(m.chat, thumb, '', spotipy, m)
 }
 
 handler.help = ['spotify <judul>']
