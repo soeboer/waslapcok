@@ -12,8 +12,8 @@ let spotifyinfo = `✨️ *Title:* ${title}
 🎆️ *Album:* ${duration}
 💚️ *Rating:* ${popularity}\`
 
-  await conn.sendFile(m.chat, thumb, '', spotifyinfo, m)
-  await conn.sendFile(m.chat, result, 'spotify.mp3', spotifyinfo, m)
+//   await conn.sendFile(m.chat, thumb, '', spotifyinfo, m)
+conn.sendFile(m.chat, result, 'spotify.mp3', spotifyinfo, m)
 }
 handler.help = ['spotify <judul>']
 handler.tags = ['pencarian']
