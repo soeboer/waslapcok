@@ -52,7 +52,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                                 pesan = pesan + data.translation.id
                             }
                             pesan = pesan + "\n\n(Q.S. " + data.surah.name.transliteration.id + ":" + args[1] + ")"
-                            await client.sendFileFromUrl(from, data.audio.primary, '', '', id, { httpsAgent: httpsAgent })
+                            await conn.sendFileFromUrl(from, data.audio.primary, '', '', id, { httpsAgent: httpsAgent })
                             await m.reply(pesan)
                         }
                     }
