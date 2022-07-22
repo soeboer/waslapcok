@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix}) => {
  let kodene = `${raw_text}`
  let perintahe = '.cekqr'
  
- conn.sendButton(m.chat, `Kode NOP : ${kodene}`, '@burhansyam', null, [['Cek QR Aset', `${perintahe} ${kodene}`]], m)
+ conn.sendButton(m.chat, `Kode QR Aset : ${kodene}`, '@burhansyam', null, [['Cek QR Aset', `${perintahe} ${kodene}`]], m)
  
 // conn.sendButton(m.chat, `${raw_text}`, pecah, pecah, [['cek nop', `${command} ${pecah}`]], m)
 //             conn.reply(m.chat, raw_text, m)
