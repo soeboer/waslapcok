@@ -1,10 +1,23 @@
-const uploadImage = require('../lib/uploadImage')
-let handler = async (m, { conn, text }) => {
-  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-  await conn.sendFile(m.chat, global.API('xteam', '/videomaker/colorful', { text: teks }, 'APIKEY'), 'colorful.mp4', "fatur gay", m)
-}
-handler.help = ['colorful'].map((v) => v + " <text>")
+import fetch from 'node-fetch'
+import uploadImage from '../lib/uploadImage.js'
+
+let handler = async (m, { conn, usedPrefix, command}) => {
+  let q = m.quoted ? m.quoted : m
+  let mime = (q.msg || q).mimetype || ''
+  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}wait`
+    if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
+    let img = await q.download()
+    let url = await uploadImage(img)
+    await m.reply('ditunggu dulu kak...')
+
+let img = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
+ 
+  conn.sendFile(m.chat, img, 'ihik.jpg', `Nih kak`, m, false)
+ 
+ 
+ 
+handler.help = ['sunset'])
 handler.tags = ['maker']
 
-handler.command = /^colorful$/i
+handler.command = /^sunset/i
 export default handler
