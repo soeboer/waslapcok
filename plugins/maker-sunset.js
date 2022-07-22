@@ -7,10 +7,10 @@ let handler = async (m, { conn, usedPrefix}) => {
   if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}.sunset`
     if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
     let img = await q.download()
-    let url = await uploadImage(img)
+    let urle = await uploadImage(img)
     await m.reply('ditunggu dulu kak...')
 
- let res = await fetch(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
+ let res = await fetch(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${urle}`)
  
  	if (res.status !== 200) throw res.statusText
 	conn.sendMessage(m.chat, { image: { url: res.url }}, { quoted: m })
