@@ -1,13 +1,18 @@
-import * as scraper from '@bochilteam/scraper'
+// import * as scraper from '@bochilteam/scraper'
 
-let handler = async (m, { args }) => {
-    if (!args[0]) throw 'Input URL'
-    let res = await scraper.instagramdl(args[0])
-        .catch(async _ => await scraper.instagramdlv2(args[0]))
-        .catch(async _ => await scraper.instagramdlv3(args[0]))
-        .catch(async _ => await scraper.instagramdlv4(args[0]))
-    if (!res) throw 'Can\'t download the post'
-    await m.reply('_In progress, please wait..._')
+import fetch from 'node-fetch'
+
+let handler = async (m, { text }) => {
+    if (!text) throw 'Masukkan Alamat URL'
+//     let res = await scraper.instagramdl(args[0])
+//         .catch(async _ => await scraper.instagramdlv2(args[0]))
+//         .catch(async _ => await scraper.instagramdlv3(args[0]))
+//         .catch(async _ => await scraper.instagramdlv4(args[0]))
+    let res = await fetch(`https://api.zekais.com/igdl2?apikey=zekais&url=${text}`)
+    let json = await res.json()
+//     if (!res) throw 'Can\'t download the post'
+    let url = = json.result[0]
+    await m.reply('_Dalam proses, mohon ditunggu..._')
     for (let { url } of res) await m.conn.sendFile(m.chat, url, '', '', m)
 }
 handler.help = ['instagram']
