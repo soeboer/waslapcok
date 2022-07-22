@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
 
 let gbr = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
  
-  conn.sendFile(m.chat, gbr, 'ihik.jpg', `Tukang Edit Manual`, m, false)
+  conn.sendFile(m.chat, gbr.data, 'ihik.jpg', `Tukang Edit Manual`, m, false)
  
 }
  
