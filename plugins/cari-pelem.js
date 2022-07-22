@@ -18,8 +18,8 @@ let peleme = `
 💋 *Link Download*:\n ${dondot}`
 conn.sendFile(m.chat, thumb, '', peleme, m)
 }
-handler.help = ['pelem <judul>']
+handler.help = ['film <judul>']
 handler.tags = ['pencarian']
-handler.command = /^(pelem)$/i
+handler.command = /^(film)$/i
 
 export default handler
