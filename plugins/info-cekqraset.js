@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Kode QR Aset* \n Contoh : .cekqr 201700667583`
-  await m.reply('🕵️ Kata Mas Angga mau di cek dulu...')
+  await m.reply('🕵️ Sabar, Kata Mas Angga mau di cek dulu...')
 //  let res = await fetch(`https://aset.simda.net/2022/ai_cha/?qrcode=${text}`)
  let res = await fetch(`https://api.burhansyam.com/bot/aset/?qrcode=${text}`)
 
@@ -10,7 +10,7 @@ if (!text) throw `*[❗INFO❗] Masukan Kode QR Aset* \n Contoh : .cekqr 2017006
 let json = await res.json()
 let { qrcode, kodekib, namabarang, tahunperolehan, nilaibarang, kodebarang, kodeopd, opd, status, kodelokasi, koderuang, ruang, kodeopdruang, penanggungjawab, lokasi } = json.result
 
-let asetku = `*Detail Barang dalam SIM ASET : *
+let asetku = `*Detail Barang dalam SIM ASET :*
 📲 *Kode QR    :* ${qrcode}
 📃 *Kode KIB   :* ${kodekib}
 📦 *Nama Barang :* ${namabarang}
@@ -21,9 +21,9 @@ let asetku = `*Detail Barang dalam SIM ASET : *
 💾 *Kode Barang :* ${kodebarang}
 🚏 *Ruang :* ${ruang}
 📄 *Kode Ruang :* ${kodeopdruang}
-🌎 *Kode Lokasi :* ${kodelokasi}
+🗺 *Kode Lokasi :* ${kodelokasi}
 🧑‍✈️ *Penanggung Jawab:* ${penanggungjawab}
-🗺 *Lokasi Barang:* \n${lokasi}`      
+🌎 *Lokasi Barang:* \n${lokasi}`      
            conn.reply(m.chat, asetku, m)
 }
 // 🚨 *Kode OPD Ruang :* ${kodeopdruang}
