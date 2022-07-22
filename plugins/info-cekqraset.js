@@ -2,8 +2,8 @@ import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Kode QR Aset* \n Contoh : .cekqr 201700667583`
-  await m.reply('Sabar kak saya cek dulu...')
- let res = await fetch(`https://lat-aset.simda.net/cek/?qrcode=${text}`)
+  await m.reply('Kata Mas Angga mau di cek dulu...')
+ let res = await fetch(`https://aset.gunungkidulkab.go.id/2022/ai_cha/?qrcode=${text}`)
 if (!res.ok) throw await res.text()
 let json = await res.json()
 let { qrcode, kodekib, namabarang, tahunperolehan, nilaibarang, kodebarang, kodeopd, opd, status, kodelokasi, koderuang, ruang, kodeopdruang, penanggungjawab, lokasi } = json.result
