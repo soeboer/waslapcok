@@ -10,9 +10,9 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     let url = await uploadImage(img)
     await m.reply('ditunggu dulu kak...')
 
-let img = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
+let gbr = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
  
-  conn.sendFile(m.chat, img, 'ihik.jpg', `Nih kak`, m, false)
+  conn.sendFile(m.chat, gbr, 'ihik.jpg', `Tukang Edit Manual`, m, false)
  
  
  
