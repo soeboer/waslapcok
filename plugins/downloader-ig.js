@@ -10,9 +10,7 @@ let handler = async (m, { conn, text }) => {
     let res = await fetch(`https://api.zekais.com/igdl2?apikey=zekais&url=${text}`)
     let json = await res.json()
 //     if (!res) throw 'Can\'t download the post'
-//     let url = json.result[0]
-    let { type, url } = json.result[0]
-//     let url = `${url}`
+
     await m.reply('_Dalam proses, mohon ditunggu..._')
     for (let { url } of json.result[0]) await m.conn.sendFile(m.chat, url, '', '', m)
 }
