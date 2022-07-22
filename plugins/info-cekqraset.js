@@ -11,7 +11,7 @@ let { qrcode, kodekib, namabarang, tahunperolehan, nilaibarang, kodebarang, kode
 let asetku = `
 🏷 *Kode QR    :* ${qrcode}
 📃 *Kode KIB   :* ${kodekib}
-📄 *Kode KIB   :* ${namabarang}
+📄 *Nama Barang   :* ${namabarang}
 💰 *Nilai Barang:* ${nilaibarang}
 📆 *Tahun Perolehan :* ${tahunperolehan}
 🏠 *Nama OPD :* ${opd}
