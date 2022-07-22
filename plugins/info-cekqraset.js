@@ -10,19 +10,19 @@ if (!text) throw `*[❗INFO❗] Masukan Kode QR Aset* \n Contoh : .cekqr 2017006
 let json = await res.json()
 let { qrcode, kodekib, namabarang, tahunperolehan, nilaibarang, kodebarang, kodeopd, opd, status, kodelokasi, koderuang, ruang, kodeopdruang, penanggungjawab, lokasi } = json.result
 
-let asetku = `
-🏷 *Kode QR    :* ${qrcode}
+let asetku = `*Detail Barang dalam SIM ASET : *
+📲 *Kode QR    :* ${qrcode}
 📃 *Kode KIB   :* ${kodekib}
-📄 *Nama Barang :* ${namabarang}
-💰 *Nilai Barang:* Rp ${nilaibarang}
+📦 *Nama Barang :* ${namabarang}
+💰 *Nilai Barang :* Rp ${nilaibarang}
 📆 *Tahun Perolehan :* ${tahunperolehan}
 🏠 *Nama OPD :* ${opd}
 💻 *Status Barang :* ${status}
-🪙 *Kode Barang :* ${kodebarang}
-🚧 *Ruang :* ${ruang}
-🚏 *Kode Ruang :* ${kodeopdruang}
-🖨 *Kode Lokasi :* ${kodelokasi}
-🧑🏿‍✈️ *Penanggung Jawab:* ${penanggungjawab}
+💾 *Kode Barang :* ${kodebarang}
+🚏 *Ruang :* ${ruang}
+📄 *Kode Ruang :* ${kodeopdruang}
+🌎 *Kode Lokasi :* ${kodelokasi}
+🧑‍✈️ *Penanggung Jawab:* ${penanggungjawab}
 🗺 *Lokasi Barang:* \n${lokasi}`      
            conn.reply(m.chat, asetku, m)
 }
