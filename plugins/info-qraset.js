@@ -4,11 +4,11 @@ import uploadImage from '../lib/uploadImage.js'
 let handler = async (m, { conn, usedPrefix}) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}wait`
+  if (!mime) throw `Balas Foto/Kirim Foto Dengan Caption ${usedPrefix}qraset`
     if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
     let img = await q.download()
     let url = await uploadImage(img)
-    await m.reply('ditunggu dulu kak...')
+    await m.reply('🧞‍♂️ Siap kami proses dulu...')
 
  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
  let json = await res.json()
