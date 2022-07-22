@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import uploadImage from '../lib/uploadImage.js'
 
-let handler = async (m, { conn, usedPrefix, command}) => {
+let handler = async (m, { conn, usedPrefix, command} ) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}sunset`
@@ -10,14 +10,13 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     let url = await uploadImage(img)
     await m.reply('ditunggu dulu kak...')
 
-  let res = `https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}
-  conn.sendFile(m.chat, res, 'sunset.jpg', `Efek Sunset`, m, false)
-
+		let hasil = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?apikey=beta&image=${url}`)
+		let caption = `*Efek Senja*`
+                conn.sendFile(m.chat, hasil.data, `photone.jpg`, caption, m)
  
 }
  
 handler.help = ['sunset'])
 handler.tags = ['maker']
-
 handler.command = /^sunset/i
 export default handler
