@@ -1,8 +1,7 @@
 // import * as scraper from '@bochilteam/scraper'
-
 import fetch from 'node-fetch'
 
-let handler = async (m, { text }) => {
+let handler = async (m, { conn, text }) => {
     if (!text) throw 'Masukkan Alamat URL'
 //     let res = await scraper.instagramdl(args[0])
 //         .catch(async _ => await scraper.instagramdlv2(args[0]))
@@ -13,9 +12,9 @@ let handler = async (m, { text }) => {
 //     if (!res) throw 'Can\'t download the post'
 //     let url = json.result[0]
     let { type, url } = json.result[0]
-    let url = `${url}`
+//     let url = `${url}`
     await m.reply('_Dalam proses, mohon ditunggu..._')
-    for (let { url } of res) await m.conn.sendFile(m.chat, url, '', '', m)
+    for (let { url } of json.result[0]) await m.conn.sendFile(m.chat, url, '', '', m)
 }
 handler.help = ['instagram']
 handler.tags = ['downloader']
