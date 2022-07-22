@@ -14,7 +14,7 @@ let gbr = await conn.getFile(`https://violetics.pw/api/photofilter/warm-sunset?a
  
   conn.sendFile(m.chat, gbr, 'ihik.jpg', `Tukang Edit Manual`, m, false)
  
- 
+}
  
 handler.help = ['sunset'])
 handler.tags = ['maker']
