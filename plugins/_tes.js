@@ -2,7 +2,7 @@ import { sticker } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
+let stiker = await sticker(null, global.API(`${pickRandom(stikertes)}`), global.packname, global.author)
     if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
     throw stiker.toString()
     
@@ -16,7 +16,7 @@ export default handler
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
-let stikerhuuu = [
+let stikertes = [
  "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/19cb3213-15ec-4541-abf7-7b7234910428.webp",//patrick huu
  "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/aa484c6f-423d-46cf-826e-8bddd5dd42e7.webp",//anime yntkts
  "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/893f5efa-67b2-4de9-ae35-6b7aa840ab37.webp",//windah bocil
