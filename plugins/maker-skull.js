@@ -1,13 +1,21 @@
-let handler = async (m, { conn, usedprefix }) => {
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    conn.sendFile(m.chat, global.API('https://docs-jojo.herokuapp.com', '/api/skull-makeup', {
-        image_url: await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
-    }), 'error.png', `*Hiiii*`, m)
-}
-catch (e) {
-   m.reply('Mungkin wajah tidak terdeteksi')
-  }
+import fetch from 'node-fetch'
+import uploadImage from '../lib/uploadImage.js'
 
+let handler = async (m, { conn, usedPrefix}) => {
+  let q = m.quoted ? m.quoted : m
+  let mime = (q.msg || q).mimetype || ''
+  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}.sunset`
+    if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
+    let img = await q.download()
+    let urle = await uploadImage(img)
+    await m.reply('Sabar bestie,dibuatkan dulu yaak...')
+
+ let res = await fetch(`https://docs-jojo.herokuapp.com/api/skull-makeup?image_url=${urle}`)
+ 
+ 	if (res.status !== 200) throw res.statusText
+	conn.sendMessage(m.chat, { image: { url: res.url }}, { quoted: m })
+
+}
 handler.help = ['skull']
 handler.tags = ['maker']
 handler.command = /^(skull)$/i
