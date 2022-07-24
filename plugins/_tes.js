@@ -1,10 +1,9 @@
 import { sticker } from '../lib/sticker.js'
-import { pasaran } from '../lib/tgl.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
-    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', 'anjay lu bang, dah jago kah sok sokan ngetes gua?? ${pasaran().jawa}', m)
+    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', 'anjay lu bang, dah jago kah sok sokan ngetes gua??', m)
     throw stiker.toString()
     
 }
@@ -18,23 +17,13 @@ function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
 let stikerhuuu = [
- "https://telegra.ph/file/fa2bbea0f7de2575cf027.png",//patrick huu
- "https://telegra.ph/file/4a2db7bc9f3f9ecfc007d.png",//anime yntkts
- "https://telegra.ph/file/5f6079714851d9927697e.png",//windah bocil
- "https://telegra.ph/file/d5100b4ce95a0012e88c1.png",//patrick bawa minum
- "https://telegra.ph/file/2ade25087c89f86587853.png",//pak polisi pap tt
- "https://telegra.ph/file/eb2b5e5fff569896c1639.png",//kucing1
- "https://telegra.ph/file/bd8a0e7ea01218531798b.png",//kacamata
- "https://telegra.ph/file/300610838ffa0e6576eb9.png",//patrick pembohong
- "https://telegra.ph/file/954afe562e58c144620ae.png",//spongebob FBI
- "https://telegra.ph/file/72026dcc46e4cb4b6f9ae.png",//mazowski monster inc
- "https://telegra.ph/file/aa9f1bea869e362e6f56e.png",//wkwk
- "https://telegra.ph/file/09bbff0da316ba21b4f8e.png",//kucing2
- "https://telegra.ph/file/2e0637d57e3cc1abcb4a0.png",//patrick anak setan
- "https://telegra.ph/file/d771ae015b5486859d03f.png",//mazowski 2
- "https://telegra.ph/file/9c7606f571c05b4d0c941.png",//hengker
- "https://telegra.ph/file/84fd937257bcd614d6c9e.png",//anjing
- "https://telegra.ph/file/b8ba6989c00c50df049d0.png",//bapak bapak lovee
- "https://telegra.ph/file/2f618fffab6ff7bea32ab.png",//abang saleh
- "https://telegra.ph/file/dfbf483c209a31f01b4e5.png"//hengker2
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/19cb3213-15ec-4541-abf7-7b7234910428.webp",//patrick huu
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/aa484c6f-423d-46cf-826e-8bddd5dd42e7.webp",//anime yntkts
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/893f5efa-67b2-4de9-ae35-6b7aa840ab37.webp",//windah bocil
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/44d6641f-e056-4106-9618-8b2368387417.webp",//patrick bawa minum
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/e83dc1e8-834d-4241-a99f-a7871960a01c.webp",//pak polisi pap tt
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/6e4cf6b7-a425-423b-a3b6-4daf68d43301.webp",//kucing1
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/8e850eea-76bb-443b-bf7d-64d2e604a058.webp",//kacamata
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/32d0fe33-2103-4c56-9984-03a01fab8a3c.webp",//patrick pembohong
+ "https://stickerly.pstatic.net/sticker_pack/0yX6lJomw6K8Wa7ROwQKA/P82QK4/18/f86911cb-8c17-4221-882f-0670f19fe69c.webp"//spongebob FBI
 ]
