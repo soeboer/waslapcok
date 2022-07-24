@@ -4,7 +4,7 @@ import { pasaran } from '../lib/tgl.js'
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
-    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', `anjay lu bang, dah jago kah sok sokan ngetes gua?? ${pasaran().jawa}`, m)
+    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', 'anjay lu bang, dah jago kah sok sokan ngetes gua?? ${pasaran().jawa}', m)
     throw stiker.toString()
     
 }
