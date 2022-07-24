@@ -13,7 +13,7 @@ let pidio = await conn.getFile(`${download}`)
 		let caption = `@burhansyam`
                 conn.sendFile(m.chat, pidio.data, `get.${pidio}.mp4`, caption, m)
 }
-handler.help = ['cocofun']
+handler.help = ['cocofun <url cocofun>']
 handler.tags = ['downloader']
 handler.command = /^(coco(fun)?)$/i
 
