@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Kode QR Aset* \n Contoh : .cekqr 201700667583`
   await m.reply('🕵️ Sabar, Kata Mas Angga mau di cek dulu...')
 //  let res = await fetch(`https://aset.simda.net/2022/ai_cha/?qrcode=${text}`)
- let res = await fetch(`https://api.burhansyam.com/bot/aset/?nopol=${text}`)
+ let res = await fetch(`https://api.burhansyam.com/bot/nopol/?nopol=${text}`)
 
   if (!res.ok) throw await res.text()
 let json = await res.json()
