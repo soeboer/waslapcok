@@ -10,10 +10,14 @@ let handler = async (m, { conn, usedPrefix}) => {
     let url = await uploadImage(img)
     await m.reply('ditunggu dulu maszeeh...')
 
- let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
+//  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
+//  let json = await res.json()
+//  let { raw_text } = json.result
+ let res = await fetch(`https://api.burhansyam.com/bot/qr/?qrcode=${url}`)
  let json = await res.json()
- let { raw_text } = json.result
- let kodene = `${raw_text.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
+ let { data } = json 
+  
+ let kodene = `${data.replace('https://bkad.gunungkidulkab.go.id/cek-pbb/?nop=', '')}`
  let perintahe = '.ceknop'
  
  conn.sendButton(m.chat, `Kode NOP : ${kodene}`, '@burhansyam', null, [['Cek NOP', `${perintahe} ${kodene}`]], m)
