@@ -10,10 +10,16 @@ let handler = async (m, { conn, usedPrefix }) => {
     let url = await uploadImage(img)
   await m.reply('ditunggu dulu bestie...')
   
- let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
+//  let res = await fetch(`https://docs-jojo.herokuapp.com/api/qr_read?image_url=${url}`)
+//  let json = await res.json()
+//  let { raw_text } = json.result
+ let res = await fetch(`https://api.burhansyam.com/bot/qr/?qrcode=${url}`)
  let json = await res.json()
- let { raw_text } = json.result
- let pecah = `🚧 *Bacaan Kode QR    :* \n${raw_text}`
+ let { data } = json  
+ 
+ 
+ 
+ let pecah = `🚧 *Teks dalam Kode QR    :* \n${data}`
              conn.reply(m.chat, pecah, m)
 }
 
