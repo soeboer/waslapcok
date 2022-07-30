@@ -7,13 +7,14 @@ import moment from 'moment-timezone'
 let tags = {}
 const defaultMenu = {
   
-  before: `\n> *Tanggal:* %date \n> *Jam:* %time \n> *Aktif:* %uptime\n%readmore`,
+  before: `\n> *Hari:* %week %weton \n %dateIslamic \n> *Tanggal:* %date \n> *Jam:* %wib \n> *Aktif:* %uptime\n%readmore`,
   header: '│❏━━⦿❰ *%category* ❱⦿━━❏',
   body: '│┊⬤❱ *%cmd* %islimit %isPremium',
   footer: '│❏━━━━━━⦿',
   after: '',
 }
 
+    
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let name = m.pushName || conn.getName(m.sender)
@@ -65,6 +66,14 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       second: 'numeric'
     })   
       
+    let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+    let wibh = moment.tz('Asia/Jakarta').format('HH')
+    let wibm = moment.tz('Asia/Jakarta').format('mm')
+    let wibs = moment.tz('Asia/Jakarta').format('ss')
+    let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
+    let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
+    let wktuwib = `${wibh} H ${wibm} M ${wibs} S`  
+    
       //let vn = './media/tante-tante.mp3'
     let uptime = clockString(_uptime)
     let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
