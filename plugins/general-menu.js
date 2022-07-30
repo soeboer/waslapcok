@@ -24,41 +24,46 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     
-    let days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    let dayName = days[d.getDay()];
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      timeZone: 'Asia/Jakarta'
-    })
-    let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Jakarta' })
-    time = time.replace(/[.]/g, ':')
-    let _uptime
-    if (process.send) {
-      process.send('uptime')
-      _uptime = await new Promise(resolve => {
-        process.once('message', resolve)
-        setTimeout(resolve, 1000)
-      }) * 1000
-    }
-    
-    //jajali
-//         let d = new Date(new Date + 3600000)
-//     let locale = 'id'
-//     // d.getTimeZoneOffset()
-//     // Offset -420 is 18.00
-//     // Offset    0 is  0.00
-//     // Offset  420 is  7.00
+//     let days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+//     let dayName = days[d.getDay()];
 //     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+
 //     let week = d.toLocaleDateString(locale, { weekday: 'long' })
 //     let date = d.toLocaleDateString(locale, {
 //       day: 'numeric',
 //       month: 'long',
-//       year: 'numeric'
+//       year: 'numeric',
+//       timeZone: 'Asia/Jakarta'
+//     })
+//     let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Jakarta' })
+//     time = time.replace(/[.]/g, ':')
+//     let _uptime
+//     if (process.send) {
+//       process.send('uptime')
+//       _uptime = await new Promise(resolve => {
+//         process.once('message', resolve)
+//         setTimeout(resolve, 1000)
+//       }) * 1000
+//     }
+    
+//cobak ganti
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+    let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(d)
+    let time = d.toLocaleTimeString(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    })   
       
       //let vn = './media/tante-tante.mp3'
     let uptime = clockString(_uptime)
@@ -149,34 +154,69 @@ export default handler
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
+// function clockString(ms) {
+//   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+//   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+//   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+//   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+// }
+
 function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+  return [h, ' H ', m, ' M ', s, ' S '].map(v => v.toString().padStart(2, 0)).join('')
+}
+function clockStringP(ms) {
+  let ye = isNaN(ms) ? '--' : Math.floor(ms / 31104000000) % 10
+  let mo = isNaN(ms) ? '--' : Math.floor(ms / 2592000000) % 12
+  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000) % 30
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [ye, ' *Years 🗓️*\n',  mo, ' *Month 🌙*\n', d, ' *Days ☀️*\n', h, ' *Hours 🕐*\n', m, ' *Minute ⏰*\n', s, ' *Second ⏱️*'].map(v => v.toString().padStart(2, 0)).join('')
 }
 
+
+// function wish() {
+//     let wishloc = ''
+//   const time = moment.tz('Asia/Jakarta').format('HH')
+//   wishloc = ('Hi')
+//   if (time >= 0) {
+//     wishloc = ('🌙 Met Jam Pocong')
+//   }
+//   if (time >= 4) {
+//     wishloc = ('🌄 Pageee')
+//   }
+//   if (time >= 10) {
+//     wishloc = ('☀️ Siangg')
+//   }
+//   if (time >= 15) {
+//     wishloc = ('🌅 Soree')
+//   }
+//   if (time >= 16) {
+//     wishloc = ('️🌅Petanggg')
+//   }
+//   if (time >= 23) {
+//     wishloc = ('🌙 Maleeem')
+//   }
+//   return wishloc
+// }
+
 function wish() {
-    let wishloc = ''
   const time = moment.tz('Asia/Jakarta').format('HH')
-  wishloc = ('Hi')
-  if (time >= 0) {
-    wishloc = ('🌙 Met Jam Pocong')
-  }
+  let wishloc = "Selamat Dini Hari ☀️"
   if (time >= 4) {
-    wishloc = ('🌄 Pageee')
+    res = "Selamat Pagi 🌄"
   }
   if (time >= 10) {
-    wishloc = ('☀️ Siangg')
+    res = "Selamat Siang ☀️"
   }
   if (time >= 15) {
-    wishloc = ('🌅 Soree')
+    res = "Selamat Sore 🌇"
   }
-  if (time >= 16) {
-    wishloc = ('️🌅Petanggg')
-  }
-  if (time >= 23) {
-    wishloc = ('🌙 Maleeem')
+  if (time >= 18) {
+    res = "Selamat Malam 🌙"
   }
   return wishloc
 }
