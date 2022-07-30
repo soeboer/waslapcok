@@ -38,14 +38,14 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 //     })
 //     let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Jakarta' })
 //     time = time.replace(/[.]/g, ':')
-//     let _uptime
-//     if (process.send) {
-//       process.send('uptime')
-//       _uptime = await new Promise(resolve => {
-//         process.once('message', resolve)
-//         setTimeout(resolve, 1000)
-//       }) * 1000
-//     }
+    let _uptime
+    if (process.send) {
+      process.send('uptime')
+      _uptime = await new Promise(resolve => {
+        process.once('message', resolve)
+        setTimeout(resolve, 1000)
+      }) * 1000
+    }
     
 //cobak ganti
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
