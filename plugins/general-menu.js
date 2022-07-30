@@ -216,16 +216,16 @@ function wish() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   let wishloc = "Selamat Dini Hari ☀️"
   if (time >= 4) {
-    res = "Selamat Pagi 🌄"
+    wishloc = "Selamat Pagi 🌄"
   }
   if (time >= 10) {
-    res = "Selamat Siang ☀️"
+    wishloc = "Selamat Siang ☀️"
   }
   if (time >= 15) {
-    res = "Selamat Sore 🌇"
+    wishloc = "Selamat Sore 🌇"
   }
   if (time >= 18) {
-    res = "Selamat Malam 🌙"
+    wishloc = "Selamat Malam 🌙"
   }
   return wishloc
 }
