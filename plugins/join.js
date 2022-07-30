@@ -2,7 +2,7 @@ let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})( [0-9]{1,3})?/i
 import fs from 'fs'
 
 let handler = async (m, { conn, text, usedPrefix, command, isOwner }) => {
-let frep = { contextInfo: { externalAdReply: {title: wm, body: 'Simple Bot Esm', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg')}}}
+let frep = { contextInfo: { externalAdReply: {title: wm, body: 'Burhansyam Simple Bot', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg')}}}
 let imgr = flaaa.getRandom()
 
     let [_, code, expired] = text.match(linkRegex) || []
