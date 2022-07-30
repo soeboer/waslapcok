@@ -5,14 +5,7 @@ import moment from 'moment-timezone'
 
 
 let tags = {}
-const defaultMenu = {
-  
-  before: `\n> *Hari:* %week %weton \n %dateIslamic \n> *Tanggal:* %date \n> *Jam:* %wib \n> *Aktif:* %uptime\n%readmore`,
-  header: '│❏━━⦿❰ *%category* ❱⦿━━❏',
-  body: '│┊⬤❱ *%cmd* %islimit %isPremium',
-  footer: '│❏━━━━━━⦿',
-  after: '',
-}
+
 
     
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -73,6 +66,18 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
     let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
     let wktuwib = `${wibh} H ${wibm} M ${wibs} S`  
+    
+    
+ const defaultMenu = {
+  
+  before: `\n> *Hari:* %week %weton \n %dateIslamic \n> *Tanggal:* %date \n> *Jam:* %time \n> *Aktif:* %uptime\n%readmore`,
+  header: '│❏━━⦿❰ *%category* ❱⦿━━❏',
+  body: '│┊⬤❱ *%cmd* %islimit %isPremium',
+  footer: '│❏━━━━━━⦿',
+  after: '',
+}   
+    
+    
     
       //let vn = './media/tante-tante.mp3'
     let uptime = clockString(_uptime)
