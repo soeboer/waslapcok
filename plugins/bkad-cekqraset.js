@@ -29,7 +29,7 @@ let asetku = `*Detail Barang dalam SIM ASET :*
 // 🚨 *Kode OPD Ruang :* ${kodeopdruang}
 
 handler.help = ['cekqr <kodeqr aset>']
-handler.tags = ['info']
+handler.tags = ['bkad']
 handler.command = /^(cekqr)$/i
 
 export default handler
