@@ -78,7 +78,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 ], m, {asLocation: true})
 }
 handler.help = ['botinfo']
-handler.tags = ['info']
+handler.tags = ['general']
 handler.command = /^(botinfo|bot|info|bi)$/i
 
 export default handler
