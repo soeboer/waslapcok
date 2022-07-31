@@ -3,7 +3,7 @@ import { tiktokdl } from '@bochilteam/scraper'
 import { toAudio, toPTT } from '../lib/converter.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
+  if (!args[0]) throw `Laah.. url nya mana bestie?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
   if (!args[0].match(/tiktok/gi)) throw `url salah`
 //   const sentMsg = await m.reply(wait)
   await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
@@ -17,7 +17,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     thumbnail: await(await fetch(img)).buffer(),
     sourceUrl: linkgc
      }}
-  })try {
+  })
+  try {
     var anu = await Tiktok(args[0])
     var { url, title, thumbnail, duration, source, medias } = anu
     var { quality, extension, size, formattedSize, } = anu.medias[0]
@@ -26,9 +27,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     } catch {
     try {
     var anu = await tiktokdl(args[0])
-    var { url, title, thumbnail, duration, source, medias } = anu
+    var { url, title, thumbnail, duration, source, medias, video } = anu
     var { quality, extension, size, formattedSize, } = anu.medias[0]
-    let v = medias[1].url
+    let v = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
     let a = await(await fetch(v)).buffer()
     let au = await toAudio(a, 'mp4')
     let vn = await toPTT(a, 'mp4') 
@@ -37,7 +38,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   } catch {
     try {
     var anuu = await tiktokdl(args[0])
-    var { nowm, wm, audio } = anuu
+    var { video, nowm, wm, audio, description  } = anuu
     let v = nowm
     let a = await(await fetch(v)).buffer()
     let au = await toAudio(a, 'mp4')
