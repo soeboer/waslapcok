@@ -22,7 +22,7 @@ let teksbio = `*───────[ BIODATA OWNER ]───────*
 conn.sendHydrated(m.chat, teksbio, wm, ppown, "wa.me/" + nomorown, "💬 ᴄʜᴀᴛs", null,null, [["ᴅᴏɴᴀsɪ", '.donasi'], [null, null],[null,null]], m)
 }
 handler.help = ['bioowner']
-handler.tags = ['info']
+handler.tags = ['general']
 handler.command = /^(bioowner)$/i
 
 export default handler
