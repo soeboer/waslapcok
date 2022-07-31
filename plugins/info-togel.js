@@ -8,7 +8,7 @@ let handler = async (m, { text }) => {
 	let txt = res.result.map((v) => `${v.No}. ${v.Hari}, ${v.Tanggal} *[ ${v.Angka} ]*`).join`\n`
 	m.reply(`*Keluaran Togel ${res.toto}*\n*${txt}*\n💻 ©️ ᶜᵒᵈᵉᵈ ᵇʸ ᵇᵘʳʰᵃⁿˢʸᵃᵐ ™️`)
 }
-handler.help = ['togel <nama>']
+handler.help = ['togel <hk/sgp>']
 handler.tags = ['info']
 handler.command = /^togel$/i
 
