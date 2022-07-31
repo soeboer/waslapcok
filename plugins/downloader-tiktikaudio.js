@@ -1,5 +1,5 @@
 import { Tiktok } from 'xfarr-api'
-import { tiktok } from '../lib/scraper.js'
+import { tiktokdl } from '@bochilteam/scraper'
 import { toAudio, toPTT } from '../lib/converter.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     await conn.sendMedia(m.chat, medias[2].url, null, {ptt: true, mentions: [m.sender]})
     } catch {
     try {
-    var anu = await Tiktok(args[0])
+    var anu = await tiktokdl(args[0])
     var { url, title, thumbnail, duration, source, medias } = anu
     var { quality, extension, size, formattedSize, } = anu.medias[0]
     let v = medias[1].url
