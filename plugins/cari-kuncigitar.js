@@ -12,7 +12,7 @@ ${content}`
             conn.reply(m.chat, koenci, m)
 }
 
-handler.help = ['kuncigitar <lagu>']
+handler.help = ['chord <lagu>']
 handler.tags = ['pencarian']
-handler.command = /^(kuncigitar)$/i
+handler.command = /^(kord|chord|kunci)$/i
 export default handler
