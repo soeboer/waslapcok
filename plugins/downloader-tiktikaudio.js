@@ -5,19 +5,10 @@ import { toAudio, toPTT } from '../lib/converter.js'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `Laah.. url nya mana bestie?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
   if (!args[0].match(/tiktok/gi)) throw `url salah`
-//   const sentMsg = await m.reply(wait)
-  await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
-  contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
-    mediaUrl: linkig,
-    mediaType: 2,
-    description: deslink , 
-    title: titlink,
-    body: wm, //`${fileSizeH}`,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: linkgc
-     }}
-  })
+
+//   await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
+
+//   })
   try {
     var anu = await Tiktok(args[0])
     var { url, title, thumbnail, duration, source, medias } = anu
@@ -47,6 +38,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     await conn.sendFile(m.chat, vn.data, 'tiktok.opus', '', 0, 1, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
   } catch {
     throw eror 
+    
       }
     }
   }
