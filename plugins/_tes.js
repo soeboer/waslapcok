@@ -1,4 +1,4 @@
-import { sticker } from '../lib/sticker.js'
+// import { sticker } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
           let hasil = `Waalaikumsalam warahmatullahi wabarakatuh\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ\nSiap bisa dibantu?\nUntuk bantuan silakan ketik .bkad`
@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     
 }
 
-handler.customPrefix = /^(ass(alamu)?|p)$/i
+handler.customPrefix = /^(ass(alam)?|p)$/i
 handler.command = new RegExp
 
 export default handler
