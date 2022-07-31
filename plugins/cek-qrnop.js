@@ -27,7 +27,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
 handler.help = ['qrnop <reply>']
-handler.tags = ['info']
+handler.tags = ['bkad']
 handler.command = /^(qrnop)$/i
 
 export default handler
