@@ -1,12 +1,12 @@
 // import { sticker } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-          let hasil = `Waalaikumsalam warahmatullahi wabarakatuh\nSiap bisa dibantu?\nUntuk bantuan silakan ketik .bkad`
+          let hasil = `Waalaikumsalam warahmatullahi wabarakatuh\nSiap bisa dibantu?Untuk bantuan silakan ketik .bkad`
             conn.reply(m.chat, hasil, m)
     
 }
 
-handler.customPrefix = /^(ass(alam)?|p)$/i
+handler.customPrefix = /^(tes(s)?|p)$/i
 handler.command = new RegExp
 
 export default handler
