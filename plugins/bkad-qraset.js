@@ -27,7 +27,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 //             conn.reply(m.chat, raw_text, m)
 }
 
-handler.help = ['qraset <reply>']
+handler.help = ['qraset <upload/balas foto>']
 handler.tags = ['bkad']
 handler.command = /^(qraset)$/i
 
