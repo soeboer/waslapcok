@@ -28,7 +28,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 }
 
 handler.help = ['qraset <reply>']
-handler.tags = ['info']
+handler.tags = ['bkad']
 handler.command = /^(qraset)$/i
 
 export default handler
