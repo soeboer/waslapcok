@@ -1,11 +1,10 @@
-import { Tiktok } from 'xfarr-api'
 import { tiktokdl } from '@bochilteam/scraper'
 import { toAudio, toPTT } from '../lib/converter.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
   if (!args[0].match(/tiktok/gi)) throw `url salah`
-  const sentMsg = await m.reply(wait)
+//   const sentMsg = await m.reply(wait)
   await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
@@ -18,13 +17,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     sourceUrl: linkgc
      }}
   })
-  try {
-    var anu = await Tiktok(args[0])
-    var { url, title, thumbnail, duration, source, medias } = anu
-    var { quality, extension, size, formattedSize, } = anu.medias[0]
-    await conn.sendMedia(m.chat, medias[2].url, null, {mentions: [m.sender]})
-    await conn.sendMedia(m.chat, medias[2].url, null, {ptt: true, mentions: [m.sender]})
-    } catch {
     try {
     var anu = await tiktokdl(args[0])
     var { url, title, thumbnail, duration, source, medias } = anu
@@ -37,7 +29,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     await conn.sendFile(m.chat, vn.data, 'tiktok.opus', '', 0, 1, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
   } catch {
     try {
-    var anuu = await tiktok(args[0])
+    var anuu = await tiktokdl(args[0])
     var { nowm, wm, audio } = anuu
     let v = nowm
     let a = await(await fetch(v)).buffer()
