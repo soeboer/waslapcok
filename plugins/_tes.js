@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     
 }
 
-handler.customPrefix = /^(tes(s)?|p)$/i
+handler.customPrefix = /^(tes(t)?|p)$/i
 handler.command = new RegExp
 
 export default handler
