@@ -28,7 +28,7 @@ conn.reply(m.chat, pajek, m)
 // 💸 *Bangunan :* ${bangunan}
 
 handler.help = ['ceknop <nmr objek pajak>']
-handler.tags = ['info']
+handler.tags = ['bkad']
 handler.command = /^(ceknop)$/i
 
 export default handler
