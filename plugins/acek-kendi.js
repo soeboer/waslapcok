@@ -33,7 +33,7 @@ let asetku = `*Detail Barang dalam SIM ASET :*
 // 🗺 *Kode Lokasi :* ${kodelokasi}
 
 handler.help = ['kendi <AB 1056 UD>']
-handler.tags = ['info']
+handler.tags = ['bkad']
 handler.command = /^(kendi)$/i
 
 export default handler
