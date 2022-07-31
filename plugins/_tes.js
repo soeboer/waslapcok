@@ -1,7 +1,7 @@
 // import { sticker } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-          let hasil = `Waalaikumsalam warahmatullahi wabarakatuh\nSiap bisa dibantu?Untuk bantuan silakan ketik .bkad`
+          let hasil = `Siap bisa dibantu?Untuk bantuan silakan ketik .bkad`
             conn.reply(m.chat, hasil, m)
     
 }
