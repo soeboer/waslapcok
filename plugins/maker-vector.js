@@ -10,15 +10,15 @@ let handler = async (m, { conn, usedPrefix}) => {
     let urle = await uploadImage(img)
     await m.reply('Sabar bestie,dibuatkan dulu yaak...')
 
- let res = await fetch(`https://docs-jojo.herokuapp.com/api/clown-face-in-hole?image_url=${urle}`)
+ let res = await fetch(`https://api.burhansyam.com/bot/pho.to/index.php?url=${urle}`)
  
  	if (res.status !== 200) throw res.statusText
 	conn.sendMessage(m.chat, { image: { url: res.url }}, { quoted: m })
 
 }
-handler.help = ['badut']
+handler.help = ['vector']
 handler.tags = ['maker']
-handler.command = /^(badut)$/i
+handler.command = /^(vector)$/i
 handler.fail = null
 
 
