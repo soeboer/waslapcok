@@ -10,15 +10,15 @@ let handler = async (m, { conn, usedPrefix}) => {
     let urle = await uploadImage(img)
     await m.reply('Sabar bestie,dibuatkan dulu yaak...')
 
- let res = await fetch(`https://api.burhansyam.com/bot/pho.to/vshadow/index.php?url=${urle}`)
+ let res = await fetch(`https://api.burhansyam.com/bot/pho.to/combo3/index.php?url=${urle}`)
  
  	if (res.status !== 200) throw res.statusText
 	conn.sendMessage(m.chat, { image: { url: res.url }}, { quoted: m })
 
 }
-handler.help = ['vector4']
+handler.help = ['combo3']
 handler.tags = ['maker']
-handler.command = /^(vector4)$/i
+handler.command = /^(combo3)$/i
 handler.fail = null
 
 
