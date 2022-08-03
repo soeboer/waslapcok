@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text }) => {
-let bales = `Halo..Terimakasih banyak ya,saya tunggu dirumah yaaa😊 😍 🥰 😘`
+let bales = `Halo..Terimakasih banyak ucapan & doanya,saya tunggu dirumah yaaa 😊 😍 🥰 😘`
             conn.reply(m.chat, bales, m)
 }
 
