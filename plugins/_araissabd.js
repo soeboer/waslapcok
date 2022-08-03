@@ -6,7 +6,7 @@ let bales = `Halo..Terimakasih banyak ucapan & doanya,saya tunggu dirumah yaaa ð
 
 
 // handler.customPrefix = /^(icha|hbd|halo|selamat|hpbd|dek)$/i
-/(h?(a|o)i?|icha|hbd|hpbd|selamat)/i
+handler.customPrefix = /^h?(a|o)i?|icha|hbd|halo|hpbd|selamat$/i
 handler.command = new RegExp
 
 export default handler
