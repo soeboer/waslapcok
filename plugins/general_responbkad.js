@@ -14,7 +14,7 @@ conn.sendHydrated(m.chat, '*『 ɪɴᴛʀᴏᴅᴜᴄᴛɪᴏɴ 』*', `وَعَ
 }
 
 
-handler.customPrefix = /^ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم$|p|pak|buk|permisi|tes$/i
+handler.customPrefix = /^ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم$|p|pak|buk|permisi|tes|mohon$/i
 handler.command = new RegExp
 
 export default handler
