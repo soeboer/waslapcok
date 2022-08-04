@@ -1,3 +1,10 @@
+
+import { spawn } from 'child_process'
+import fs from 'fs'
+import path from 'path'
+let tmp = path.join(__dirname, '../tmp/')
+
+
 let handler = async (m, { conn, text }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
@@ -14,10 +21,6 @@ handler.command = /^run$/i
 
 export default handler
 
-import { spawn } from 'child_process'
-import fs from 'fs'
-import path from 'path'
-let tmp = path.join(__dirname, '../tmp/')
 function running(img, duration = 10, fps = 60) {
   return new Promise((resolve, reject) => {
     let layers = [
