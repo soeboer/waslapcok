@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
   try { q = m.quoted.download() }
   catch (e) { q = m.download() }
   m.reply('_Sedang membuat..._\n*Mohon tunggu sekitar 1 menit*')
-  running(await q).then(vid => conn.sendFile(m.chat, vid, 'run.mp4', '*© Nurutomo*\nMade with FFmpeg', m))
+  running(await q).then(vid => conn.sendFile(m.chat, vid, 'run.mp4', '*Made with FFmpeg*', m))
 }
 handler.help = ['run']
 handler.tags = ['tools']
@@ -14,9 +14,9 @@ handler.command = /^run$/i
 
 export default handler
 
-let { spawn } = require('child_process')
-let fs = require('fs')
-let path = require('path')
+import { spawn } from 'child_process'
+import fs from 'fs'
+import path from 'path'
 let tmp = path.join(__dirname, '../tmp/')
 function running(img, duration = 10, fps = 60) {
   return new Promise((resolve, reject) => {
