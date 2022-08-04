@@ -17,9 +17,9 @@ conn.sendFile(m.chat, img, '', peroses, m)
   
   
 }
-handler.help = ['brewokputih']
-handler.tags = ['maker']
-handler.command = /^(brewokputih)$/i
+handler.help = ['uploadfoto']
+handler.tags = ['tools']
+handler.command = /^(uploadfoto)$/i
 handler.fail = null
 
 
