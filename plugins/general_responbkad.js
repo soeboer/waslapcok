@@ -19,7 +19,7 @@ export default handler
 
 function wish() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  let wishloc = "Selamat Dini Hari ☀️"
+  let wishloc = "*Selamat Dini Hari* ☀️"
   if (time >= 4) {
     wishloc = "*Selamat Pagi* 🌄"
   }
