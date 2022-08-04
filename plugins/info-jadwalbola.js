@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, {command, conn}) => {
-     let res = await fetch(global.API('https://api.burhansyam.com', '/bot/jadwal-bola'))
+     let res = await fetch(global.API('https://docs-jojo.herokuapp.com', '/api/jadwal-bola'))
      let json = await res.json()
      let bol = json.result.map((v, i) => `${i + 1}.📆 Tanggal : ${v.tanggal}\n⌚️ Jam : ${v.jam}\n📊 Liga : ${v.liga}\n⚽️ Pertandingan : ${v.match}\n📺 Channel : ${v.ch_tv}`).join('\n\n')
      m.reply(bol)
