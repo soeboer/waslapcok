@@ -12,7 +12,7 @@ conn.sendHydrated(m.chat, '*『 ɪɴᴛʀᴏᴅᴜᴄᴛɪᴏɴ 』*', `${wish()
 }
 
 
-handler.customPrefix = /^assalamualaikum|salam|permisi|tes|mohon|bkad$/i
+handler.customPrefix = /^bkad$/i
 handler.command = new RegExp
 
 export default handler
