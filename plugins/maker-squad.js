@@ -6,7 +6,7 @@ if (!text) throw `*[❗INFO❗] Masukan Nama Squad contoh .squad Agen Dosa Inc`
   let res = `https://docs-jojo.herokuapp.com/api/gaming?text=${text}`
   conn.sendFile(m.chat, res, 'gaming.jpg', `@burhansyam Logo Maker`, m, false)
 }
-handler.help = ['squad'].map(v => v + ' <Nama Squad Game>')
+handler.help = ['squad <Nama Squad Game>']
 handler.tags = ['maker']
 handler.command = /^(squad)$/i
 
