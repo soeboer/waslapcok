@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, text }) => {
 // let response = args.join(' ').split(' ')
-  if (!args[0]) throw 'Masukkan Parameter'
-  m.reply('proses..')
-  let res = `https://docs-jojo.herokuapp.com/api/gaming?text=${args[0]}`
+if (!text) throw `*[❗INFO❗] Masukan Nama Squad contoh .squad Agen Dosa Inc`
+  m.reply('Sabar kak, saya proses dulu yaak..')
+  let res = `https://docs-jojo.herokuapp.com/api/gaming?text=${text}`
   conn.sendFile(m.chat, res, 'gaming.jpg', `@burhansyam Logo Maker`, m, false)
 }
 handler.help = ['squad'].map(v => v + ' <Nama Squad Game>')
