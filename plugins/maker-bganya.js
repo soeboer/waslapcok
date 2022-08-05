@@ -4,7 +4,7 @@ import uploadImage from '../lib/uploadImage.js'
 let handler = async (m, { conn, usedPrefix}) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption ${usedPrefix}.vector`
+  if (!mime) throw `Reply Foto/Kirim Foto Dengan Caption`
     if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
     let img = await q.download()
     let urle = await uploadImage(img)
