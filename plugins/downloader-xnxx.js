@@ -14,11 +14,9 @@ let handler = async(m, { conn, text }) => {
   let hls = json.result.files.hls   
   let ihik = `*Detail Video ${title}*
 🚧 *Link    :* ${url}
-⛽️ *Durasi  :* ${duration}
-📆 *Info    :* ${info}
-🚀 *Downoad  :* \n$
-💾 *SD :* ${low}
-💽 *HD :* ${high}
+⛽️ *Info    :* ${info}
+💾 *Downoad SD :* ${low}
+💽 *Downoad HD :* ${high}
 🎥 *Streaming :* ${hls}`
   
 //     m.reply(papah)
