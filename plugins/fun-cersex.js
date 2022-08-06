@@ -2,13 +2,10 @@ import fetch from 'node-fetch'
 
 
 let handler = async (m, { text }) => {
-  let url = await fetch('https://docs-jojo.herokuapp.com/api/cerpen')
+  let url = await fetch('https://api.burhansyam.com/scrap/test.php')
   let json = await url.json()
-let { title, pengarang, kategori, cerpen } = json.result[0]
-let hasil = `✨ *Judul  :* ${title}
-🎆 *Pengarang :* ${pengarang}
-💬 *Kategori  :* ${kategori}
-${cerpen}`
+let { result } = json
+let hasil = `${result}`
 
   m.reply(hasil)
 }
