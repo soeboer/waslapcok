@@ -8,13 +8,18 @@ let handler = async(m, { conn, text }) => {
 //     if (res.status != 200) throw await res.text()
     let json = await res.json()
 //     if (!json.status) throw json
-  let { title, url, duration, image, info, files } = json.result
-  let kuali = json.files.map((v, i) => `${i + 1}.💾 SD: ${v.low}\n💽 HD: ${v.high}\n🎥 Streaming: ${v.hls}`).join('\n\n')
+  let { title, url, duration, image, info } = json.result
+  let low = json.result.files.low
+  let high = json.result.files.high
+  let hls = json.result.files.hls   
   let ihik = `*Detail Video ${title}*
 🚧 *Link    :* ${url}
 ⛽️ *Durasi  :* ${duration}
 📆 *Info    :* ${info}
-🚀 *Downoad  :* \n${kuali}`
+🚀 *Downoad  :* \n$
+💾 *SD :* ${low}
+💽 *HD :* ${high}
+🎥 *Streaming :* ${hls}`
   
 //     m.reply(papah)
 //     	          conn.reply(m.chat, mes, m)
