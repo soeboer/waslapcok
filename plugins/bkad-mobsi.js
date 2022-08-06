@@ -2,7 +2,8 @@ import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text }) => {
 let [opsi, teks] = text.split ` `
-let listopsi = `Masuk
+let listopsi = `Opsi Mobsi:
+Masuk
 Pulang
 `.trim()
 
