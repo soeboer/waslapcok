@@ -1,13 +1,17 @@
-import fetch from 'node-fetch'
+let handler = async(m, { conn, text }) => {
+let [opsi, teks] = text.split ` `
 
-let handler = async (m, { conn, args }) => {
-let ihik = args.join(' ').split(' ')
-  if (!args[0]) throw 'Masukkan Perintah dan Dev ID \nContoh: .mobsi pulang 256719cfac87abf0'
-m.reply('Siap bestie,saya otewe mencet tombol ke BKPPD dulu 😅')
- let res = await fetch(`https://api.burhansyam.com/bot/mobsi/?ayo=${ihik[0]}&id=${ihik[1]}`)
-// if (!res.ok) throw await res.text()
+let listopsi = `Masuk
+Pulang
+`.trim()
+
+    if (!opsi) return conn.reply(m.chat, listopsi, m)
+    if (!teks) return conn.reply(m.chat, 'tulis juga Dev ID nya\nContoh: .mobsi pulang 256719cfac87abf0', m)
+await m.reply('Siap bestie,saya otewe mencet tombol ke BKPPD dulu...')
+let res = await fetch(`https://api.burhansyam.com/bot/mobsi/?ayo=${opsi}&id=${teks}`)
 let json = await res.json()
 let { presensi, status, waktu, nama, nip, opd, jarak, koordinat } = json.result
+
 let kaslak = `🦉 *Rincian Presensi* ${presensi}
 ❗ *Status   :* ${status}
 🥷🏽 *Nama ASN :* ${nama}
