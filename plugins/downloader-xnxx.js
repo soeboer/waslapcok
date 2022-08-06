@@ -12,7 +12,7 @@ let handler = async(m, { conn, text }) => {
   let low = json.result.files.low
   let high = json.result.files.high
   let hls = json.result.files.hls   
-  let ihik = `*Detail Video ${title}*
+  let ihik = `*🎞 Detail Video ${title}*
 🚧 *Link    :* ${url}
 ⛽️ *Info    :* ${info}
 💾 *Downoad SD :* ${low}
