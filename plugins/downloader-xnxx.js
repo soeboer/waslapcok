@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let json = await res.json()
     if (!json.status) throw json
   let { title, url, duration, image, info, files, hls } = json.result
-  let kuali = json.files.map((v, i) => `${i + 1}.💾 SD: ${v.low}\n💽 HD: ${v.high}`).join('\n\n')
+  let kuali = json.result.files.map((v, i) => `${i + 1}.💾 SD: ${v.low}\n💽 HD: ${v.high}`).join('\n\n')
   let ihik = `*Detail Video ${title}*
 🚧 *Link    :* ${url}
 ⛽️ *Durasi  :* ${duration}
