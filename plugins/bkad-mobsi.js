@@ -29,3 +29,5 @@ conn.reply(m.chat, kaslak, m)
 handler.help = ['mobsi <Opsi DevId>']
 handler.tags = ['bkad']
 handler.command = /^(mobsi)$/i
+
+export default handler
