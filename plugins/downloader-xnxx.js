@@ -1,7 +1,8 @@
 import fetch from 'node-fetch'
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `*Perintah ini untuk Download link XNXX *\n\ncontoh:\n${usedPrefix + command} https://www.xnxx.com/video-10795jab/sex_in_japan`
+// let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async(m, { conn, text }) => {
+    if (!text) throw `*Perintah ini untuk Download link XNXX*\nContoh:\n.xd https://www.xnxx.com/video-10795jab/sex_in_japan`
     await m.reply('💻 Sabar bestie saya cek dulu...')
     let res = await fetch(global.API('https://api.burhansyam.com', '/bot/xnxx/down/', { q: text }))
 //     if (res.status != 200) throw await res.text()
