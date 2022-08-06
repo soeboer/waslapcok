@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `*Perintah ini untuk melacak pelayanan SIPAPAH berdasarkan nomor pelayanan *\n\ncontoh:\n${usedPrefix + command} 20220727-072`
-    let res = await fetch(global.API('https://api.burhansyam.com', '/bot/lc/', { nopen: text }))
+    let res = await fetch(global.API('https://api.burhansyam.com', '/bot/lc/', { q: text }))
     if (res.status != 0) throw await res.text()
     let json = await res.json()
     if (!json.status) throw json
