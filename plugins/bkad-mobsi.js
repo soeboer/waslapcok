@@ -22,8 +22,8 @@ let kaslak = `🦉 *Rincian Presensi* ${presensi}
 🏢 *Alamat OPD :* ${opd}
 🎯 *Jarak :* ${jarak}
 🗺 *Koordinat :* ${koordinat}
-*Silakan cek di riwayat presensi Anda disini:*
-⏳ https://bkad.my.id/mobsi/riwayat/?nip=${nip}`      
+⏳ *Silakan cek di riwayat presensi Anda :*
+https://bkad.my.id/mobsi/riwayat/?nip=${nip}`      
 
 conn.reply(m.chat, kaslak, m)
 }
