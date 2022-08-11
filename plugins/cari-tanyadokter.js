@@ -15,7 +15,7 @@ let asolole = `*Penjelasang singkat :*
 🚨 *Kategori   :* ${category}
 👩‍🔬 *Nama Dokter :* ${doctor_name}
 📆 *Update :* ${custom_last_update}
-{short_content}`      
+${short_content}`      
            conn.reply(m.chat, asolole, m)
 }
 // 🚨 *Kode OPD Ruang :* ${kodeopdruang}
