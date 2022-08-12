@@ -4,11 +4,13 @@ import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (args && /(?:https?:\/{2})?(?:w{3}|m|music)?\.?youtu(?:be)?\.(?:com|be)(?:watch\?v=|\/)([^\s&]+)/i.test(args[0])) {
-    let res = await fetch(`https://yt-downloader.akkun3704.repl.co/yt?url=${args[0]}`)
+//     let res = await fetch(`https://yt-downloader.akkun3704.repl.co/yt?url=${args[0]}`)
+    let res = await fetch(`https://api.burhansyam.com/bot/yta/?link=${args[0]}`)
     res = await res.json()
     if (!res) res = ''
-    let { description, ownerChannelName, viewCount, uploadDate, likes, dislikes } = res.result.videoDetails
-    let { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
+//     let { description, ownerChannelName, viewCount, uploadDate, likes, dislikes } = res.result.videoDetails
+    let { title, thumb, channel, published, views, audione } = res.result
+    let { thumbnail, audio: _audio } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
     await m.reply('_In progress, please wait..._')
     let limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
     let audio, quality, link, lastError, isLimit //,source
@@ -18,7 +20,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
         quality = audio.quality
         console.log(audio)
         isLimit = audio.fileSize > limitedSize
-        // if (isLimit) return conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: `*Title:* ${title}\n*Link:* ${await shortUrl(`https://yt-downloader.akkun3704.repl.co/?url=${args[0]}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`)}\n\n_Filesize too big_` }, { quoted: m })
+        if (isLimit) return conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: `*Title:* ${title}\n*Link:* ${await shortUrl(`${audio}`)}\n\n_Filesize too big_` }, { quoted: m })
         link = await audio.download()
         if (link) break
         // if (link) source = await (await fetch(link)).arrayBuffer()
