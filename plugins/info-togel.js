@@ -3,7 +3,7 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 
 let handler = async (m, { text }) => {
-	if (!text) throw 'Masukkan Nama Togel'
+	if (!text) throw 'Masukkan Nama Togel\n hk atau sg'
 	let res = await Togel(text)
 	let txt = res.result.map((v) => `${v.No}. ${v.Hari}, ${v.Tanggal} *[ ${v.Angka} ]*`).join`\n`
 	m.reply(`*Keluaran Togel ${res.toto}*\n*${txt}*\n💻 ©️ ᶜᵒᵈᵉᵈ ᵇʸ ᵇᵘʳʰᵃⁿˢʸᵃᵐ ™️`)
@@ -18,7 +18,7 @@ async function Togel(name) {
 	let list = JSON.parse(fs.readFileSync('./lib/togel.json', 'utf-8'))
 	let data = list.find((v) => (new RegExp(name, 'gi')).test(v.toto)), result = []
 	if (!data) throw 'Togel Yg Tersedia:\n' + list.map(v => v.toto).sort().join('\n')
-	let html = (await axios.get(`https://api.burhansyam.com/bot/${data.value}`)).data
+	let html = (await axios.get(`https://indotv.my.id/bot/${data.value}`)).data
 	let $ = cheerio.load(html)
 	$('div > table').find('tbody > tr').slice(1).each(function () {
 		let No = $(this).find('td').eq(0).text()
