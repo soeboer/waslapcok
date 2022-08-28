@@ -12,7 +12,7 @@ indahcargo, indopaket, jexpress, rpx, rex, sap, pcp, dse, first, idl
     if (!kurir) return conn.reply(m.chat, listkurir, m)
     if (!teks) return conn.reply(m.chat, 'Kode Resinya ?', m)
   await m.reply('Sabar Kak saya cek dulu...')
- let url = await fetch(`https://api.burhansyam.com/bot/resi/?kurir=${kurir}&resi=${teks}`)
+ let url = await fetch(`https://indotv.my.id/bot/resi/?kurir=${kurir}&resi=${teks}`)
       let angkut = await url.json()
       let hasil = `${angkut.result}`
 //  conn.reply(m.chat, `${res.result}`, m)
