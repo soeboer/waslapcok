@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
     if (!text) return conn.reply(m.chat, '[❗INFO❗] Berapa ID Sambungannya ?\n Contoh : .pdamgk 050200292', m)
 
   await m.reply('Sabar bestie saya cek dulu...')
- let res = await fetch(`https://api.burhansyam.com/bot/pdamgk/?id=${text}`)
+ let res = await fetch(`https://indotv.my.id/bot/pdamgk/?id=${text}`)
 let json = await res.json()
 let { pesan, nosamw, nama, alamat, urstat_smb, urjlw, periode, stand_k, stand_l, pakai, lembar, jml_tag, denda, subtotal, message } = json
 let pampers = `*Informasi Tagihan PDAM Gunungkidul*
