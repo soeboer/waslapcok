@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 
 let handler = async (m, { text }) => {
-  let url = await fetch('https://api.burhansyam.com/scrap/test.php')
+  let url = await fetch('https://indotv.my.id/bot/cersex.php')
   let json = await url.json()
 let { result } = json
 let hasil = `${result}`
