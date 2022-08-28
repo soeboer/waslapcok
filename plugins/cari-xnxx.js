@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     await m.reply('Sabar bestie saya carikan dulu...')
     let res = await fetch(global.API('https://indotv.my.id', '/bot/xnxx/', { q: text }))
     let json = await res.json()
-    let xxx = json.result.results.map((v, i) => `${i + 1}.💋 Judul : ${v.title}\n👙 Info : ${v.info}\n🤏🏼 Link : ${v.link}`).join('\n\n')
+    let xxx = json.result.map((v, i) => `${i + 1}.💋 Judul : ${v.title}\n👙 Info : ${v.info}\n🤏🏼 Link : ${v.link}`).join('\n\n')
     m.reply(xxx)
 
 
