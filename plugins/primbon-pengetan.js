@@ -7,7 +7,7 @@ let [tanggal, bulan, teks] = text.split ` `
     if (!bulan) return conn.reply(m.chat, 'Bulan ?\n Contoh : 06', m)
     if (!teks) return conn.reply(m.chat, 'Tahun ? \n Contoh : 2020', m)
   await m.reply('Sabar bestie saya hitung dulu...')
-let res = await fetch(`https://api.burhansyam.com/bot/petung/?y=${teks}&m=${bulan}&d=${tanggal}`)
+let res = await fetch(`https://indotv.my.id/bot/petung/?y=${teks}&m=${bulan}&d=${tanggal}`)
 let json = await res.json()
 let { wafat, dino3, dino7, dino40, dino100, pendak1, pendak2, nyewu } = json.result
 
@@ -17,8 +17,8 @@ let sedane = `🥷🏻 *Dinten Pengetan Sedo* 🥷🏻
 📆 *Pengetan 7 Hari  :*\n ${dino7}
 📆 *Pengetan 40 Hari :*\n ${dino40}
 📆 *Pengetan 100 hari :*\n ${dino100}
-📆 *Pengetan Pendak 1 :*\n ${pendak1}
-📆 *Pengetan Pendak 2 :*\n ${pendak2}
+📆 *Pengetan Mendak 1 :*\n ${pendak1}
+📆 *Pengetan Mendak 2 :*\n ${pendak2}
 📆 *Pengetan 1000 Hari :*\n ${nyewu}
 `      
            conn.reply(m.chat, sedane, m)
