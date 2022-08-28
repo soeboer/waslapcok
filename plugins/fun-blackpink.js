@@ -1,6 +1,6 @@
 let handler = async (m, {command, conn}) => {
 await m.reply('Masih saya pantau kak...')
-let img = await conn.getFile(`https://api.burhansyam.com/bot/blekping.json`)
+let img = await conn.getFile(`https://indotv.my.id/bot/blekping.json`)
 var capt = `🐦 Random Foto BlackPink😋`
         conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 acak 🤗', `/${command}`]], m)
 }
