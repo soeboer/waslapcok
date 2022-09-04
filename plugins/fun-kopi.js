@@ -1,6 +1,6 @@
 let handler = async (m, {command, conn}) => {
 await m.reply('ditunggu dulu maszeeh...')
-let img = await conn.getFile(`https://indotv.my.id/bot/kopi.json`)
+let img = await conn.getFile(`https://api.beetv.my.id/bot/kopi.json`)
 var capt = `🐦 Selamat Menikmati🗿`
         conn.sendButton(m.chat, `_${command}_`.trim(), capt, img.data, [['😋 Ngopi Lagi 🤗', `/${command}`]], m)
 }
