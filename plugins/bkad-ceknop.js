@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Nomor Objek Pajak* \n Contoh : .ceknop 3403080008001002602020`
   await m.reply('Sabar kak saya cek dulu...')
- let res = await fetch(`https://indotv.my.id/bot/pbb/?nop=${text}`)
+ let res = await fetch(`https://api.beetv.my.id/bot/pbb/?nop=${text}`)
 if (!res.ok) throw await res.text()
 let json = await res.json()
 let { tahun, nama_wp, alamat_wp, alamat_op, bumi, bangunan, njop, status, tempo, piutang } = json.result
