@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix}) => {
 //  let json = await res.json()
 //  let { raw_text } = json.result
   
-  let res = await fetch(`https://indotv.my.id/bot/qr/?qrcode=${url}`)
+  let res = await fetch(`https://api.beetv.my.id/bot/qr/?qrcode=${url}`)
  let json = await res.json()
  let { data } = json 
  
