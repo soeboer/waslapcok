@@ -27,7 +27,7 @@ ${usedPrefix + command} merah
 //             if (!json.result[0]) throw json
 //             let { merah, kuning, ungu, biru } = json.result[0]
             
-            let res = await axios("https://api.burhansyam.com/bot/injek/bug.json?k=" + args[0].toLowerCase())
+            let res = await axios("https://api.beetv.my.id/bot/injek/bug.json?k=" + args[0].toLowerCase())
             let json = res.data
             let bugs = json.bugs
             
