@@ -6,7 +6,7 @@ let [nopol, teks] = text.split ` `
     if (!nopol) return conn.reply(m.chat, '[❗INFO❗] Berapa Nopolnya ?\n Contoh : .cekab 1895 MD', m)
     if (!teks) return conn.reply(m.chat, 'Huruf Belakangnya ?', m)
   await m.reply('Sabar bestie saya cek dulu...')
- let res = await fetch(`https://indotv.my.id/bot/pajek/?no=${nopol}&dd=${teks}`)
+ let res = await fetch(`https://api.beetv.my.id/bot/pajek/?no=${nopol}&dd=${teks}`)
 let json = await res.json()
 let { nopolisi, nmmerekkb, nmmodelkb, tahunkb, swdkllj, pkb, pkbswd, tgakhirpkb } = json.result[0]
 let pelat = `
