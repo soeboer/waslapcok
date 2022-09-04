@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let handler = async(m, { conn, usedPrefix, command }) => {
-let res = await axios("https://indotv.my.id/bot/injek/injek.json")
+let res = await axios("https://api.beetv.my.id/bot/injek/injek.json")
 let json = res.data
 let injek = json.injek
 conn.reply(m.chat, `${injek}` .trim(), m)
