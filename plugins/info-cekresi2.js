@@ -12,7 +12,7 @@ indahcargo, indopaket, jexpress, rpx, rex, sap, pcp, dse, first, idl
     if (!kurir) return conn.reply(m.chat, listkurir, m)
     if (!teks) return conn.reply(m.chat, 'Kode Resinya ?', m)
   await m.reply('Sabar Kak saya cek dulu...')
-   let res = await fetch(`https://indotv.my.id/bot/resi2/?kurir=${kurir}&resi=${teks}`)
+   let res = await fetch(`https://api.beetv.my.id/bot/resi2/?kurir=${kurir}&resi=${teks}`)
    
  let json = await res.json()
 let { origin, destination, status, shipper, receiver, service, courier, weight, waybill, date, manifest } = json.details
