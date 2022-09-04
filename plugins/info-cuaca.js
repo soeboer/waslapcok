@@ -3,7 +3,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
 if (!text) throw `*Masukan Nama Kota*`
-let res = await fetch(global.API('https://indotv.my.id', '/bot/cuaca/', { q: text }))
+let res = await fetch(global.API('https://api.beetv.my.id', '/bot/cuaca/', { q: text }))
 if (!res.ok) throw await res.text()
 let json = await res.json()
 let { kota, suhu, cuaca, kelembaban, angin, gbr } = json.results[0]
