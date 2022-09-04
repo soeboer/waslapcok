@@ -1,7 +1,7 @@
 import axios from 'axios'
 //let handler = async(m, { conn, usedPrefix, command }) => {
 let handler = async (m, { conn, text }) => {  
-let res = await axios("https://indotv.my.id/bot/gempa.json")
+let res = await axios("https://api.beetv.my.id/bot/gempa.json")
 let json = res.data
 let url = json.url
 let author = json.author
