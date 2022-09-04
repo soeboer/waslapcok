@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
 if (!text) throw `*[❗INFO❗] Masukan Nomor Polisi* \n Contoh : .kendi AB 1060 UD`
   await m.reply('🕵️ Sabar, Kami cek di SIM ASET dulu...')
 //  let res = await fetch(`https://aset.simda.net/2022/ai_cha/?qrcode=${text}`)
- let res = await fetch(`https://indotv.my.id/bot/nopol/?nopol=${text}`)
+ let res = await fetch(`https://api.beetv.my.id/bot/nopol/?nopol=${text}`)
 
   if (!res.ok) throw await res.text()
 let json = await res.json()
