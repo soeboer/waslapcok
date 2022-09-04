@@ -1,6 +1,6 @@
 import axios from 'axios'
 let handler = async(m, { conn, usedPrefix, command }) => {
-let res = await axios("https://indotv.my.id/bot/bucin.json")
+let res = await axios("https://api.beetv.my.id/bot/bucin.json")
 let json = res.data
 let bucin = json.bucin
 let author = json.author
