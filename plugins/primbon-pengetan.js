@@ -7,7 +7,7 @@ let [tanggal, bulan, teks] = text.split ` `
     if (!bulan) return conn.reply(m.chat, 'Bulan ?\n Contoh : 06', m)
     if (!teks) return conn.reply(m.chat, 'Tahun ? \n Contoh : 2020', m)
   await m.reply('Sabar bestie saya hitung dulu...')
-let res = await fetch(`https://indotv.my.id/bot/petung/?y=${teks}&m=${bulan}&d=${tanggal}`)
+let res = await fetch(`https://api.beetv.my.id/bot/petung/?y=${teks}&m=${bulan}&d=${tanggal}`)
 let json = await res.json()
 let { wafat, dino3, dino7, dino40, dino100, pendak1, pendak2, nyewu } = json.result
 
