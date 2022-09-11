@@ -10,7 +10,7 @@ Pulang
     if (!opsi) return conn.reply(m.chat, listopsi, m)
     if (!teks) return conn.reply(m.chat, 'tulis juga Dev ID nya\nContoh: .mobsi pulang 256719cfac87abf0', m)
 await m.reply('Siap bestie,otewe mencet tombol presensi ke BKPPD dulu...😂')
-let res = await fetch(`https://api.beetv.my.id/bot/mobsi/?ayo=${opsi}&id=${teks}`)
+let res = await fetch(`https://titib.my.id/bot/mobsi/?ayo=${opsi}&id=${teks}`)
 let json = await res.json()
 let { presensi, status, waktu, nama, nip, opd, jarak, koordinat } = json.result
 
