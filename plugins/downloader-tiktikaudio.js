@@ -1,47 +1,15 @@
-import { Tiktok } from 'xfarr-api'
-import { tiktokdl } from '@bochilteam/scraper'
-import { toAudio, toPTT } from '../lib/converter.js'
+import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Laah.. url nya mana bestie?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
-  if (!args[0].match(/tiktok/gi)) throw `url salah`
-
-//   await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
-
-//   })
-  try {
-    var anu = await Tiktok(args[0])
-    var { url, title, thumbnail, duration, source, medias } = anu
-    var { quality, extension, size, formattedSize, } = anu.medias[0]
-    await conn.sendMedia(m.chat, medias[2].url, null, {mentions: [m.sender]})
-    await conn.sendMedia(m.chat, medias[2].url, null, {ptt: true, mentions: [m.sender]})
-    } catch {
-    try {
-    var anu = await tiktokdl(args[0])
-    var { url, title, thumbnail, duration, source, medias, video } = anu
-    var { quality, extension, size, formattedSize, } = anu.medias[0]
-    let v = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
-    let a = await(await fetch(v)).buffer()
-    let au = await toAudio(a, 'mp4')
-    let vn = await toPTT(a, 'mp4') 
-    await conn.sendFile(m.chat, au.data, 'tiktok.mp3', '', 0, 0, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
-    await conn.sendFile(m.chat, vn.data, 'tiktok.opus', '', 0, 1, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
-  } catch {
-    try {
-    var anuu = await tiktokdl(args[0])
-    var { video, nowm, wm, audio, description  } = anuu
-    let v = nowm
-    let a = await(await fetch(v)).buffer()
-    let au = await toAudio(a, 'mp4')
-    let vn = await toPTT(a, 'mp4')
-    await conn.sendFile(m.chat, au.data, 'tiktok.mp3', '', 0, 0, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
-    await conn.sendFile(m.chat, vn.data, 'tiktok.opus', '', 0, 1, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: global.db.data.chats[m.chat].useDocument })
-  } catch {
-    throw eror 
-    
-      }
-    }
-  }
+if (!args[0]) throw `Contoh ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
+//     const { author: { nickname }, video, description } = await tiktokdl(args[0])
+//     const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
+//     if (!url) throw 'Can\'t download video!'
+    await m.reply('Dalam Proses,silakan tunggu..._')
+    let res = await fetch(`https://hadi-api.herokuapp.com/api/tiktok?url=${args[0]}`)
+    res = await res.json()
+    let { audio1, audio2, original } = res.result.audio_only
+    conn.sendFile(m.chat, audio1, 'tiktok.mp3', `_©burhansyam_`.trim(), m)
 }
 handler.help = ['tiktokaudio'].map(v => v + ' <url>')
 handler.tags = ['downloader']
