@@ -9,7 +9,11 @@ if (!args[0]) throw `Contoh ${usedPrefix}${command} https://vt.tiktok.com/ZSR9Up
     let res = await fetch(`https://hadi-api.herokuapp.com/api/tiktok?url=${args[0]}`)
     res = await res.json()
     let { audio1, audio2, original } = res.result.audio_only
-    conn.sendFile(m.chat, original, 'tiktok.mp3', `_©burhansyam_`.trim(), m)
+//     conn.sendFile(m.chat, original, 'tiktok.mp3', `_©burhansyam_`.trim(), m)
+    
+    let musrik = await conn.getFile(`${original}`)
+		let caption = `@burhansyam`
+                conn.sendFile(m.chat, musrik.data, `get.${musrik}.mp3`, caption, m)
 }
 handler.help = ['tiktokaudio'].map(v => v + ' <url>')
 handler.tags = ['downloader']
