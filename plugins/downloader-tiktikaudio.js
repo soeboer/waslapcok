@@ -5,7 +5,7 @@ if (!args[0]) throw `Contoh ${usedPrefix}${command} https://vt.tiktok.com/ZSR9Up
 //     const { author: { nickname }, video, description } = await tiktokdl(args[0])
 //     const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
 //     if (!url) throw 'Can\'t download video!'
-    await m.reply('Dalam Proses,silakan tunggu..._')
+    await m.reply('Dalam Proses,silakan tunggu...')
     let res = await fetch(`https://hadi-api.herokuapp.com/api/tiktok?url=${args[0]}`)
     res = await res.json()
     let { audio1, audio2, original } = res.result.audio_only
