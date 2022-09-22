@@ -10,10 +10,8 @@ if (!args[0]) throw `Contoh ${usedPrefix}${command} https://vt.tiktok.com/ZSR9Up
     res = await res.json()
     let { audio1, audio2, original } = res.result.audio_only
 //     conn.sendFile(m.chat, original, 'tiktok.mp3', `_©burhansyam_`.trim(), m)
-    
-    let musrik = await conn.getFile(`${original}`)
-		let caption = `@burhansyam`
-                conn.sendFile(m.chat, musrik.data, `get.${musrik}.mp3`, caption, m)
+conn.sendButton(m.chat, `Download MP3 : ${original}`, 'Coded by @burhansyam', null, [['Server 2', `${audio1}`]], m)
+
 }
 handler.help = ['tiktokaudio'].map(v => v + ' <url>')
 handler.tags = ['downloader']
