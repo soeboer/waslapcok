@@ -13,7 +13,7 @@
         "start": "node index.js",
         "test": "node test.js",
         "test2": "nodemon index.js",
-        "db": "node . --autocleartmp --db 'mongodb+srv://ozan:Akhmad6825@cluster0.mflne.mongodb.net/zabotv6?retryWrites=true&w=majority'"
+        "db": ""
         
     },
     "keywords": [
@@ -28,16 +28,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/burhansyam/gendawon",
+    "homepage": "https://github.com/soeboer/waslapcok",
     "author": {
         "name": "burhansyam"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/burhansyam/gendawon.git"
+        "url": "git+https://github.com/soeboer/waslapcok.git"
     },
     "bugs": {
-        "url": "https://github.com/burhansyam/gendawon/issues"
+        "url": "https://github.com/soeboer/waslapcok/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
