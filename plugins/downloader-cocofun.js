@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
 let res = await fetch(`https://docs-jojo.herokuapp.com/api/cocofun-no-wm?url=${text}`)
 if (!res.ok) throw await res.text()
     
-    await m.reply('_Dalam proses, mohon ditunggu..._')
+    await m.reply('_Dalam proses, mohon ditunggu...')
 let json = await res.json()
 let { download } = json
 let pidio = await conn.getFile(`${download}`)
