@@ -7,13 +7,15 @@ if (!args[0]) throw `Contoh ${usedPrefix}${command} https://vt.tiktok.com/ZSR9Up
     res = await res.json()
     let { original, audio1, audio2 } = res.result.audio_only
 //     conn.sendFile(m.chat, original, 'tiktok.mp3', `_©burhansyam_`.trim(), m)
-let sound = await conn.getFile(`${original}`)
-		let caption = `*Tikcrot Sound Downloader*`
-                conn.sendFile(m.chat, sound.data, `${audio1}.mp3`, caption, m)    
+    let sound = `*Tiktok MP3 Donload*
+🚧 *Link 1    :* ${audio1}
+⛽️ *Link 2  :* ${audio2}
+🛵 *Original :* ${original}`
+           conn.reply(m.chat, sound, m)    
     
 
 }
-handler.help = ['tiktokaudio'].map(v => v + ' <url>')
+handler.help = ['ttmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(tt|tiktok)(a(udio)?|mp3|sound)(dl)?(download(er)?)?$/i
 
